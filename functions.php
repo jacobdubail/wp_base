@@ -1,20 +1,16 @@
 <?php 
       
-    if (function_exists('register_sidebar')) {
-      register_sidebar(array(
-        'name' => 'Sidebar Widgets',
-        'id'   => 'sidebar-widgets',
-        'description'   => 'These are widgets for the sidebar.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
-      ));
-    }
+  register_sidebar(array(
+    'name' => 'Sidebar Widgets',
+    'id'   => 'sidebar-widgets',
+    'description'   => 'These are widgets for the sidebar.',
+    'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ));
 
-  if (function_exists('add_theme_support')) {
-     add_theme_support('nav-menus');
-  }
+  add_theme_support('nav-menus');
   add_action( 'init', 'register_my_menu' );
   function register_my_menu() {
     register_nav_menu( 'main-nav', __( 'Main Nav' ) );
@@ -44,8 +40,8 @@
   add_filter('post_class', 'category_id_class');
   add_filter('body_class', 'category_id_class');
 
-  add_action('wp_enqueue_scripts', 'wedding_register_scripts');
-  function wedding_register_scripts() {
+  add_action('wp_enqueue_scripts', 'base_register_scripts');
+  function base_register_scripts() {
     wp_deregister_script('jquery');
     wp_deregister_script( 'l10n' );
 
@@ -58,14 +54,14 @@
     wp_register_script('jquery', $jQuery, false, '1.8.2', true);
     wp_enqueue_script('jquery');
      
-    wp_register_script('wedding_plugins', '/wp-content/themes/wedding/js/plugins.min.js', array('jquery'), '1', true );
-    wp_enqueue_script('wedding_plugins');
+    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', array('jquery'), '1', true );
+    wp_enqueue_script('base_plugins');
     
-    wp_register_script('wedding_functions', '/wp-content/themes/wedding/js/script.min.js', array('jquery', 'wedding_plugins'), '1', true );
-    wp_enqueue_script('wedding_functions');    
+    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('jquery', 'base_plugins'), '1', true );
+    wp_enqueue_script('base_functions');    
     
-    wp_register_style('wedding_styles', '/wp-content/themes/wedding/css/style.css', '', '1', 'all');
-    wp_enqueue_style('wedding_styles');
+    wp_register_style('base_styles', '/wp-content/themes/base/css/style.css', '', '1', 'all');
+    wp_enqueue_style('base_styles');
     
   }
 
