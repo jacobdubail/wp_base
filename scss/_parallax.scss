@@ -1,0 +1,82 @@
+/* vertical version */
+.items{
+  overflow:hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+}
+.item{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  height:100%;
+}
+.inner,
+.inner-lev1,
+.inner-lev2{
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:1;
+  display:none;
+}
+.content{
+  background:rgba(255,255,255,0.9);
+  background:transparent;
+  padding:20px;
+  width:300px;
+  margin:30px;
+  position:relative;
+  z-index:2;
+}
+  
+
+
+/* parallax images */
+.item1{
+  background: transparent url(../i/bg/710.jpg) 50% 0 fixed no-repeat;
+  height: 600px;
+  padding-top: 40px;
+}
+.inner1{
+  background: url(http://lorempixum.com/200/200/people/1) 400px 200px fixed no-repeat;
+}
+
+.item2{
+  background: transparent url(../i/bg/610.jpg) 50% 0 fixed no-repeat;
+  height: 600px;
+}
+.inner2{
+  background: url(http://lorempixum.com/200/200/people/2) 400px 200px fixed no-repeat;
+}
+.inner2a{
+  background: url(http://lorempixum.com/200/200/sports/1) 500px 250px fixed no-repeat;
+}
+.inner2b{
+  background: url(http://lorempixum.com/200/200/sports/2) 600px 300px fixed no-repeat;
+}
+
+.item3{
+  background: transparent url(../i/bg/291.jpg) 50% bottom  no-repeat;
+  height: 1350px;
+}
+.inner3{
+  background: url(http://lorempixum.com/200/200/people/3) 400px 200px fixed no-repeat;
+}
+
+.item4{
+  background: transparent url(../i/bg/421.jpg) 50% 0 fixed no-repeat;
+  height: 1050px;
+}
+.inner4{
+  background: url(http://lorempixum.com/200/200/people/4) 400px 200px fixed no-repeat;
+}
+
+.item5{
+  background: transparent url(../i/bg/121-new.jpg) 50% bottom fixed no-repeat;
+  height: 1050px;
+}
+.inner5{
+  background: url(http://lorempixum.com/200/200/people/5) 400px 200px fixed no-repeat;
+}
