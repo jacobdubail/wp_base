@@ -1,4 +1,4 @@
-.htaccess
+# .htaccess
 wp-*.php
 xmlrpc.php
 wp-admin/
@@ -17,7 +17,7 @@ readme.html
 license.txt
 .sass-cache
 .DS_Store
-*.sublime-*
-bin/
-bin/*
+# *.sublime-*
+# bin/
+# bin/*
 .phptidy-cache

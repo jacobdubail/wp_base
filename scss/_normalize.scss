@@ -202,6 +202,7 @@ sub {
 
 img {
     border: 0;
+    vertical-align: middle;
 }
 
 /*
@@ -350,6 +351,7 @@ input::-moz-focus-inner {
 textarea {
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
+    resize: vertical;
 }
 
 /* ==========================================================================
