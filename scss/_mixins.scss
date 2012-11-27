@@ -13,7 +13,7 @@
   }
 }
 
-mixin triangle($direction, $color, $size) {
+@mixin triangle($direction, $color, $size) {
 
   @if $direction == "left" {
     border-bottom: $size solid transparent;
