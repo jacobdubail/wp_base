@@ -15,8 +15,8 @@
   <meta name="google-site-verification" content="">
   <meta name="viewport" content="width=device-width">
   
-  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/i/favicon.ico">
-  <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/i/apple-touch-icon.png"> 
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+  <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png"> 
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.min.js"></script>
 
@@ -30,7 +30,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!--[if lt IE 7]>
+  <!--[if lt IE 7=8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
   
@@ -46,7 +46,7 @@
     </header>
 
     <nav class="main-nav">
-      <?php wp_nav_menu( array( 'theme_location' => 'main-nav' ) ); ?>
+      <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '' ) ); ?>
     </nav>
     
     <section class="main-content">
