@@ -1,7 +1,7 @@
       </section>
 
       <footer class="footer">
-        <small>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></small>
+        <p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
       </footer>
 
     </div>
