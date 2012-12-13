@@ -4,7 +4,7 @@
 
 		<h2>Search Results</h2>
 
-		<?php get_template_part( '_/inc/nav' ); ?>
+		<?php get_template_part( 'inc/nav' ); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
@@ -12,11 +12,11 @@
 
 				<h2><?php the_title(); ?></h2>
 
-				<?php get_template_part( '_/inc/meta' ); ?>
+				<?php get_template_part( 'inc/meta' ); ?>
 
 				<div class="entry">
 
-					<?php the_excerpt(); ?>
+					<?php the_content('Continue Reading'); ?>
 
 				</div>
 
@@ -24,7 +24,7 @@
 
 		<?php endwhile; ?>
 
-		<?php get_template_part( '_/inc/nav' ); ?>
+		<?php get_template_part( 'inc/nav' ); ?>
 
 	<?php else : ?>
 
