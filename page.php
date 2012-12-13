@@ -6,7 +6,7 @@
 
 			<h2><?php the_title(); ?></h2>
 
-			<?php get_template_part( '_/inc/meta' ); ?>
+			<?php get_template_part( 'inc/meta' ); ?>
 
 			<div class="entry">
 
