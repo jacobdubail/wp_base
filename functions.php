@@ -145,33 +145,29 @@ add_action( 'wp_head', 'jtd_opengraph_for_posts' );
 
 class JTD_Cleanup_Admin {
     function __construct() {
-        // Hook onto the action 'admin_menu' for our function to remove menu items
+
+      if ( is_user_logged_in() && !get_current_user_id() == 1 ) {
         add_action( 'admin_menu', array( $this, 'remove_menus' ) );
-        // Hook onto the action 'admin_menu' for our function to remove dashboard widgets
         add_action( 'admin_menu', array( $this, 'remove_dashboard_widgets' ) );
-        // Hook onto the action 'admin_menu' for our function to relabel Posts
-        add_action('admin_menu', array($this, 'relabel_posts_menu'));
+      }
 
-        add_action( 'admin_init', array( $this, 'remove_theme_editor' ) );
-        // Hook onto the post type-specific filters to remove columns
-        add_filter( 'manage_posts_columns', array( $this, 'remove_columns' ) );
-        add_filter( 'manage_pages_columns', array( $this, 'remove_columns' ) );
-
-        add_action('init', array($this, 'relabel_posts'));
+      add_action( 'admin_menu', array( $this, 'remove_menus_everyone' ) );
+      add_action( 'admin_init', array( $this, 'remove_theme_editor' ) );
+      add_action('admin_menu', array($this, 'relabel_posts_menu'));
+      add_action('init', array($this, 'relabel_posts'));
 
     }
-    // This function removes each menu item using the Page Hook Suffix ( http://codex.wordpress.org/Administration_Menus#Page_Hook_Suffix )
+
     function remove_menus() {
-        // Links page
-        remove_menu_page( 'link-manager.php' );
-        // Tools page
         remove_menu_page( 'tools.php' );
-        // Settings page
         remove_menu_page( 'options-general.php' );
         remove_menu_page('plugins.php' );
 
         remove_submenu_page('plugins.php', 'plugin-editor.php');
         remove_submenu_page('options-general.php', 'options-permalink.php');
+    }
+    function remove_menus_everyone() {
+        remove_menu_page( 'link-manager.php' );
     }
     // This function removes dashboard widgets
     function remove_dashboard_widgets() {
@@ -186,11 +182,6 @@ class JTD_Cleanup_Admin {
     // This function removes the theme editor
     function remove_theme_editor() {
       remove_submenu_page('themes.php', 'theme-editor.php');
-    }
-    // This function removes post / page list columns
-    function remove_columns( $defaults ) {
-        unset( $defaults['author'] );
-        return $defaults;
     }
     /**
      * Relabel "Posts" to a much more user friendly "Articles"
@@ -225,5 +216,4 @@ class JTD_Cleanup_Admin {
       $submenu['edit.php'][10][0] = $wp_post_types['post']->labels->add_new;
     }
 }
-if ( is_user_logged_in() && !current_user_can('manage_options') )
-  $jtd_cleanup_admin = new JTD_Cleanup_Admin();
+$jtd_cleanup_admin = new JTD_Cleanup_Admin();
