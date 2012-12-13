@@ -43,7 +43,6 @@
   add_action('wp_enqueue_scripts', 'base_register_scripts');
   function base_register_scripts() {
     wp_deregister_script('jquery');
-    wp_deregister_script( 'l10n' );
 
     $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js";
     $test   = @fopen($jQuery,'r'); 
