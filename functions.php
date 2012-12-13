@@ -141,3 +141,89 @@ function jtd_opengraph_for_posts() {
     }
 }
 add_action( 'wp_head', 'jtd_opengraph_for_posts' );
+
+
+class JTD_Cleanup_Admin {
+    function __construct() {
+        // Hook onto the action 'admin_menu' for our function to remove menu items
+        add_action( 'admin_menu', array( $this, 'remove_menus' ) );
+        // Hook onto the action 'admin_menu' for our function to remove dashboard widgets
+        add_action( 'admin_menu', array( $this, 'remove_dashboard_widgets' ) );
+        // Hook onto the action 'admin_menu' for our function to relabel Posts
+        add_action('admin_menu', array($this, 'relabel_posts_menu'));
+
+        add_action( 'admin_init', array( $this, 'remove_theme_editor' ) );
+        // Hook onto the post type-specific filters to remove columns
+        add_filter( 'manage_posts_columns', array( $this, 'remove_columns' ) );
+        add_filter( 'manage_pages_columns', array( $this, 'remove_columns' ) );
+
+        add_action('init', array($this, 'relabel_posts'));
+
+    }
+    // This function removes each menu item using the Page Hook Suffix ( http://codex.wordpress.org/Administration_Menus#Page_Hook_Suffix )
+    function remove_menus() {
+        // Links page
+        remove_menu_page( 'link-manager.php' );
+        // Tools page
+        remove_menu_page( 'tools.php' );
+        // Settings page
+        remove_menu_page( 'options-general.php' );
+        remove_menu_page('plugins.php' );
+
+        remove_submenu_page('plugins.php', 'plugin-editor.php');
+        remove_submenu_page('options-general.php', 'options-permalink.php');
+    }
+    // This function removes dashboard widgets
+    function remove_dashboard_widgets() {
+        global $wp_meta_boxes;
+
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+    }
+    // This function removes the theme editor
+    function remove_theme_editor() {
+      remove_submenu_page('themes.php', 'theme-editor.php');
+    }
+    // This function removes post / page list columns
+    function remove_columns( $defaults ) {
+        unset( $defaults['author'] );
+        return $defaults;
+    }
+    /**
+     * Relabel "Posts" to a much more user friendly "Articles"
+     * Handles all the variations as well
+     */
+    public function relabel_posts() {
+      global $wp_post_types;
+
+      $wp_post_types['post']->labels->name               = 'Articles';
+      $wp_post_types['post']->labels->singular_name      = 'Article';
+      $wp_post_types['post']->labels->add_new            = 'Add New';
+      $wp_post_types['post']->labels->add_new_item       = 'Add New Article';
+      $wp_post_types['post']->labels->edit_item          = 'Edit Article';
+      $wp_post_types['post']->labels->new_item           = 'New Article';
+      $wp_post_types['post']->labels->view_item          = 'View Article';
+      $wp_post_types['post']->labels->search_items       = 'Search Articles';
+      $wp_post_types['post']->labels->not_found          = 'No articles found';
+      $wp_post_types['post']->labels->not_found_in_trash = 'No articles found in Trash';
+      $wp_post_types['post']->labels->all_items          = 'All Articles';
+      $wp_post_types['post']->labels->menu_name          = 'Articles';
+      $wp_post_types['post']->labels->name_admin_bar     = 'Article';
+    }
+    /**
+     * Update the admin menu to use Articles instead of News
+     * This will automatically pull in terms updated from $wp_post_types['post']->labels
+     */
+    public function relabel_posts_menu() {
+      global $menu, $submenu, $wp_post_types;
+
+      $menu[5][0]   = $wp_post_types['post']->labels->name;
+      $submenu['edit.php'][5][0]  = $wp_post_types['post']->labels->all_items;
+      $submenu['edit.php'][10][0] = $wp_post_types['post']->labels->add_new;
+    }
+}
+if ( is_user_logged_in() && !current_user_can('manage_options') )
+  $jtd_cleanup_admin = new JTD_Cleanup_Admin();
