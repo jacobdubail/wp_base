@@ -45,13 +45,13 @@
     wp_deregister_script('jquery');
     wp_deregister_script( 'l10n' );
 
-    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js";
+    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js";
     $test   = @fopen($jQuery,'r'); 
     if ( $test === false ) { 
       $jQuery = get_template_directory_uri() . '/js/jquery.min.js';
     }
 
-    wp_register_script('jquery', $jQuery, false, '1.8.2', true);
+    wp_register_script('jquery', $jQuery, false, '1.8.3', true);
     wp_enqueue_script('jquery');
      
     wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', array('jquery'), '1', true );
@@ -129,12 +129,12 @@ function jtd_opengraph_for_posts() {
     if ( is_singular() ) {
         global $post;
         setup_postdata( $post );
-        $output = '<meta property="og:type" content="article" />' . "\n";
+        $output  = '<meta property="og:type" content="article" />' . "\n";
         $output .= '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '" />' . "\n";
         $output .= '<meta property="og:url" content="' . get_permalink() . '" />' . "\n";
         $output .= '<meta property="og:description" content="' . esc_attr( get_the_excerpt() ) . '" />' . "\n";
         if ( has_post_thumbnail() ) {
-            $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+            $imgsrc  = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
             $output .= '<meta property="og:image" content="' . $imgsrc[0] . '" />' . "\n";
         }
         echo $output;
@@ -153,18 +153,18 @@ class JTD_Cleanup_Admin {
 
       add_action( 'admin_menu', array( $this, 'remove_menus_everyone' ) );
       add_action( 'admin_init', array( $this, 'remove_theme_editor' ) );
-      add_action('admin_menu', array($this, 'relabel_posts_menu'));
-      add_action('init', array($this, 'relabel_posts'));
+      add_action( 'admin_menu', array($this, 'relabel_posts_menu' ));
+      add_action( 'init', array($this, 'relabel_posts' ));
 
     }
 
     function remove_menus() {
         remove_menu_page( 'tools.php' );
         remove_menu_page( 'options-general.php' );
-        remove_menu_page('plugins.php' );
+        remove_menu_page( 'plugins.php' );
 
-        remove_submenu_page('plugins.php', 'plugin-editor.php');
-        remove_submenu_page('options-general.php', 'options-permalink.php');
+        remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+        remove_submenu_page( 'options-general.php', 'options-permalink.php' );
     }
     function remove_menus_everyone() {
         remove_menu_page( 'link-manager.php' );
@@ -181,7 +181,7 @@ class JTD_Cleanup_Admin {
     }
     // This function removes the theme editor
     function remove_theme_editor() {
-      remove_submenu_page('themes.php', 'theme-editor.php');
+      remove_submenu_page( 'themes.php', 'theme-editor.php' );
     }
     /**
      * Relabel "Posts" to a much more user friendly "Articles"
