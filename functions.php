@@ -216,3 +216,35 @@ class JTD_Cleanup_Admin {
     }
 }
 $jtd_cleanup_admin = new JTD_Cleanup_Admin();
+
+
+
+function jtd_comment_callback( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
+?>
+<li class="media">
+        <div class="pull-left">
+            <?php echo get_avatar( $comment, '64' ); ?>
+        </div>
+        <div class="media-body">
+            <?php printf(__('<h4 class="media-heading">%s <span class="says">says:</span></h4>'), get_comment_author_link()); ?>
+        
+            <?php if ($comment->comment_approved == '0') : ?>
+                <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.'); ?></p>
+            <?php endif; ?>
+
+            <?php comment_text() ?>
+
+            <p class="reply">
+                <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+            </p>
+        </div>
+<?php
+} // end comment
+
+add_filter('get_avatar','change_avatar_css');
+function change_avatar_css($class) {
+    $class = str_replace("class='avatar", "class='author_gravatar media-object ", $class) ;
+    return $class;
+}
