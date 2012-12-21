@@ -19,9 +19,9 @@
 		<div class="prev-posts"><?php next_comments_link() ?></div>
 	</div>
 
-	<ol class="commentlist">
-		<?php wp_list_comments(); ?>
-	</ol>
+	<ul class="commentlist">
+		<?php wp_list_comments('type=comment&callback=jtd_comment_callback'); ?>
+	</ul>
 
 	<div class="navigation">
 		<div class="next-posts"><?php previous_comments_link() ?></div>
