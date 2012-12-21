@@ -19,7 +19,7 @@
 		<div class="prev-posts"><?php next_comments_link() ?></div>
 	</div>
 
-	<ul class="commentlist">
+	<ul class="media-list">
 		<?php wp_list_comments('type=comment&callback=jtd_comment_callback'); ?>
 	</ul>
 
