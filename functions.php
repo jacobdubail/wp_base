@@ -142,6 +142,16 @@ function jtd_opengraph_for_posts() {
 add_action( 'wp_head', 'jtd_opengraph_for_posts' );
 
 
+/* https://gist.github.com/4557917 */
+function mytheme_remove_img_dimensions($html) {
+  $html = preg_replace('/(width|height)=["\']\d*["\']\s?/', "", $html);
+    return $html;
+}
+add_filter('post_thumbnail_html', 'mytheme_remove_img_dimensions', 10);
+add_filter('the_content', 'mytheme_remove_img_dimensions', 10);
+add_filter('get_avatar','mytheme_remove_img_dimensions', 10);
+
+
 class JTD_Cleanup_Admin {
     function __construct() {
 
