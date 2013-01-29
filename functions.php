@@ -44,13 +44,13 @@
   function base_register_scripts() {
     wp_deregister_script('jquery');
 
-    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js";
+    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js";
     $test   = @fopen($jQuery,'r'); 
     if ( $test === false ) { 
       $jQuery = get_template_directory_uri() . '/js/jquery.min.js';
     }
 
-    wp_register_script('jquery', $jQuery, false, '1.8.3', true);
+    wp_register_script('jquery', $jQuery, false, '1.9', true);
     wp_enqueue_script('jquery');
      
     wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', array('jquery'), '1', true );
