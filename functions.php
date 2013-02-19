@@ -82,6 +82,7 @@
   function jtd_add_google_profile( $contactmethods ) {
     // Add Google Profiles
     $contactmethods['google_profile'] = 'Google Profile URL';
+    $contactmethods['googleplus']     = 'Google+';
     $contactmethods['facebook']       = 'Facebook';
     $contactmethods['twitter']        = 'Twitter';
     unset($contactmethods['aim']);
@@ -109,12 +110,6 @@ function browser_body_class($classes) {
 }
 
 
-function jtd_googleplus_contactmethod( $contactmethods ) {
-    if ( ! isset( $contactmethods['googleplus'] ) )
-        $contactmethods['googleplus'] = 'Google+';
-    return $contactmethods;
-}
-add_filter( 'user_contactmethods', 'jtd_googleplus_contactmethod' );
 add_action( 'wp_head', 'jtd_googleplus_header' );
 function jtd_googleplus_header() {
     if ( is_singular() ) {
