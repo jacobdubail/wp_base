@@ -44,7 +44,7 @@
   function base_register_scripts() {
     wp_deregister_script('jquery');
 
-    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js";
+    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
     $test   = @fopen($jQuery,'r'); 
     if ( $test === false ) { 
       $jQuery = get_template_directory_uri() . '/js/jquery.min.js';
@@ -96,16 +96,17 @@ add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {
       global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
 
-	if($is_lynx) $classes[] = 'lynx';
-	elseif($is_gecko) $classes[] = 'gecko';
-	elseif($is_opera) $classes[] = 'opera';
-	elseif($is_NS4) $classes[] = 'ns4';
-	elseif($is_safari) $classes[] = 'safari';
-	elseif($is_chrome) $classes[] = 'chrome';
-	elseif($is_IE) $classes[] = 'ie';
-	else $classes[] = 'unknown';
+  if($is_lynx) $classes[]       = 'lynx';
+  elseif($is_gecko) $classes[]  = 'gecko';
+  elseif($is_opera) $classes[]  = 'opera';
+  elseif($is_NS4) $classes[]    = 'ns4';
+  elseif($is_safari) $classes[] = 'safari';
+  elseif($is_chrome) $classes[] = 'chrome';
+  elseif($is_IE) $classes[]     = 'ie';
+  else $classes[]               = 'unknown';
 
 	if($is_iphone) $classes[] = 'iphone';
+  if($is_ipad) $classes[]   = 'ipad';
 	return $classes;
 }
 
@@ -142,9 +143,9 @@ function mytheme_remove_img_dimensions($html) {
   $html = preg_replace('/(width|height)=["\']\d*["\']\s?/', "", $html);
     return $html;
 }
-add_filter('post_thumbnail_html', 'mytheme_remove_img_dimensions', 10);
-add_filter('the_content', 'mytheme_remove_img_dimensions', 10);
-add_filter('get_avatar','mytheme_remove_img_dimensions', 10);
+// add_filter('post_thumbnail_html', 'mytheme_remove_img_dimensions', 10);
+// add_filter('the_content', 'mytheme_remove_img_dimensions', 10);
+// add_filter('get_avatar','mytheme_remove_img_dimensions', 10);
 
 
 class JTD_Cleanup_Admin {
@@ -175,13 +176,13 @@ class JTD_Cleanup_Admin {
     }
     // This function removes dashboard widgets
     function remove_dashboard_widgets() {
-        global $wp_meta_boxes;
+      global $wp_meta_boxes;
 
-            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-            unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-            unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
     }
     // This function removes the theme editor
     function remove_theme_editor() {
@@ -229,22 +230,22 @@ function jtd_comment_callback( $comment, $args, $depth ) {
 	extract($args, EXTR_SKIP);
 ?>
 <li class="media">
-        <div class="pull-left">
-            <?php echo get_avatar( $comment, '64' ); ?>
-        </div>
-        <div class="media-body">
-            <?php printf(__('<h4 class="media-heading">%s <span class="says">says:</span></h4>'), get_comment_author_link()); ?>
-        
-            <?php if ($comment->comment_approved == '0') : ?>
-                <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.'); ?></p>
-            <?php endif; ?>
+  <div class="pull-left">
+      <?php echo get_avatar( $comment, '64' ); ?>
+  </div>
+  <div class="media-body">
+      <?php printf(__('<h4 class="media-heading">%s <span class="says">says:</span></h4>'), get_comment_author_link()); ?>
+  
+      <?php if ($comment->comment_approved == '0') : ?>
+          <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.'); ?></p>
+      <?php endif; ?>
 
-            <?php comment_text() ?>
+      <?php comment_text() ?>
 
-            <p class="reply">
-                <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-            </p>
-        </div>
+      <p class="reply">
+          <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+      </p>
+  </div>
 <?php
 } // end comment
 

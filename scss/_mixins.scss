@@ -1,4 +1,4 @@
-@mixin breakpoint($point) {
+@mixin bp($point) {
   @if $point == hippo {
     @media (max-width: 1600px) { @content; }
   }

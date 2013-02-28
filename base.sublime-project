@@ -2,11 +2,11 @@
 	"folders":
 	[
 		{
-			"path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/base/wp-content/themes/base",
+			"path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/project/wp/wp-content/themes/base",
       "folder_exclude_patterns":[".sass-cache"]
 		},
     {
-      "path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/base/"
+      "path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/project/wp/"
     }
 	],
   "settings":

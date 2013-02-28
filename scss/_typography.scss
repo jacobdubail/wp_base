@@ -1,0 +1,192 @@
+*,*:before,*:after {
+  @include box-sizing(border-box);
+
+  //*behavior: url(wp-content/themes/elco/inc/boxsizing.htc);
+  //-ms-behavior: url(/wp-content/themes/mzcoach/inc/backgroundsize.min.htc);
+}
+::-moz-selection {
+    background: $red;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: $red;
+    color: #fff;
+    text-shadow: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+	font-family: sans-serif;
+	line-height: 1.2;
+	font-size: 13px;
+	overflow-x: hidden;
+}
+
+h1,h2,h3 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+h1 {
+	font-size: 44px;
+}
+h2 {
+	font-size: 26px;
+	margin: 0 0 20px;
+	line-height: 1;
+	color: $c9;
+}
+h3 {
+	font-size: 16px;
+	line-height: 1;
+	margin: 0 0 10px;
+	color: $c6;
+}
+h4 {
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 0 5px;
+	line-height: 1.2;
+}
+
+p {
+	font-size: 13px;
+	line-height: $baselineheight;
+	margin: 0 0 20px;
+}
+
+ul, ol {
+	margin: 0 0 20px;
+	padding: 0;
+}
+li {
+	list-style-position: inside;
+	margin: 0 0 7px;
+}
+
+a {
+
+}
+
+blockquote {
+	position: relative;
+	margin: 0 0 0 70px;
+	max-width: 60%;
+	clear: both;
+	p {
+		font-size: 120%;
+		color: $c6;
+	}
+}
+
+.gform_button {
+	@include transition( all .17s ease );
+	@include inline-block;
+	border: none;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	outline: none;
+	font-weight: bold;
+	background: $c9;
+	color: $red;
+	padding: 0 32px;
+	line-height: 32px;
+	height: 32px;
+	-webkit-box-shadow: 0 0 3px rgba(black, 0.35);
+  box-shadow: 0 0 3px rgba(black, 0.35);
+
+  .no-boxshadow & {
+    border: 1px solid #bbb;
+  }
+
+  &:active,
+  &:hover {
+  	background: $red;
+  	color: #fff;
+  }
+}
+.btn {
+	//@include transition( all .17s ease );
+	@include inline-block;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	outline: none;
+	font-weight: bold;
+	background: $c9;
+	color: $red;
+	padding: 0 12px;
+	line-height: 24px;
+	height: 24px;
+
+	&:hover {
+		background: $red;
+		color: #fff;
+		text-decoration: none;
+
+	}
+}
+
+
+.wp-caption {
+	position: relative;
+
+	&.alignleft {
+		float: left;
+		margin: 0 27px 20px 0;
+
+		@include bp(oryx) {
+			float: none;
+		}
+	}
+	&.alignright {
+		float: right;
+		margin: 0 0 20px 27px;
+
+		@include bp(oryx) {
+			float: none;
+		}
+	}
+
+	.wp-caption-text {
+		background: #f2f2f2;
+		border-top: 1px solid #fff;
+		padding: 13px 20px;
+		color: #7a7a7a;
+		font-size: 12px;
+	}
+}
+
+
+.entry {
+	margin: 32px 0;
+	padding: 0 50px;
+
+	p, li {
+		color: $c6;
+	}
+
+	li {
+		list-style-position: inside;
+	}
+
+	.grid {
+		margin: 0 0 27px;
+	}
+
+	a {
+		color: $c3;
+		outline: none;
+
+		&:hover {
+			background: $red;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+}
