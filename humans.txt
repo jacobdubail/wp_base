@@ -1,0 +1,17 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Developer: Jacob Dubail
+  Site: http://jacobdubail.com
+  Twitter: jacobdubail
+  Location: Edmonds, Washington, USA
+
+/* THANKS */
+  Names (& URL):
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: Sublime text 2, Codekit

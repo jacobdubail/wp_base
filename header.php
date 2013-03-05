@@ -27,8 +27,10 @@
 
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
+<!-- Typekit
   <script src="//use.typekit.net/xdb0ddk.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+-->
 
   <?php wp_head(); ?>
   

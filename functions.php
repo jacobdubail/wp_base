@@ -1,4 +1,27 @@
 <?php 
+
+
+/**
+ * constant
+ **/
+define('PATH', STYLESHEETPATH);
+define('FUNCTIONS_PATH', PATH . '/inc/');
+
+//require_once(FUNCTIONS_PATH . 'language.php');
+require_once (FUNCTIONS_PATH . 'login.php');
+require_once (FUNCTIONS_PATH . 'admin.php');
+//require_once (FUNCTIONS_PATH . 'dashboard.php');
+//require_once (FUNCTIONS_PATH . 'menu.php');
+
+require_once (FUNCTIONS_PATH . 'social.php');
+require_once (FUNCTIONS_PATH . 'images.php');
+require_once (FUNCTIONS_PATH . 'comments.php');
+require_once (FUNCTIONS_PATH . 'shortcodes.php');
+//require_once (FUNCTIONS_PATH . 'shortcodes-images.php');
+require_once (FUNCTIONS_PATH . 'widget.php');
+
+
+
       
   register_sidebar(array(
     'name' => 'Sidebar Widgets',
@@ -28,12 +51,10 @@
   remove_action('wp_head', 'parent_post_rel_link', 10, 0);
   remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
   
-    
-  add_filter('widget_text', 'do_shortcode');
-  
+      
   function category_id_class($classes) {
     global $post;
-    foreach((get_the_category($post->ID)) as $category)
+    foreach( ( get_the_category($post->ID) ) as $category )
       $classes [] = 'cat-' . $category->cat_ID . '-id';
     return $classes;
   }
@@ -50,8 +71,15 @@
       $jQuery = get_template_directory_uri() . '/js/jquery.min.js';
     }
 
-    wp_register_script('jquery', $jQuery, false, '1.9', true);
-    wp_enqueue_script('jquery');
+    $jquery_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.91/jquery.min.js';      
+    $resp       = wp_remote_head($jquery_url);
+    if ( is_wp_error($resp) || 200 != $resp['response']['code'] ) {
+      $jquery_url = get_template_directory_uri() . '/js/jquery.min.js';  
+    }
+
+    wp_register_script( 'jquery', $jquery_url, false, '1.9.1', false );
+    wp_enqueue_script( 'jquery' );
+
      
     wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', array('jquery'), '1', true );
     wp_enqueue_script('base_plugins');
@@ -79,18 +107,7 @@
   }
   add_action( 'wp_loaded', 'jtd_allow_rel' );
   
-  function jtd_add_google_profile( $contactmethods ) {
-    // Add Google Profiles
-    $contactmethods['google_profile'] = 'Google Profile URL';
-    $contactmethods['googleplus']     = 'Google+';
-    $contactmethods['facebook']       = 'Facebook';
-    $contactmethods['twitter']        = 'Twitter';
-    unset($contactmethods['aim']);
-    unset($contactmethods['yim']);    
-    unset($contactmethods['jabber']);
-    return $contactmethods;
-  }
-  add_filter( 'user_contactmethods', 'jtd_add_google_profile', 10, 1);
+
 
 add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {
@@ -109,119 +126,6 @@ function browser_body_class($classes) {
   if($is_ipad) $classes[]   = 'ipad';
 	return $classes;
 }
-
-
-add_action( 'wp_head', 'jtd_googleplus_header' );
-function jtd_googleplus_header() {
-    if ( is_singular() ) {
-        $gplus_link = get_the_author_meta( 'googleplus', get_current_user_id() );
-        if ( $gplus_link )
-            echo '<link rel="author" href="' . $gplus_link . '" />';
-    }
-}
-
-function jtd_opengraph_for_posts() {
-    if ( is_singular() ) {
-        global $post;
-        setup_postdata( $post );
-        $output  = '<meta property="og:type" content="article" />' . "\n";
-        $output .= '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '" />' . "\n";
-        $output .= '<meta property="og:url" content="' . get_permalink() . '" />' . "\n";
-        $output .= '<meta property="og:description" content="' . esc_attr( get_the_excerpt() ) . '" />' . "\n";
-        if ( has_post_thumbnail() ) {
-            $imgsrc  = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-            $output .= '<meta property="og:image" content="' . $imgsrc[0] . '" />' . "\n";
-        }
-        echo $output;
-    }
-}
-add_action( 'wp_head', 'jtd_opengraph_for_posts' );
-
-
-/* https://gist.github.com/4557917 */
-function mytheme_remove_img_dimensions($html) {
-  $html = preg_replace('/(width|height)=["\']\d*["\']\s?/', "", $html);
-    return $html;
-}
-// add_filter('post_thumbnail_html', 'mytheme_remove_img_dimensions', 10);
-// add_filter('the_content', 'mytheme_remove_img_dimensions', 10);
-// add_filter('get_avatar','mytheme_remove_img_dimensions', 10);
-
-
-class JTD_Cleanup_Admin {
-    function __construct() {
-
-      if ( is_user_logged_in() && !get_current_user_id() == 1 ) {
-        add_action( 'admin_menu', array( $this, 'remove_menus' ) );
-        add_action( 'admin_menu', array( $this, 'remove_dashboard_widgets' ) );
-      }
-
-      add_action( 'admin_menu', array( $this, 'remove_menus_everyone' ) );
-      add_action( 'admin_init', array( $this, 'remove_theme_editor' ) );
-      add_action( 'admin_menu', array($this, 'relabel_posts_menu' ));
-      add_action( 'init', array($this, 'relabel_posts' ));
-
-    }
-
-    function remove_menus() {
-        remove_menu_page( 'tools.php' );
-        remove_menu_page( 'options-general.php' );
-        remove_menu_page( 'plugins.php' );
-
-        remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
-        remove_submenu_page( 'options-general.php', 'options-permalink.php' );
-    }
-    function remove_menus_everyone() {
-        remove_menu_page( 'link-manager.php' );
-    }
-    // This function removes dashboard widgets
-    function remove_dashboard_widgets() {
-      global $wp_meta_boxes;
-
-      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
-    }
-    // This function removes the theme editor
-    function remove_theme_editor() {
-      remove_submenu_page( 'themes.php', 'theme-editor.php' );
-    }
-    /**
-     * Relabel "Posts" to a much more user friendly "Articles"
-     * Handles all the variations as well
-     */
-    public function relabel_posts() {
-      global $wp_post_types;
-
-      $wp_post_types['post']->labels->name               = 'Articles';
-      $wp_post_types['post']->labels->singular_name      = 'Article';
-      $wp_post_types['post']->labels->add_new            = 'Add New';
-      $wp_post_types['post']->labels->add_new_item       = 'Add New Article';
-      $wp_post_types['post']->labels->edit_item          = 'Edit Article';
-      $wp_post_types['post']->labels->new_item           = 'New Article';
-      $wp_post_types['post']->labels->view_item          = 'View Article';
-      $wp_post_types['post']->labels->search_items       = 'Search Articles';
-      $wp_post_types['post']->labels->not_found          = 'No articles found';
-      $wp_post_types['post']->labels->not_found_in_trash = 'No articles found in Trash';
-      $wp_post_types['post']->labels->all_items          = 'All Articles';
-      $wp_post_types['post']->labels->menu_name          = 'Articles';
-      $wp_post_types['post']->labels->name_admin_bar     = 'Article';
-    }
-    /**
-     * Update the admin menu to use Articles instead of News
-     * This will automatically pull in terms updated from $wp_post_types['post']->labels
-     */
-    public function relabel_posts_menu() {
-      global $menu, $submenu, $wp_post_types;
-
-      $menu[5][0]   = $wp_post_types['post']->labels->name;
-      $submenu['edit.php'][5][0]  = $wp_post_types['post']->labels->all_items;
-      $submenu['edit.php'][10][0] = $wp_post_types['post']->labels->add_new;
-    }
-}
-$jtd_cleanup_admin = new JTD_Cleanup_Admin();
 
 
 
