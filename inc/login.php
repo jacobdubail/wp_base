@@ -12,6 +12,8 @@ class jtd_login {
 
 		// Change logo link title
 		add_action( 'login_headertitle',  array( &$this, 'change_url_title' ) );
+
+		add_filter ( 'login_errors', array( &$this, 'failed_login' ) );
 	}
 
 
@@ -26,6 +28,11 @@ class jtd_login {
 	function change_url_title() {
 		echo get_option( 'blogname' );
 	}
+
+	function failed_login () {
+    return 'the login information you have entered is incorrect.';
+	}
+
 
 }
 $jtd_login = new jtd_login();

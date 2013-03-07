@@ -8,6 +8,9 @@ class jtd_admin {
 		// Remove notifications for non admins
 		$this->remove_notifications();
 
+    // prevent access to admin editors
+    define ( 'DISALLOW_FILE_EDIT', true );
+
 		add_filter( 'admin_footer_text',  array( &$this, 'change_admin_footer' ) );
 		add_action( 'pre_ping', array( &$this, 'no_self_ping' ) );
 		add_filter( 'mce_buttons',  array( &$this, 'enable_more_buttons' ) );

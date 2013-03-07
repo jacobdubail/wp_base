@@ -96,10 +96,10 @@ require_once (FUNCTIONS_PATH . 'widget.php');
   add_filter('the_generator', 'complete_version_removal');
   remove_filter('pre_user_description',    'wp_filter_kses');
   remove_filter('pre_comment_content',     'wp_rel_nofollow');
-  add_filter   ('get_comment_author_link', 'xwp_dofollow');
-  add_filter   ('post_comments_link',      'xwp_dofollow');
-  add_filter   ('comment_reply_link',      'xwp_dofollow');
-  add_filter   ('comment_text',            'xwp_dofollow');
+  // add_filter   ('get_comment_author_link', 'xwp_dofollow');
+  // add_filter   ('post_comments_link',      'xwp_dofollow');
+  // add_filter   ('comment_reply_link',      'xwp_dofollow');
+  // add_filter   ('comment_text',            'xwp_dofollow');
   
   function jtd_allow_rel() {
     global $allowedtags;
@@ -111,7 +111,7 @@ require_once (FUNCTIONS_PATH . 'widget.php');
 
 add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {
-      global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+      global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $is_ipad;
 
   if($is_lynx) $classes[]       = 'lynx';
   elseif($is_gecko) $classes[]  = 'gecko';
