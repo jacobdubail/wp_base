@@ -22,11 +22,11 @@ class jtd_login {
 	}
 
 	function change_url() {
-		echo bloginfo( 'url' );
+		return home_url();
 	}
 
 	function change_url_title() {
-		echo get_option( 'blogname' );
+		return get_bloginfo('name');
 	}
 
 	function failed_login () {
