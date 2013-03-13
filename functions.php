@@ -63,28 +63,13 @@ require_once (FUNCTIONS_PATH . 'widget.php');
 
   add_action('wp_enqueue_scripts', 'base_register_scripts');
   function base_register_scripts() {
-    wp_deregister_script('jquery');
-
-    $jQuery = "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
-    $test   = @fopen($jQuery,'r'); 
-    if ( $test === false ) { 
-      $jQuery = get_template_directory_uri() . '/js/jquery.min.js';
-    }
-
-    $jquery_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.91/jquery.min.js';      
-    $resp       = wp_remote_head($jquery_url);
-    if ( is_wp_error($resp) || 200 != $resp['response']['code'] ) {
-      $jquery_url = get_template_directory_uri() . '/js/jquery.min.js';  
-    }
-
-    wp_register_script( 'jquery', $jquery_url, false, '1.9.1', false );
     wp_enqueue_script( 'jquery' );
 
      
-    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', array('jquery'), '1', true );
+    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', false, '1', true );
     wp_enqueue_script('base_plugins');
     
-    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('jquery', 'base_plugins'), '1', true );
+    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('base_plugins'), '1', true );
     wp_enqueue_script('base_functions');    
     
     wp_register_style('base_styles', '/wp-content/themes/base/css/style.css', '', '1', 'all');
@@ -96,10 +81,6 @@ require_once (FUNCTIONS_PATH . 'widget.php');
   add_filter('the_generator', 'complete_version_removal');
   remove_filter('pre_user_description',    'wp_filter_kses');
   remove_filter('pre_comment_content',     'wp_rel_nofollow');
-  // add_filter   ('get_comment_author_link', 'xwp_dofollow');
-  // add_filter   ('post_comments_link',      'xwp_dofollow');
-  // add_filter   ('comment_reply_link',      'xwp_dofollow');
-  // add_filter   ('comment_text',            'xwp_dofollow');
   
   function jtd_allow_rel() {
     global $allowedtags;
