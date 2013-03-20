@@ -7,8 +7,10 @@ sass_dir        = "scss"
 images_dir      = "i"
 javascripts_dir = "js"
 
-output_style    = :compressed
+output_style    = :nested
 environment     = :production
+
+sass_options = {:debug_info => true}
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true

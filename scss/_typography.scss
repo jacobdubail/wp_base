@@ -15,8 +15,9 @@
     text-shadow: none;
 }
 
-html, body {
-  height: 100%;
+html {
+	position: relative;
+  min-height: 100%;
 }
 
 body {
@@ -25,6 +26,14 @@ body {
 	line-height: $baselineheight;
 	color: $textcolor;
 	overflow-x: hidden;
+	margin: 0 0 100px;
+}
+.footer {
+	position: absolute;
+	height: 100px;
+	bottom: 0;
+	left: 0; right: 0;
+	padding: 1em 0;
 }
 
 a         { color: #00e; }
@@ -98,53 +107,60 @@ blockquote {
 	}
 }
 
-.gform_button {
-	@include transition( all .17s ease );
-	@include inline-block;
-	border: none;
-	position: relative;
-	text-decoration: none;
-	text-transform: uppercase;
-	outline: none;
-	font-weight: bold;
-	background: $c9;
-	color: $red;
-	padding: 0 32px;
-	line-height: 32px;
-	height: 32px;
-	-webkit-box-shadow: 0 0 3px rgba(black, 0.35);
-  box-shadow: 0 0 3px rgba(black, 0.35);
-
-  .no-boxshadow & {
-    border: 1px solid #bbb;
-  }
-
-  &:active,
-  &:hover {
-  	background: $red;
-  	color: #fff;
-  }
-}
+.gform_button,
 .btn {
 	//@include transition( all .17s ease );
-	@include inline-block;
-	position: relative;
+	@include font-size( $fontsize*1.6 );
+	font-family: sans-serif;
+	
 	text-decoration: none;
 	text-transform: uppercase;
 	outline: none;
-	font-weight: bold;
-	background: $c9;
-	color: $red;
-	padding: 0 12px;
-	line-height: 24px;
-	height: 24px;
+	border: none;
+	
+	display: block;
+	position: relative;
+	top: 0;
+	margin: .5em 0;
 
-	&:hover {
-		background: $red;
-		color: #fff;
-		text-decoration: none;
+	box-shadow: 1px 0px 1px darken( $red, 8% ),
+							0px 1px 1px darken( $red, 10% ),
+							2px 1px 1px darken( $red, 12% ),
+							1px 2px 1px darken( $red, 14% ),
+							3px 2px 1px darken( $red, 16% ),
+							2px 3px 1px darken( $red, 18% ),
+							4px 3px 1px darken( $red, 20% ),
+							3px 4px 1px darken( $red, 22% ),
+							5px 4px 1px darken( $red, 24% ),
+							4px 5px 1px darken( $red, 26% ),
+							6px 5px 1px darken( $red, 28% );
+	
+	width: 98%;
 
+	background: $red;
+	color: #fff;
+	
+	line-height: 2em;
+	height: 2em;
+
+	
+
+  &:hover {
+  	background: darken( $red, 4% );
+  	color: #fff;
+  }
+	
+	&:active {
+		box-shadow: 1px 0px 1px darken( $red, 8% ),
+								0px 1px 1px darken( $red, 10% ),
+								2px 1px 1px darken( $red, 12% ),
+								1px 2px 1px darken( $red, 14% ),
+								3px 2px 1px darken( $red, 16% );
+		top: 3px;
+		left: 3px;
 	}
+
+
 }
 
 
@@ -155,7 +171,7 @@ blockquote {
 		float: left;
 		margin: 0 27px 20px 0;
 
-		@include bp(oryx) {
+		@include bp(m) {
 			float: none;
 		}
 	}
@@ -163,7 +179,7 @@ blockquote {
 		float: right;
 		margin: 0 0 20px 27px;
 
-		@include bp(oryx) {
+		@include bp(m) {
 			float: none;
 		}
 	}
@@ -177,32 +193,3 @@ blockquote {
 	}
 }
 
-
-.entry {
-	margin: 32px 0;
-	padding: 0 50px;
-
-	p, li {
-		color: $c6;
-	}
-
-	li {
-		list-style-position: inside;
-	}
-
-	.grid {
-		margin: 0 0 27px;
-	}
-
-	a {
-		color: $c3;
-		outline: none;
-
-		&:hover {
-			background: $red;
-			color: #fff;
-			text-decoration: none;
-		}
-	}
-
-}

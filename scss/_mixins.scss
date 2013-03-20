@@ -1,47 +1,29 @@
 @mixin bp($point) {
-  @if $point == hippo {
+  @if $point == xl {
     @media (max-width: 1600px) { @content; }
   }
-  @if $point == zebra {
+  @if $point == l {
     @media (max-width: 1250px) { @content; }
   }
-  @else if $point == meerkat {
+  @else if $point == m {
     @media (max-width: 870px)  { @content; }
   }
-  @else if $point == snail {
+  @else if $point == s {
     @media (max-width: 490px)  { @content; }
   }
 }
-
-@mixin triangle($direction, $color, $size) {
-
-  @if $direction == "left" {
-    border-bottom: $size solid transparent;
-    border-right: $size solid $color;
-    border-top: $size solid transparent;
-  }
-  @else if $direction == "right" {
-    border-bottom: $size solid transparent;
-    border-left: $size solid $color;
-    border-top: $size solid transparent;
-  }
-  @else if $direction == "up" {
-    border-bottom: $size solid $color;
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-  }
-  @else if $direction == "down" {
-    border-right: $size solid transparent;
-    border-left: $size solid transparent;
-    border-top: $size solid $color;
-  }
-
-  height: 0;
-  width: 0;
-}       
+     
 
 
-@mixin fontsize($sizeValue: 1.6){
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
+@mixin font-size($sizeValue: 1.6){
+  font-size: $sizeValue / 1.6 + em;
+  font-size: $sizeValue / 1.6 + rem;
+}
+
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
 }
