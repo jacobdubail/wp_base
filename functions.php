@@ -5,7 +5,7 @@
  * constant
  **/
 define('PATH', STYLESHEETPATH);
-define('FUNCTIONS_PATH', PATH . '/inc/');
+define('FUNCTIONS_PATH', PATH . '/lib/');
 
 //require_once(FUNCTIONS_PATH . 'language.php');
 require_once (FUNCTIONS_PATH . 'login.php');
@@ -18,20 +18,30 @@ require_once (FUNCTIONS_PATH . 'images.php');
 require_once (FUNCTIONS_PATH . 'comments.php');
 require_once (FUNCTIONS_PATH . 'shortcodes.php');
 //require_once (FUNCTIONS_PATH . 'shortcodes-images.php');
+require_once (FUNCTIONS_PATH . 'sidebars.php');
 require_once (FUNCTIONS_PATH . 'widget.php');
 
+require_once (FUNCTIONS_PATH . 'posttypes.php');
 
+
+
+  add_action('wp_enqueue_scripts', 'base_register_scripts');
+  function base_register_scripts() {
+    wp_enqueue_script( 'jquery' );
+
+     
+    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', false, '1', true );
+    wp_enqueue_script('base_plugins');
+    
+    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('base_plugins'), '1', true );
+    wp_enqueue_script('base_functions');    
+    
+    wp_register_style('base_styles', '/wp-content/themes/base/css/style.css', '', '1', 'all');
+    wp_enqueue_style('base_styles');
+    
+  }
 
       
-  register_sidebar(array(
-    'name' => 'Sidebar Widgets',
-    'id'   => 'sidebar-widgets',
-    'description'   => 'These are widgets for the sidebar.',
-    'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ));
 
   add_theme_support('nav-menus');
   add_action( 'init', 'register_my_menu' );
@@ -51,31 +61,6 @@ require_once (FUNCTIONS_PATH . 'widget.php');
   remove_action('wp_head', 'parent_post_rel_link', 10, 0);
   remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
   
-      
-  function category_id_class($classes) {
-    global $post;
-    foreach( ( get_the_category($post->ID) ) as $category )
-      $classes [] = 'cat-' . $category->cat_ID . '-id';
-    return $classes;
-  }
-  add_filter('post_class', 'category_id_class');
-  add_filter('body_class', 'category_id_class');
-
-  add_action('wp_enqueue_scripts', 'base_register_scripts');
-  function base_register_scripts() {
-    wp_enqueue_script( 'jquery' );
-
-     
-    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', false, '1', true );
-    wp_enqueue_script('base_plugins');
-    
-    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('base_plugins'), '1', true );
-    wp_enqueue_script('base_functions');    
-    
-    wp_register_style('base_styles', '/wp-content/themes/base/css/style.css', '', '1', 'all');
-    wp_enqueue_style('base_styles');
-    
-  }
 
   function complete_version_removal() { return ''; }
   add_filter('the_generator', 'complete_version_removal');
