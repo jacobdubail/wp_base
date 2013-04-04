@@ -1,7 +1,5 @@
 .main-nav {
 	position: relative;
-	float: right;
-	top: 40px;
 
 	.lt-ie8 & {
 		z-index: 100;
@@ -44,8 +42,16 @@
 	}
 
 	ul {
-		margin: 0;
+		margin: 0 0 1em;
 		padding: 0;
+		display: none;
+		height: 100%;
+		border: 1px solid $red;
+		@include bp( s ) {
+			display: block;
+			border: none;
+			border-bottom: 1px solid $red;
+		}
 
 	}
 	li {
@@ -90,9 +96,64 @@
 		}
 
 	}
-	.current-menu-parent > a,
-	.current_page_item > a {
+	&.current-menu-item > a,
+	&.current_page_parent > a,
+	&.current-menu-parent > a,
+	&.current_page_item > a {
 		color :$red;
+	}
+
+
+	/* default checkbox */
+	input[type=checkbox] {
+
+	  + label { 
+		  cursor: pointer;
+		  user-select: none;
+		  display: block;
+		  position: relative;
+		  width: 100%;
+		  background: $red;
+		  padding: 1.5em 0;
+		  margin: 0;
+
+		  &:after {
+		  	content: "\2261";
+		  	color: #fff;
+		  	position: absolute;
+				top: 6px;
+		  	right: 1.125%;
+		  	@include font-size( 6 );
+		  }
+
+		  &:hover:after {
+		  	color: $red;
+		  }
+
+		  @include bp(s) {
+		  	display: none;
+		  }
+		}
+
+		&:checked {
+
+			+ label {
+				margin: 0;
+				&:after {
+					color: $red;
+				}
+			}
+
+			~ ul {
+				display: block;
+				margin: 0;
+
+				> li {
+					width: 100%;
+					display: block;
+				}
+			}
+		}
 	}
 
 }

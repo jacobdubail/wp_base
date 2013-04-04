@@ -59,6 +59,8 @@
     </header>
 
     <nav class="main-nav">
+      <input type="checkbox" id="menu" class="visuallyhidden">
+      <label for="menu" onclick></label>
       <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '' ) ); ?>
     </nav>
     
