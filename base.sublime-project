@@ -1,12 +1,13 @@
 {
+  "url": "http://base.dev:8888",
 	"folders":
 	[
 		{
-			"path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/project/wp/wp-content/themes/base",
+			"path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/folder/project/wp/wp-content/themes/base",
       "folder_exclude_patterns":[".sass-cache"]
 		},
     {
-      "path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/project/wp/"
+      "path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/folder/project/wp/"
     }
 	],
   "settings":

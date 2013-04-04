@@ -45,9 +45,15 @@
     
     <header class="header">
       <?php if ( is_front_page() ) : ?>
-        <h1 id="logo"><?php bloginfo('name'); ?></h1>
+        <h1 id="logo">
+          <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
+        </h1>
       <?php else : ?>
-        <h1><a id="logo" href="<?php home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
+        <h1>
+          <a id="logo" href="<?php home_url(); ?>/">
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
+          </a>
+        </h1>
       <?php endif; ?>
       <h2><?php bloginfo('description'); ?></h2>
     </header>

@@ -3,19 +3,19 @@
 /* Functions for admin
 /*-----------------------------------------------------------------------------------*/
 class jtd_admin {
-	public function jtd_admin() {
+  public function __construct() {
 
-		// Remove notifications for non admins
-		$this->remove_notifications();
+    // Remove notifications for non admins
+    $this->remove_notifications();
 
     // prevent access to admin editors
     define ( 'DISALLOW_FILE_EDIT', true );
 
-		add_filter( 'admin_footer_text',  array( &$this, 'change_admin_footer' ) );
-		add_action( 'pre_ping', array( &$this, 'no_self_ping' ) );
-		add_filter( 'mce_buttons',  array( &$this, 'enable_more_buttons' ) );
+    add_filter( 'admin_footer_text',  array( &$this, 'change_admin_footer' ) );
+    add_action( 'pre_ping', array( &$this, 'no_self_ping' ) );
+    add_filter( 'mce_buttons',  array( &$this, 'enable_more_buttons' ) );
 
-		if ( is_user_logged_in() && !get_current_user_id() == 1 ) {
+    if ( is_user_logged_in() && !get_current_user_id() == 1 ) {
         add_action( 'admin_menu', array( &$this, 'remove_menus' ) );
         add_action( 'admin_menu', array( &$this, 'remove_dashboard_widgets' ) );
       }
@@ -27,59 +27,64 @@ class jtd_admin {
     add_filter( 'user_contactmethods', array( &$this, 'tweak_profile_fields' ) );
 
     // https://gist.github.com/hitautodestruct/b6801fd070c4b638c55a
-    add_action('get_header', array( &$this, 'filter_head' ) );
-    add_action('wp_head',    array( &$this, 'admin_css' ) );
+    add_action( 'get_header', array( &$this, 'filter_head' ) );
+    add_action( 'wp_head',    array( &$this, 'admin_css' ) );
+
+    // add editor styles
+    add_action( 'init', array( &$this, 'add_editor_styles' ) );
+
+  }
 
 
-	}
-
-	function remove_notifications() {
-		global $user_login;
-		get_currentuserinfo();
-		if ( !current_user_can( 'activate_plugins' ) ) {
-			add_action( 'init', array( &$this, 'remove_wp_check' ) );
-			add_filter( 'pre_option_update_core', array( &$this, 'return null' ) );
-		}
-	}
-	function remove_wp_check() {
-		remove_action( 'init', 'wp_version_check' );
-	}
-	function return_null() {
-		return null;
-	}
 
 
-	function add_cpt_to_dropdown( $pages ) {
-		$cpt   = get_posts( array( 'post_type' => 'portfolio' ) );
-		$pages = array_merge( $pages, $cpt );
-		return $pages;
-	}
+  function remove_notifications() {
+    global $user_login;
+    get_currentuserinfo();
+    if ( !current_user_can( 'activate_plugins' ) ) {
+      add_action( 'init', array( &$this, 'remove_wp_check' ) );
+      add_filter( 'pre_option_update_core', array( &$this, 'return null' ) );
+    }
+  }
+  function remove_wp_check() {
+    remove_action( 'init', 'wp_version_check' );
+  }
+  function return_null() {
+    return null;
+  }
 
 
-	function change_admin_footer() {
-		echo 'Site developed by <a href="http://jacobdubail.com">Jacob Dubail</a>';
-	}
-
-	function no_self_ping( &$links ) {
-		$home = get_option( 'home' );
-		foreach ( $links as $l => $link )
-			if ( 0 === strpos( $link, $home ) )
-				unset( $links[$l] );
-	}
-
-	function enable_more_buttons( $buttons ) {
-		$buttons[] = 'hr';
-
-		/*
-		Repeat with any other buttons you want to add, e.g.
-		  $buttons[] = 'fontselect';
-		  $buttons[] = 'sup';
-		*/
-		return $buttons;
-	}
+  function add_cpt_to_dropdown( $pages ) {
+    $cpt   = get_posts( array( 'post_type' => 'portfolio' ) );
+    $pages = array_merge( $pages, $cpt );
+    return $pages;
+  }
 
 
-	 function remove_menus() {
+  function change_admin_footer() {
+    echo 'Site developed by <a href="http://jacobdubail.com">Jacob Dubail</a>';
+  }
+
+  function no_self_ping( &$links ) {
+    $home = home_url();
+    foreach ( $links as $l => $link )
+      if ( 0 === strpos( $link, $home ) )
+        unset( $links[$l] );
+  }
+
+  function enable_more_buttons( $buttons ) {
+    $buttons[] = 'hr';
+
+    /*
+    Repeat with any other buttons you want to add, e.g.
+      $buttons[] = 'fontselect';
+      $buttons[] = 'sup';
+    */
+    return $buttons;
+  }
+
+
+   function remove_menus() {
         remove_menu_page( 'tools.php' );
         remove_menu_page( 'options-general.php' );
         remove_menu_page( 'plugins.php' );
@@ -138,16 +143,16 @@ class jtd_admin {
     }
 
     function tweak_profile_fields( $contactmethods ) {
-	    // Add Google Profiles
-	    $contactmethods['google_profile'] = 'Google Profile URL';
-	    $contactmethods['googleplus']     = 'Google+';
-	    $contactmethods['facebook']       = 'Facebook';
-	    $contactmethods['twitter']        = 'Twitter';
-	    unset($contactmethods['aim']);
-	    unset($contactmethods['yim']);    
-	    unset($contactmethods['jabber']);
-	    return $contactmethods;
-	  }
+      // Add Google Profiles
+      $contactmethods['google_profile'] = 'Google Profile URL';
+      $contactmethods['googleplus']     = 'Google+';
+      $contactmethods['facebook']       = 'Facebook';
+      $contactmethods['twitter']        = 'Twitter';
+      unset($contactmethods['aim']);
+      unset($contactmethods['yim']);    
+      unset($contactmethods['jabber']);
+      return $contactmethods;
+    }
 
 
     function filter_head() { remove_action('wp_head', '_admin_bar_bump_cb'); }
@@ -183,8 +188,12 @@ class jtd_admin {
             }
           </style>
       <?php }
-}
-	  
+  }
+
+  function add_editor_styles() {
+    add_editor_style( 'css/editor-style.css' );
+  }
+    
 
 }
 $jtd_admin = new jtd_admin();

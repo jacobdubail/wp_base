@@ -4,7 +4,7 @@
 /**
  * constant
  **/
-define('PATH', STYLESHEETPATH);
+define('PATH', get_stylesheet_directory());
 define('FUNCTIONS_PATH', PATH . '/lib/');
 
 //require_once(FUNCTIONS_PATH . 'language.php');
@@ -21,7 +21,7 @@ require_once (FUNCTIONS_PATH . 'shortcodes.php');
 require_once (FUNCTIONS_PATH . 'sidebars.php');
 require_once (FUNCTIONS_PATH . 'widget.php');
 
-require_once (FUNCTIONS_PATH . 'posttypes.php');
+//require_once (FUNCTIONS_PATH . 'posttypes.php');
 
 
 
@@ -42,7 +42,10 @@ require_once (FUNCTIONS_PATH . 'posttypes.php');
   }
 
       
+  if ( ! isset( $content_width ) ) $content_width = 1160;
 
+      
+  add_theme_support( 'automatic-feed-links' );
   add_theme_support('nav-menus');
   add_action( 'init', 'register_my_menu' );
   function register_my_menu() {
@@ -124,3 +127,22 @@ function change_avatar_css($class) {
     $class = str_replace("class='avatar", "class='author_gravatar media-object ", $class) ;
     return $class;
 }
+
+
+
+$customHeaderDefaults = array(
+  'default-image'          => get_template_directory_uri() . '/images/logo.png',
+  'random-default'         => false,
+  'width'                  => 202,
+  'height'                 => 72,
+  'flex-height'            => false,
+  'flex-width'             => false,
+  'default-text-color'     => '',
+  'header-text'            => '',
+  'uploads'                => true,
+  'wp-head-callback'       => '',
+  'admin-head-callback'    => '',
+  'admin-preview-callback' => '',
+);
+
+add_theme_support( 'custom-header', $customHeaderDefaults );
