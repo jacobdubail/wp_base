@@ -146,3 +146,9 @@ $customHeaderDefaults = array(
 );
 
 add_theme_support( 'custom-header', $customHeaderDefaults );
+
+
+add_filter("gform_submit_button", "jtd_change_gform_submit_btn", 10, 2);
+function jtd_change_gform_submit_btn($button, $form){
+    return "<button class='btn' id='gform_submit_button_{$form["id"]}'>Submit</button>";
+}

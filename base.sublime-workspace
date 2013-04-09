@@ -31,7 +31,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2541,
+				"buffer_size": 3003,
 				"line_ending": "Unix"
 			}
 		}
@@ -400,15 +400,15 @@
 					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 2541,
+						"buffer_size": 3003,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1647,
-								1647
+								0,
+								0
 							]
 						],
 						"settings":

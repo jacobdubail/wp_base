@@ -169,10 +169,28 @@ blockquote {
 								2px 1px 1px darken( $red, 12% ),
 								1px 2px 1px darken( $red, 14% ),
 								3px 2px 1px darken( $red, 16% );
-		top: 3px;
-		left: 3px;
+		@include transform( translate(3px, 3px) );
+
+		.no-csstransform & {
+			top: 3px;
+			left: 3px;
+		}
 	}
 
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -5px;
+		bottom: -5px;
+	}
+	&:active:after {
+		top: -3px;
+		left: -3px;
+		right: -2px;
+		bottom: -2px;
+	}
 
 }
 
