@@ -1,11 +1,14 @@
 /* Author: Jacob Dubail
 
 */
+(function($) {
 
-jQuery.noConflict();
-jQuery(document).ready(function() {
+	responsiveNav( "#nav-wrap", {
+    label : "&#9776;",
+    animate : true,
+    transition : 300
+  } );
 
 
 
- 
-});
+})(jQuery);

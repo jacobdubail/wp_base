@@ -152,3 +152,68 @@ add_filter("gform_submit_button", "jtd_change_gform_submit_btn", 10, 2);
 function jtd_change_gform_submit_btn($button, $form){
     return "<button class='btn' id='gform_submit_button_{$form["id"]}'>Submit</button>";
 }
+
+
+
+
+
+/* PLACE HOLDER SUPPORT FOR GRAVITY FORMS */
+/* Add a custom field to the field editor (See editor screenshot) */
+add_action("gform_field_standard_settings", "jtd_gform_placeholders", 10, 2);
+
+function jtd_gform_placeholders($position, $form_id){
+
+  // Create settings on position 25 (right after Field Label)
+  if ( $position == 25 ) {
+  ?>
+      
+    <li class="admin_label_setting field_setting" style="display: list-item; ">
+      <label for="field_placeholder">Placeholder Text
+        <!-- Tooltip to help users understand what this field does -->
+        <a href="javascript:void(0);" class="tooltip tooltip_form_field_placeholder" tooltip="&lt;h6&gt;Placeholder&lt;/h6&gt;Enter the placeholder/default text for this field.">(?)</a>  
+      </label>
+      <input type="text" id="field_placeholder" class="fieldwidth-3" size="35" onkeyup="SetFieldProperty('placeholder', this.value);">
+    </li>
+  <?php
+  }
+}
+
+/* Now we execute some javascript technicalitites for the field to load correctly */
+
+add_action("gform_editor_js", "jtd_gform_editor_js");
+function jtd_gform_editor_js(){
+?>
+  <script>
+    //binding to the load field settings event to initialize the checkbox
+    jQuery(document).bind("gform_load_field_settings", function(event, field, form){
+      jQuery("#field_placeholder").val(field["placeholder"]);
+    });
+  </script>
+
+<?php
+}
+
+/* We use jQuery to read the placeholder value and inject it to its field */
+
+add_action('gform_enqueue_scripts',"jtd_gform_enqueue_scripts", 10, 2);
+function jtd_gform_enqueue_scripts($form, $is_ajax=false) {
+?>
+  <script>
+    jQuery(function(){
+    <?php
+      /* Go through each one of the form fields */
+      foreach($form['fields'] as $i=>$field) {
+        /* Check if the field has an assigned placeholder */
+        if(isset($field['placeholder']) && !empty($field['placeholder'])){
+          /* If a placeholder text exists, inject it as a new property to the field using jQuery */
+          ?>
+          jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>')
+            .attr('placeholder','<?php echo $field['placeholder']?>');
+        <?php
+        }
+      }
+    ?>
+    });
+  </script>
+<?php
+}

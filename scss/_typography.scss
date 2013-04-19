@@ -1,4 +1,4 @@
-,:before,:after {
+*,*:before,*:after {
   @include box-sizing(border-box);
 
   //behavior: url(wp-content/themes/elco/inc/boxsizing.htc);

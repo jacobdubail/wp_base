@@ -1,6 +1,35 @@
 .main-nav {
 	position: relative;
 
+	.js & {
+		clip: rect(0 0 0 0);
+		max-height: 0;
+		position: absolute;
+		display: block;
+		overflow: hidden;
+	  @include bp( s ) {
+	  	position: relative;
+	    max-height: none;
+	    @include span-columns(2);
+	    @include omega;
+	    float: right;
+	    text-align: right;
+	    margin-top: 1.25em;
+	  }
+	  @include bp( m ) {
+	  	margin-top: 1em;
+	  }
+	  @include bp( l ) {
+	  	margin-top: .9em;
+	  }
+	  @include bp( xl ) {
+			padding-right: 5%;
+		}
+	}
+	&.opened {
+		max-height: 9999px;
+	}
+
 	.lt-ie8 & {
 		z-index: 100;
 	}
@@ -42,22 +71,20 @@
 	}
 
 	ul {
-		margin: 0 0 1em;
+		margin: 0;
 		padding: 0;
-		display: none;
-		height: 100%;
-		border: 1px solid $red;
-		@include bp( s ) {
-			display: block;
-			border: none;
-			border-bottom: 1px solid $red;
-		}
-
+		list-style: none;
+		width: 100%;
+		float: left;
 	}
 	li {
 		@include inline-block;
 		list-style: none;
 		margin: 0;
+		width: 100%;
+		@include bp( s ) {
+			width: auto;
+		}
 
 		.lt-ie8 & {
 			position: relative;
@@ -79,17 +106,14 @@
 
 	}
 	a {
+		@include font-size(1.4);
 		@include transition( all .2s ease );
 		display: block;
 		position: relative;
 		text-decoration: none;
 		outline: none;
 		color: $c3;
-		font-weight: bold;
-		font-size: 13px;
-		text-transform: uppercase;
-		line-height: 60px;
-		padding: 0 10px;
+		padding: 0 1em;
 
 		&:hover {
 			color: $red;
@@ -101,59 +125,6 @@
 	&.current-menu-parent > a,
 	&.current_page_item > a {
 		color :$red;
-	}
-
-
-	/* default checkbox */
-	input[type=checkbox] {
-
-	  + label { 
-		  cursor: pointer;
-		  user-select: none;
-		  display: block;
-		  position: relative;
-		  width: 100%;
-		  background: $red;
-		  padding: 1.5em 0;
-		  margin: 0;
-
-		  &:after {
-		  	content: "\2261";
-		  	color: #fff;
-		  	position: absolute;
-				top: 6px;
-		  	right: 1.125%;
-		  	@include font-size( 6 );
-		  }
-
-		  &:hover:after {
-		  	color: $red;
-		  }
-
-		  @include bp(s) {
-		  	display: none;
-		  }
-		}
-
-		&:checked {
-
-			+ label {
-				margin: 0;
-				&:after {
-					color: $red;
-				}
-			}
-
-			~ ul {
-				display: block;
-				margin: 0;
-
-				> li {
-					width: 100%;
-					display: block;
-				}
-			}
-		}
 	}
 
 }

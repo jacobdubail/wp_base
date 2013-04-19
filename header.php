@@ -33,6 +33,10 @@
 -->
 
   <?php wp_head(); ?>
+
+  <!--[if lt IE 9]>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/respond.js"></script>
+  <![endif]-->
   
 </head>
 
@@ -44,24 +48,15 @@
   <div class="page-wrap">
     
     <header class="header">
-      <?php if ( is_front_page() ) : ?>
-        <h1 id="logo">
+      <nav class="main-nav" id="nav-wrap" role="navigation">
+        <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '' ) ); ?>
+      </nav>
+      <h1>
+        <a id="logo" href="<?php home_url(); ?>/">
           <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
-        </h1>
-      <?php else : ?>
-        <h1>
-          <a id="logo" href="<?php home_url(); ?>/">
-            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
-          </a>
-        </h1>
-      <?php endif; ?>
+        </a>
+      </h1> 
       <h2><?php bloginfo('description'); ?></h2>
     </header>
-
-    <nav class="main-nav">
-      <input type="checkbox" id="menu" class="visuallyhidden">
-      <label for="menu" onclick></label>
-      <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '' ) ); ?>
-    </nav>
     
-    <section class="main-content">
+    <section class="main-content" role="main">
