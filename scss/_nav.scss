@@ -128,3 +128,22 @@
 	}
 
 }
+
+
+#nav-toggle {
+	@include font-size( 3 );
+	line-height: 1;
+	display: block;
+	margin: .25em 0 0;
+	padding: .25em 5%;
+	text-decoration: none;
+	color: $red;
+	background: lighten( $c3, 7% );
+	&:hover {
+		color: gray;
+	}
+	
+  @include bp( s ) {
+	  display: none;
+	}
+}
