@@ -42,7 +42,22 @@ require_once (FUNCTIONS_PATH . 'widget.php');
   }
 
       
-  if ( ! isset( $content_width ) ) $content_width = 1160;
+  if ( ! isset( $content_width ) ) $content_width = 1200;
+
+
+  function category_id_class( $classes ) {
+    global $post;
+    if ( ! empty( $post ) ) {
+      $cats = get_the_category($post->ID);
+      if ( ! empty( $cats ) ) {
+        foreach( $cats as $cat )
+          $classes [] = 'cat-' . $cat->cat_ID . '-id';
+      }
+    }
+    return $classes;
+  }
+  add_filter('post_class', 'category_id_class');
+  add_filter('body_class', 'category_id_class');
 
       
   add_theme_support( 'automatic-feed-links' );
