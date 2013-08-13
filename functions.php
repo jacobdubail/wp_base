@@ -209,12 +209,11 @@ function jtd_gform_editor_js(){
 }
 
 /* We use jQuery to read the placeholder value and inject it to its field */
-
-add_action('gform_enqueue_scripts',"jtd_gform_enqueue_scripts", 10, 2);
+add_action('gform_pre_render',"jtd_gform_enqueue_scripts", 10, 2);
 function jtd_gform_enqueue_scripts($form, $is_ajax=false) {
 ?>
   <script>
-    jQuery(function(){
+    jQuery(document).bind('gform_post_render',function(){
     <?php
       /* Go through each one of the form fields */
       foreach($form['fields'] as $i=>$field) {
@@ -223,7 +222,7 @@ function jtd_gform_enqueue_scripts($form, $is_ajax=false) {
           /* If a placeholder text exists, inject it as a new property to the field using jQuery */
           ?>
           jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>')
-            .attr('placeholder','<?php echo $field['placeholder']?>');
+            .attr('placeholder',"<?php echo $field['placeholder']?>");
         <?php
         }
       }
@@ -232,3 +231,30 @@ function jtd_gform_enqueue_scripts($form, $is_ajax=false) {
   </script>
 <?php
 }
+
+/**
+ * Fix Gravity Form Tabindex Conflicts
+ * http://gravitywiz.com
+ */
+add_filter("gform_tabindex", "gform_tabindexer");
+function gform_tabindexer() {
+    $starting_index = 1000; // if you need a higher tabindex, update this number
+    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}
+
+
+
+
+
+if(!function_exists('jtd_log')){
+  function jtd_log( $message ) {
+    if( WP_DEBUG === true && is_user_logged_in() ){
+      if( is_array( $message ) || is_object( $message ) ){
+        error_log( print_r( $message, true ) );
+      } else {
+        error_log( $message );
+      }
+    }
+  }
+}
+

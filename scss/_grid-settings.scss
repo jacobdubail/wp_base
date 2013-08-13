@@ -1,7 +1,11 @@
 @import "neat/neat-helpers"; // or "neat-helpers" when in Rails
 
 // Change the grid settings
-$column: 243px;
-$gutter: 17px;
+$column: golden-ratio(1em, 3) !default; // Column width
+$gutter: golden-ratio(1em, 3) !default; // Gutter between each two columns
+
 $grid-columns: 4;
 $max-width: em(1040);
+
+$fg-column: $column;
+$fg-gutter: $gutter;

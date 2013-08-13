@@ -127,7 +127,11 @@
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 125.0,
+		"history":
+		[
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')"
+		]
 	},
 	"distraction_free":
 	{
@@ -429,6 +433,7 @@
 	{
 		"height": 0.0
 	},
+	"project": "base.sublime-project",
 	"replace":
 	{
 		"height": 62.0
@@ -467,13 +472,31 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"wp_",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			]
 		],
 		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 606.0
+	},
+	"settings":
+	{
 	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 216.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
