@@ -144,6 +144,7 @@
 	},
 	"file_history":
 	[
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/WI/wpengine/wp-content/themes/wi/bin/git_deploy.sh",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/header.php",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/base.sublime-project",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.md",
@@ -472,6 +473,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"jtd",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/JTD/wp/wp-content/themes/jtd-4/jtd.sublime-project"
+			],
 			[
 				"wp_",
 				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"

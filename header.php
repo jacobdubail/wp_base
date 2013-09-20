@@ -53,7 +53,7 @@
       </nav>
       <h1>
         <a id="logo" href="<?php home_url(); ?>/">
-          <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name'); ?>" />
+          <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
         </a>
       </h1> 
       <h2><?php bloginfo('description'); ?></h2>
