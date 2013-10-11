@@ -163,7 +163,7 @@ class jtd_admin {
           <style>
             #wpadminbar {
               width: 47px;
-              min-width: auto;
+              min-width: 0;
               overflow: hidden;
               -webkit-transition: .4s width;
               -webkit-transition-delay: 1s;

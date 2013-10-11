@@ -29,14 +29,13 @@ require_once (FUNCTIONS_PATH . 'widget.php');
   function base_register_scripts() {
     wp_enqueue_script( 'jquery' );
 
-     
-    wp_register_script('base_plugins', '/wp-content/themes/base/js/plugins.min.js', false, '1', true );
+    wp_register_script('base_plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', false, '1', true );
     wp_enqueue_script('base_plugins');
     
-    wp_register_script('base_functions', '/wp-content/themes/base/js/script.min.js', array('base_plugins'), '1', true );
+    wp_register_script('base_functions', get_stylesheet_directory_uri() . '/js/script.min.js', array('base_plugins'), '1', true );
     wp_enqueue_script('base_functions');    
     
-    wp_register_style('base_styles', '/wp-content/themes/base/css/style.css', '', '1', 'all');
+    wp_register_style('base_styles', get_stylesheet_directory_uri() . '/css/style.css', '', '1', 'all');
     wp_enqueue_style('base_styles');
     
   }
@@ -165,7 +164,7 @@ add_theme_support( 'custom-header', $customHeaderDefaults );
 
 add_filter("gform_submit_button", "jtd_change_gform_submit_btn", 10, 2);
 function jtd_change_gform_submit_btn($button, $form){
-    return "<button class='btn' id='gform_submit_button_{$form["id"]}'>Submit</button>";
+  return "<button class='btn' id='gform_submit_button_{$form["id"]}'>{$form["submit"]}</button>";
 }
 
 
