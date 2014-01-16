@@ -430,6 +430,10 @@
 	{
 		"height": 531.0
 	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"output.sftp":
 	{
 		"height": 0.0

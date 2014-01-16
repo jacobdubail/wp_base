@@ -26,27 +26,31 @@
 html {
 	position: relative;
   min-height: 100%;
-  font-size: 120%;
-  @include bp( 480px ) {
-  	font-size: 100%;
-  }
-  @include bp( 768px ) {
-  	font-size: 110%;
-  }
-  @include bp( 1024px ) {
-  	font-size: 120%;
-  }
+  font-size: 100%;
+  // @include bp( 480px ) {
+  // 	font-size: 100%;
+  // }
+  // @include bp( 900px ) {
+  // 	font-size: 105%;
+  // }
+  // @include bp( 1280px ) {
+  // 	font-size: 110%;
+  // }
 }
 
 body {
-	@include font-size();
 	font-family: sans-serif;
-	line-height: 1.41;
 	color: $textcolor;
-	// overflow-x: hidden;
-	// margin: 0 0 100px;
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	@include font-size();
+	line-height: 1.25;
+
+	@include bp( 900px ) {
+		line-height: 1.375;
+	}
 }
 // .footer {
 // 	position: absolute;
@@ -57,9 +61,9 @@ body {
 // }
 
 a, a:visited { 
-	color: #00e; 
+	color: $linkcolor; 
 	&:hover   { 
-		color: #06e; 
+		color: $linkcolorhover; 
 	}
 	&:focus {
 		outline: thin dotted;
@@ -71,41 +75,68 @@ h1,h2,h3,
 h4,h5,h6,
 .h1,.h2,.h3,
 .h4,.h5,.h6{
-	margin:0;
-	a{
+	margin: 0;
+	font-weight: normal;
+	a {
 		text-decoration: none;
 	}
 }
 
 h1,.h1{ 
 	@include font-size( 2 );
-	font-weight:bold;
+	line-height: 1.25;
+	@include bp( 900px ) {
+		@include fs( 2.5 );
+		line-height: 1.125;
+	}
+	@include bp( 1024px ) {
+		@include fs( 3 );
+		line-height: 1.05;
+	}
 }
 
 h2,.h2{ 
-	@include font-size( 1.6 );
-	font-weight:bold;
+	@include font-size( 1.625 );
+	line-height: 1.15385615;
+	@include bp( 900px ) {
+		@include fs( 2 );
+		line-height: 1.25;
+	}
+	@include bp( 1024px ) {
+		@include fs( 3 );
+		line-height: 1.05;
+	}
 }
 
 h3,.h3{ 
-	@include font-size( 1.4 );
-	font-weight:bold;
+	@include font-size( 1.375 );
+	line-height: 1.13636364;
+	@include bp( 900px ) {
+		@include fs( 1.5 );
+		line-height: 1.25;
+	}
+	@include bp( 1024px ) {
+		@include fs( 1.75 );
+		line-height: 1.25;
+	}
 }
 
 h4,.h4{ 
-	@include font-size( 1.2 );
-	font-weight:bold;	
+	@include font-size( 1.125 );
+	line-height: 1.1111111;
+	@include bp( 900px ) {
+		line-height: 1.2222222;
+	}
 }
 
 h5,.h5{ 
-	@include font-size( );
-	text-transform: uppercase; 
-	letter-spacing: 2px; 
+	@include font-size( 1 );
+	line-height: 1.25;
 }
 
 p {
-	@include font-size( 1.3 );
-	line-height: $baselineheight;
+	//@include font-size( 1.2 );
+	//line-height: $baselineheight;
 	margin: 0 0 1em;
 }
 
@@ -115,7 +146,10 @@ ul, ol {
 }
 li {
 	list-style-position: inside;
-	margin: 0 0 .25em;
+	margin: 0 0 .5em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 
@@ -125,26 +159,30 @@ blockquote {
 	max-width: 60%;
 	clear: both;
 	p {
-		font-size: 110%;
 		color: $c6;
+		@include fs( 1.25 );
+		line-height: 1.25;
+		@include bp( 900px ) {
+			@include fs( 1.5 );
+			line-height: 1.4583333;
+		}
 	}
 }
 
 .gform_button,
 .btn {
 	//@include transition( all .17s ease );
-	@include font-size(  1.6 );
-	font-family: sans-serif;
+	@include font-size(  1.4 );
 	
 	text-decoration: none;
 	text-transform: uppercase;
-	outline: none;
-	border: none;
+	outline: 0;
+	border: 0;
 	
-	display: block;
+	display: inline-block;
 	position: relative;
-	top: 0;
 	margin: .5em 0;
+	padding: 5px 10px;
 
 	background: $red;
 	color: #fff;
@@ -206,10 +244,13 @@ blockquote {
 }
 .alignright {
 	outline: none;
+	float: right;
 }
 .alignleft {
 	outline: none;
+	float: left;
 }
 .aligncenter {
 	outline: none;
+	margin: 0 auto;
 }

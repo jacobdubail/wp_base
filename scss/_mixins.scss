@@ -5,11 +5,17 @@
   @else if $point == s {
     @media (max-width: 767px) { @content; }
   }
+  @else if $point == 600px {
+    @media (min-width: 600px) { @content; }
+  }
   @else if $point == 768px {
     @media (min-width: 768px) { @content; }
   }
   @else if $point == m {
     @media (min-width: 768px) and (max-width: 1023px) { @content; }
+  }
+  @else if $point == 900px {
+    @media (min-width: 900px)  { @content; }
   }
   @else if $point == 1024px {
     @media (min-width: 1024px)  { @content; }
@@ -24,7 +30,7 @@
 
 
 @mixin font-size($sizeValue: 1.6){
-  font-size: $sizeValue + em;
+  font-size: $sizeValue * 10 + px;
   font-size: $sizeValue + rem;
 }
 
@@ -40,4 +46,11 @@
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
+}
+
+
+%vertical-align {
+  position: relative;
+  top: 50%;
+  @include transform( translateY(-50%) );
 }
