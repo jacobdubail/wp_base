@@ -1,48 +1,15 @@
 .main-nav {
 	position: relative;
 
-	.js & {
-		clip: rect(0 0 0 0);
-		max-height: 0;
-		position: absolute;
-		display: block;
-		overflow: hidden;
-	  @include bp( 768px ) {
-	  	position: relative;
-	    max-height: none;
-	    clip: inherit;
-	    overflow: visible;
-	  }
-	}
-	&.opened {
-		max-height: 9999px;
-	}
-
-	.lt-ie8 & {
-		z-index: 100;
-	}
-
 	.sub-menu {
-		@include transition( all .2s ease );
-		@include opacity(0);
+		transition: all .2s ease;
+		opacity: 0;
 		visibility: hidden;
 		position: absolute;
 		top: 80%;
 		z-index: 100;
 		background: #fff;
-		-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.4);
 		box-shadow: 0 0 4px rgba(0,0,0,0.4);
-
-		.no-boxshadow & {
-			border: 1px solid #ddd;
-		}
-
-		.lt-ie8 & {
-			visibility: visible;
-			@include opacity(1);
-			display: none;
-			left: 0;
-		}
 
 		li {
 			display: block;
@@ -66,7 +33,7 @@
 		float: left;
 	}
 	li {
-		@include inline-block;
+		display: inline-block;
 		list-style: none;
 		margin: 0;
 		width: 100%;
@@ -74,34 +41,25 @@
 			width: auto;
 		}
 
-		.lt-ie8 & {
-			position: relative;
-			z-index: 100;
-		}
-
 		&:hover {
 			color: $red;
 			.sub-menu {
-				@include opacity(1);
+				opacity: 1;
 				visibility: visible;
-
-				.lt-ie8 & {
-					display: block;
-					z-index: 100;
-				}
 			}
 		}
 
 	}
 	a {
-		@include font-size(1.4);
-		@include transition( all .2s ease );
+		@include fs(1.4);
+		transition: all .2s ease;
 		display: block;
 		position: relative;
 		text-decoration: none;
 		outline: none;
 		color: $c3;
-		padding: 0 1em;
+		padding: 0 10px;
+		padding: 0 1rem;
 
 		&:hover {
 			color: $red;
@@ -117,21 +75,3 @@
 
 }
 
-
-#nav-toggle {
-	@include font-size( 1.8 );
-	line-height: 1;
-	display: block;
-	margin: .25em 0 0;
-	padding: .25em 5%;
-	text-decoration: none;
-	color: $red;
-	background: lighten( $c3, 7% );
-	&:hover {
-		color: gray;
-	}
-	
-  @include bp( 480px ) {
-	  display: none;
-	}
-}

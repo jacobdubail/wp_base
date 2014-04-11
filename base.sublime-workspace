@@ -4,16 +4,220 @@
 		"selected_items":
 		[
 			[
+				"compl",
+				"compl_pfs"
+			],
+			[
+				"cur",
+				"cur_series"
+			],
+			[
+				"wp_lo",
+				"wp_loginout"
+			],
+			[
+				"print",
+				"print_var	Printvar"
+			],
+			[
+				"allo",
+				"allowed_series"
+			],
+			[
+				"access",
+				"accessed_series"
+			],
+			[
+				"acce",
+				"accessed_series"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"get_curr",
+				"get_current_user_id"
+			],
+			[
+				"is_user_",
+				"is_user_logged_in"
+			],
+			[
+				"the_title",
+				"the_title_attribute"
+			],
+			[
+				"bra",
+				"border-radius"
+			],
+			[
+				"wp_dere",
+				"wp_deregister_style"
+			],
+			[
+				"acc",
+				"accordion"
+			],
+			[
+				"get_temp",
+				"get_template_directory_uri"
+			],
+			[
+				"wp_get_cur",
+				"wp_get_current_user"
+			],
+			[
+				"q",
+				"q_obj"
+			],
+			[
+				"fac",
+				"factor_name"
+			],
+			[
+				"get_quer",
+				"get_queried_object"
+			],
+			[
+				"get_post_t",
+				"get_post_type"
+			],
+			[
+				"the_post",
+				"the_post_thumbnail"
+			],
+			[
+				"post",
+				"post_id"
+			],
+			[
+				"fact",
+				"factor_name"
+			],
+			[
+				"facto",
+				"factor_slug"
+			],
+			[
+				"wp_sa",
+				"wp_sanitize_redirect"
+			],
+			[
+				"acco",
+				"accordion-subhead"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"prin",
+				"print_var	Printvar"
+			],
+			[
+				"pos",
+				"pos:a	position:absolute"
+			],
+			[
+				"rick_vid",
+				"rick_video_link"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"complete",
+				"completed_chapters"
+			],
+			[
+				"per",
+				"performance_factor"
+			],
+			[
+				"get_the",
+				"get_the_terms"
+			],
+			[
+				"check",
+				"checkboxes"
+			],
+			[
+				"current",
+				"current_series"
+			],
+			[
+				"completed",
+				"completed_series"
+			],
+			[
+				"new",
+				"new_completed_series"
+			],
+			[
+				"abs",
+				"abs	CSS - position: absolute;"
+			],
+			[
+				"template_di",
+				"get_template_directory_uri"
+			],
+			[
+				"pro",
+				"productInfo2"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"produ",
+				"productInfo"
+			],
+			[
+				"main",
+				"mainNav"
+			],
+			[
+				"firs",
+				"first-child"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"scrol",
+				"scrollParallax"
+			],
+			[
+				"up",
+				"uppercase"
+			],
+			[
+				"the_author_p",
+				"the_author_posts_link"
+			],
+			[
+				"the_autho",
+				"the_author_posts"
+			],
+			[
 				"n",
 				"nl2br"
 			],
 			[
 				"json",
 				"json_encode"
-			],
-			[
-				"back",
-				"background	filter: AlphaImageLoader [for IE PNGs]"
 			],
 			[
 				"let",
@@ -27,32 +231,132 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scss/_mixins.scss",
+			"settings":
+			{
+				"buffer_size": 1421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/_typography.scss",
+			"settings":
+			{
+				"buffer_size": 3619,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/_nav.scss",
+			"settings":
+			{
+				"buffer_size": 1909,
+				"line_ending": "Unix"
+			}
+		}
 	],
-	"build_system": "Packages/User/Push-to-Github.sublime-build",
+	"build_system": "Packages/User/git_deploy.sublime-build",
 	"command_palette":
 	{
-		"height": 116.0,
+		"height": 147.0,
 		"selected_items":
 		[
 			[
-				"snipp the l",
-				"Snippet: The Loop"
+				"word",
+				"Word Wrap: Toggle"
 			],
 			[
-				"fetch",
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"fet",
 				"Fetch: File"
 			],
 			[
-				"tidy",
-				"Tidy PHP"
+				"fetf",
+				"Fetch: File"
+			],
+			[
+				"fetch",
+				"Fetch: Manage"
+			],
+			[
+				"set text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"set scs",
+				"Set Syntax: SCSS"
+			],
+			[
+				"set css",
+				"Set Syntax: SCSS"
+			],
+			[
+				"set javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set php",
+				"Set Syntax: PHP"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"fet",
+				"upg",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"add re",
+				"Package Control: Add Repository"
+			],
+			[
+				"fetc",
 				"Fetch: File"
+			],
+			[
+				"set sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"php",
+				"Tidy PHP"
+			],
+			[
+				"set js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"set javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"snipp the l",
+				"Snippet: The Loop"
+			],
+			[
+				"tidy",
+				"Tidy PHP"
 			],
 			[
 				"snippet h",
@@ -123,7 +427,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 579.0
+		"width": 593.0
 	},
 	"console":
 	{
@@ -144,117 +448,158 @@
 	},
 	"file_history":
 	[
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/WI/wpengine/wp-content/themes/wi/bin/git_deploy.sh",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/header.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/base.sublime-project",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.html",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.md",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/archive.php",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/User/Push-to-Github.sublime-build",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/bin/deploy_to_github.sh",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/.gitignore",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/404.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/front-page.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/index.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/functions.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/js/jquery.min.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/single.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/scss/single.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/wedding.sublime-project",
-		"/Users/jacob/Desktop/wedding_deployments.pub",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/User/PHP/WordPress/wploop.sublime-snippet",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/plugins/wp-github-sync/github-sync.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/README.md",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/.gitignore",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/wedding/bin/deploy_to_github.sh",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/bin/deploy_to_github.sh",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/index.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/footer.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/functions.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/header.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/js/plugins.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/scss/style.scss",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/js/script.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/swc/_/js/modernizr-2.min.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/js/modernizr.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/DBHJTD Projects/wedding/wp-content/themes/wedding/scss/_normalize.scss",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/User/Fetch.sublime-settings",
-		"/Users/jacob/Desktop/wordpress-stripe-integration/includes/stripe-listener.php",
-		"/Users/jacob/Desktop/wordpress-stripe-integration/wordpress-stripe-integration.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_site.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_legacy.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_carousel.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/single-projects.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/js/plugins.js",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/js/script.js",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_nav.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/front-page.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_variables.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_elements.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/functions.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/upstarts/320andup-panels/_upstart.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_768.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/header.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_992.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/320andup_scss_compass.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/page_test.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/page.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/single.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_mixins.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_typography.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_1100.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_480.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss_compass/_1382.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/footer.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/css/320andup_scss_compass.css",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss/_992.scss",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/less/768.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/less/site.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/less/320andup.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/less/992.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/css/style.css",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/less/1382.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/style.css",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/responsive.css",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/scss/style.less",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/_/js/functions.js",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/rno1/320_test.html",
-		"/Users/jacob/Desktop/firefox-bin/Close this tab",
-		"/Users/jacob/Desktop/firefox-bin/Back",
-		"/Users/jacob/Desktop/firefox-bin/Eight.scpt",
-		"/Users/jacob/Desktop/Shut The Fuck Up.scpt",
-		"/Users/jacob/Library/Speech/Speakable Items/Tell me a joke",
-		"/Users/jacob/Library/Speech/Speakable Items/Application Speakable Items/Mail/Show fonts",
-		"/Users/jacob/Desktop/firefox-bin/eight one.scpt",
-		"/Users/jacob/Library/Speech/Speakable Items/Get my mail",
-		"/Users/jacob/Library/Speech/Speakable Items/What time is it?",
-		"/Users/jacob/Desktop/customers 2.csv",
-		"/Users/jacob/MAMP/cdsmobile/js/plugins.js",
-		"/Users/jacob/MAMP/cdsmobile/js/jquery-1.7.2.min.js",
-		"/Users/jacob/MAMP/cdsmobile/js/modernizr-2.min.js",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/teal-orbit/footer.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/teal-orbit/header.php",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/teal-orbit/_/js/modernizr-2.min.js",
-		"/Users/jacob/MAMP/wordpress/wp-content/themes/swc/style.css",
-		"/Users/jacob/MAMP/therapy/wp-config.php",
-		"/Users/jacob/MAMP/therapy/wp-content/themes/therapy/sidebar.php",
-		"/Users/jacob/MAMP/therapy/wp-content/themes/therapy/footer.php",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/Prefixr/Default (OSX).sublime-keymap",
-		"/Users/jacob/MAMP/therapy/wp-content/themes/therapy/_/i/logo.png",
-		"/Users/jacob/MAMP/therapy/wp-content/themes/therapy/searchform.php",
-		"/Users/jacob/Desktop/import.csv",
-		"/Users/jacob/Desktop/customers 2 - Sheet 1.csv",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/jacob/Library/Application Support/Sublime Text 2/Packages/Alignment/Base File.sublime-settings"
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/searchform.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/sidebar.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/style.css",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/base.sublime-project",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/config.rb",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/front-nine.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/js/script.js",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_nav.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/profiles.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/footer.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/single-lesson.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/functions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/TODO.txt",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/shot-journal.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/author.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/shortcodes.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/settings.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/gravityforms.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/single.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/page.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_typography.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/page-assessment.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/login.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/assessment.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/head.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/actions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_forms.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/registration-functions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/class-rcp-payments.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/process-data.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/class-rcp-discounts.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/gateway-functions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/discount-functions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/rcp/register.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/rcp/login.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_flag.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/bin/git_deploy.sh",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/shortcodes.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/member-forms.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_icons.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_mixins.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_site.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/archive-back_nine.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_audio.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/license.txt",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/single-back_nine.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/backnine-video.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_owl.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/backnine-standard.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/backnine-carousel.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_accordion.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_utils.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/category-back-nine.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/welcome/_typography.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_footer.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/front-page.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/welcome.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/admin.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/advanced-custom-fields/lang/acf-de_DE.mo",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/archive.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/welcome/_item0.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/css/_icons.css",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/class-wp-http-ixr-client.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/index.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/rcp/profile-editor.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_buttons.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/style.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-admin/options-writing.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/css/owl.css",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_font-face.scssc",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_variables.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-config.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_posts.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/_colorbox.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/.sass-cache/482c28c6fb9cfab670e4a5486cd2f71077de81e1/_clearfix.scssc",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/templates/backnine-module.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/template-loader.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-admin/theme-editor.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/taxonomies.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/post_types.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/page-plain.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/css/assessment.css",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/advanced-custom-fields/lang/acf-sv_SE.mo",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/css/admin-styles.css",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/template.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/templates/login.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/login-functions.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/user.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/header.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/pluggable-deprecated.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/pluggable.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/.sass-cache/be639e0093930266f0d3cc4ed1c0d18455d4980e/_alternating-rows-and-columns.scssc",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/twentyfourteen/page-templates/full-width.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/twentyfourteen/page-templates/contributors.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/advanced-custom-fields/core/fields/google-map.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/frontend-uploader/lib/views/manage-ugc-posts.tpl.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/frontend-uploader/lib/views/manage-ugc-media.tpl.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro.old/includes/user-page-columns.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/user-page-columns.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/post-formats.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/neat/functions/_new-breakpoint.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/admin/new-payment.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-admin/network.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/navigation.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/mzcoach.sublime-project",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/mysql.sql",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-admin/my-sites.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/.sass-cache/72773e327525443e0064f9369a87d53735f1d13e/_transition-property-name.scssc",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/inc/backgroundsize.min.htc",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-includes/bookmark.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/header-in.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/post-type-archive-links/lang/hptal-textdomain-de_DE.mo",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/header-out.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-activate.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/rewrites.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/nav-content.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/npm-debug.log",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/page-help.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/404.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/widgets.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/organize-series/inc/debug/plugin_activation_errors.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/sidebar.php",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/owl.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/js/plugins.js",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/js/admin-scripts.js",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/scripts.php"
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/welcome",
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss",
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/twentythirteen",
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss",
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/gravityforms",
+			"",
+			"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro",
+			"<project>",
 			"",
 			"rno1",
 			"submit.php",
@@ -272,83 +617,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"check_request",
-			"update_repository",
-			"/_",
-			"_/",
-			"_",
-			"follan",
-			"swc",
-			"\\r\\n\\r\\n",
-			"listener",
-			"pippin_stripe_event_listener",
-			"Add New Attendee",
-			"#sidebar",
-			"#posts ",
-			"#posts",
-			"a ",
-			"em",
-			"docElement",
-			"slide",
-			".header",
-			".header h1",
-			"hover",
-			"font-size",
-			"orbit",
-			"teal-orbit",
-			"\"Success\"",
-			"$_REQUEST",
-			"required",
-			"\\( \\$_POST\\['(\\w+)'\\] \\)",
-			"\\$_POST\\['(\\w+)'\\]",
-			"$_POST['\\d']",
-			"message",
+			"font-size(",
+			"update",
+			"_completed_series",
+			"mz_update_user_series_array",
+			"mz_update_user_completed_series",
+			"_completed_series",
+			"mz_get_user_completed_series",
+			"check",
+			"content",
+			"$icon",
+			"$flag",
+			"count",
+			"skip_welcome",
+			"welcome",
+			"redire",
+			"form_redirect",
+			"localize_script",
+			"intval",
+			"$series",
+			"echo",
+			"I ",
+			"if I have ",
+			"mz_allowed_series",
+			"mz_accessed_series",
+			"payment_type",
+			"$payments->inser",
+			"new RCP_Payments",
+			"rcp_send_to_gateway",
+			"jtd_post_filters",
+			"rcp_store_discount_for_user",
+			"discount",
+			"mz_allowed_series",
+			"RCP_Payments",
+			"payments",
+			"mz_rcp_get_number_user_payments",
+			"mz_get_user_completed_series",
+			"mz_allowed_series",
+			"mz_can_user_assess",
+			"renew",
+			"btn",
+			"rcp_registration_form_fields",
+			"You are already registered and have an active subscription.",
+			"you already have an actie subscription",
+			"audio-box",
+			"box",
 			"status",
-			"return {",
-			"message : ",
-			"status  : ",
-			"status : ",
-			"if(trim($",
-			"value=\"\" />",
-			" <?php language_attributes(); ?>",
-			"msg",
-			"resp.msg",
-			".fadeIn('250');",
-			".show('250');",
-			"show",
-			"response",
-			"mc_embed_signup",
-			".footer",
-			"placeholder",
-			"follan",
-			".footer",
-			".btn",
-			".footer",
-			".stripe_back",
-			".description",
-			"\"bebas-neue\", ",
-			"\"bebas-neue\"",
-			"\"bebas neue\"",
-			"\"bebas-neue\"",
-			"\"bebas-neue\", ",
-			".info-bar form h3",
-			"em ",
-			"em",
-			".wrap",
-			".description",
-			"text-shadow",
-			"current",
-			" class=\"info\"",
-			"swc",
-			"bmwcca",
-			"comment-reply",
-			"comment_reply",
-			"PTSD",
-			"\\r",
-			"\n",
-			"» ",
-			"swc",
-			"follan"
+			"item",
+			"admin_bar",
+			"url",
+			"web",
+			"footer",
+			".post_title",
+			"post_title",
+			"logout",
+			".current",
+			"@",
+			".item",
+			".mz-theme .owl-controls .owl-page span.owl-numbers",
+			"$dgrey",
+			"owl-page span",
+			"footer",
+			".curr",
+			"div",
+			"//",
+			"post-format",
+			"$yellow",
+			"yellow",
+			"btn",
+			"?><",
+			"go_home",
+			"has_assessed",
+			"login_redirect",
+			"wp_login",
+			"wp_signon",
+			"function wp_login",
+			"wp_login",
+			"wp_set_current_user",
+			"rcp_login_user_in",
+			"rcp_redirect_if_user_is_logged",
+			"rcp_login_user_in",
+			"rcp_action",
+			"jtd_mz_process_assessment",
+			"toggle",
+			".",
+			"main-content",
+			"icon",
+			"redirect",
+			"welcome",
+			"listless",
+			"columns",
+			"column",
+			"<li>",
+			"1",
+			"owl-buttons div",
+			"30px",
+			"filter: Alpha(",
+			"alpha",
+			"slpha",
+			"owl-buttons div",
+			"owl-next",
+			"next",
+			"owl-theme",
+			"cursor",
+			"$(\"body\")",
+			".checkbox",
+			" flag",
+			".flag",
+			" flag",
+			"flag",
+			"html",
+			"completed",
+			"fixed",
+			".main",
+			".dl",
+			"CA",
+			"a,",
+			"shot type",
+			"Shot Type",
+			"library",
+			"shot_type",
+			"led by",
+			" dir=\"ltr\"",
+			"is_user",
+			"home_mobile_redirect",
+			"nonce",
+			"get_current_user_id()",
+			"rcp_is_paid_user",
+			"duration"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -390,14 +786,148 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "scss/_mixins.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								415,
+								415
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "scss/_typography.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							],
+							[
+								1373,
+								1373
+							],
+							[
+								1564,
+								1564
+							],
+							[
+								1762,
+								1762
+							],
+							[
+								1965,
+								1965
+							],
+							[
+								2078,
+								2078
+							],
+							[
+								2126,
+								2126
+							],
+							[
+								2637,
+								2637
+							],
+							[
+								3293,
+								3293
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 595.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scss/_nav.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1325,
+								1325
+							],
+							[
+								1676,
+								1676
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -428,7 +958,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 531.0
+		"height": 286.0
 	},
 	"output.find_results":
 	{
@@ -441,7 +971,7 @@
 	"project": "base.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -450,24 +980,516 @@
 		"selected_items":
 		[
 			[
-				"mod",
-				"swc/_/js/modernizr-2.min.js"
+				"shot",
+				"mzcoach/templates/shot-journal.php"
 			],
 			[
-				"nav",
-				"_/scss_compass/_nav.scss"
+				"footer",
+				"mzcoach/footer.php"
 			],
 			[
-				"scrip",
-				"_/js/script.js"
+				"single-le",
+				"mzcoach/single-lesson.php"
+			],
+			[
+				"prof",
+				"mzcoach/lib/profiles.php"
 			],
 			[
 				"script",
-				"_/js/script.js"
+				"mzcoach/js/script.js"
 			],
 			[
-				"plu",
-				"_/js/plugins.js"
+				"_nav",
+				"mzcoach/scss/_nav.scss"
+			],
+			[
+				"front",
+				"mzcoach/templates/front-nine.php"
+			],
+			[
+				"_form",
+				"mzcoach/scss/_forms.scss"
+			],
+			[
+				"login",
+				"mzcoach/rcp/login.php"
+			],
+			[
+				"lib/gra",
+				"mzcoach/lib/gravityforms.php"
+			],
+			[
+				"func",
+				"mzcoach/functions.php"
+			],
+			[
+				"git",
+				"mzcoach/bin/git_deploy.sh"
+			],
+			[
+				"_mix",
+				"wpengine/wp-content/themes/mzcoach/scss/_mixins.scss"
+			],
+			[
+				"_site",
+				"mzcoach/scss/_site.scss"
+			],
+			[
+				"_audio",
+				"mzcoach/scss/_audio.scss"
+			],
+			[
+				"_icon",
+				"mzcoach/scss/_icons.scss"
+			],
+			[
+				"_owl",
+				"mzcoach/scss/_owl.scss"
+			],
+			[
+				"admin",
+				"mzcoach/lib/admin.php"
+			],
+			[
+				"icon",
+				"mzcoach/scss/_icons.scss"
+			],
+			[
+				"setting",
+				"mzcoach/templates/settings.php"
+			],
+			[
+				"_mixin",
+				"mzcoach/scss/_mixins.scss"
+			],
+			[
+				"_ty",
+				"mzcoach/scss/_typography.scss"
+			],
+			[
+				"_bu",
+				"mzcoach/scss/_buttons.scss"
+			],
+			[
+				"style.scs",
+				"mzcoach/scss/style.scss"
+			],
+			[
+				"_si",
+				"mzcoach/scss/_site.scss"
+			],
+			[
+				"_navc",
+				"mzcoach/scss/_nav.scss"
+			],
+			[
+				"_var",
+				"mzcoach/scss/_variables.scss"
+			],
+			[
+				"wp-conf",
+				"wpengine/wp-config.php"
+			],
+			[
+				"temp/back",
+				"mzcoach/templates/backnine-carousel.php"
+			],
+			[
+				"page-ass",
+				"mzcoach/page-assessment.php"
+			],
+			[
+				"assess",
+				"mzcoach/lib/assessment.php"
+			],
+			[
+				"_butt",
+				"mzcoach/scss/_buttons.scss"
+			],
+			[
+				"_typ",
+				"mzcoach/scss/_typography.scss"
+			],
+			[
+				"temp/bm",
+				"mzcoach/templates/backnine-module.php"
+			],
+			[
+				"temp/bak",
+				"mzcoach/templates/backnine-carousel.php"
+			],
+			[
+				"_acc",
+				"mzcoach/scss/_accordion.scss"
+			],
+			[
+				"profil",
+				"mzcoach/rcp/profile-editor.php"
+			],
+			[
+				"back",
+				"mzcoach/archive-back_nine.php"
+			],
+			[
+				"headi",
+				"wpengine/wp-content/themes/mzcoach/header-in.php"
+			],
+			[
+				"head",
+				"mzcoach/header-in.php"
+			],
+			[
+				"single-l",
+				"mzcoach/single-lesson.php"
+			],
+			[
+				"front-",
+				"mzcoach/templates/front-nine.php"
+			],
+			[
+				"author",
+				"mzcoach/author.php"
+			],
+			[
+				"git_",
+				"mzcoach/bin/git_deploy.sh"
+			],
+			[
+				"profi",
+				"mzcoach/lib/profiles.php"
+			],
+			[
+				"rewri",
+				"mzcoach/lib/rewrites.php"
+			],
+			[
+				"navi",
+				"wpengine/wp-content/themes/mzcoach/lib/navigation.php"
+			],
+			[
+				"page",
+				"mzcoach/page.php"
+			],
+			[
+				"nav-c",
+				"mzcoach/nav-content.php"
+			],
+			[
+				"404",
+				"mzcoach/404.php"
+			],
+			[
+				"_fl",
+				"mzcoach/scss/_flag.scss"
+			],
+			[
+				"plugins.js",
+				"mzcoach/js/plugins.js"
+			],
+			[
+				"postty",
+				"mzcoach/lib/post_types.php"
+			],
+			[
+				"grid",
+				"mzcoach/scss/_grid-settings.scss"
+			],
+			[
+				"plugins",
+				"mzcoach/js/plugins.js"
+			],
+			[
+				"_less",
+				"mzcoach/scss/_lessons.scss"
+			],
+			[
+				"single",
+				"wpengine/wp-content/themes/mzcoach/single.php"
+			],
+			[
+				"_norm",
+				"mzcoach/scss/_normalize.scss"
+			],
+			[
+				"_fla",
+				"mzcoach/scss/_flag.scss"
+			],
+			[
+				"front-n",
+				"mzcoach/templates/front-nine.php"
+			],
+			[
+				"style.s",
+				"mzcoach/scss/style.scss"
+			],
+			[
+				"filter",
+				"mzcoach/lib/filters.php"
+			],
+			[
+				"inde",
+				"mzcoach/index.php"
+			],
+			[
+				"header",
+				"mzcoach/header.php"
+			],
+			[
+				"taxo",
+				"mzcoach/lib/taxonomies.php"
+			],
+			[
+				"conf",
+				"mzcoach/config.rb"
+			],
+			[
+				"taxon",
+				"mzcoach/lib/taxonomies.php"
+			],
+			[
+				"wp-con",
+				"wpengine/wp-config.php"
+			],
+			[
+				"front-page",
+				"mzcoach/front-page.php"
+			],
+			[
+				"lib/head",
+				"mzcoach/lib/head.php"
+			],
+			[
+				"page-te",
+				"mzcoach/page-test.php"
+			],
+			[
+				"page-test",
+				"wpengine/wp-content/themes/mzcoach/page-test.php"
+			],
+			[
+				"rcp/log",
+				"mzcoach/rcp/login.php"
+			],
+			[
+				"lib/log",
+				"mzcoach/lib/login.php"
+			],
+			[
+				"lib/fil",
+				"mzcoach/lib/filters.php"
+			],
+			[
+				"rcp/re",
+				"mzcoach/rcp/register.php"
+			],
+			[
+				"temp/login",
+				"restrict-content-pro/templates/login.php"
+			],
+			[
+				"lib/login",
+				"mzcoach/lib/login.php"
+			],
+			[
+				"member-fu",
+				"restrict-content-pro/includes/member-functions.php"
+			],
+			[
+				"lib/pro",
+				"mzcoach/lib/profiles.php"
+			],
+			[
+				"test",
+				"mzcoach/page-test.php"
+			],
+			[
+				"sett",
+				"mzcoach/templates/settings.php"
+			],
+			[
+				"wp-inc/plug",
+				"wpengine/wp-includes/pluggable.php"
+			],
+			[
+				"wp-inc/user.ph",
+				"wpengine/wp-includes/user.php"
+			],
+			[
+				"inclu/user.p",
+				"wpengine/wp-admin/includes/user.php"
+			],
+			[
+				"lib/post",
+				"mzcoach/lib/post_types.php"
+			],
+			[
+				"_post",
+				"wpengine/wp-content/themes/mzcoach/scss/_posts.scss"
+			],
+			[
+				"arch",
+				"mzcoach/archive.php"
+			],
+			[
+				"autho",
+				"mzcoach/author.php"
+			],
+			[
+				"lib/re",
+				"mzcoach/lib/rewrites.php"
+			],
+			[
+				"",
+				"wpengine/wp-content/themes/mzcoach/templates/front-nine.php"
+			],
+			[
+				"profile-e",
+				"mzcoach/rcp/profile-editor.php"
+			],
+			[
+				"lib/tax",
+				"mzcoach/lib/taxonomies.php"
+			],
+			[
+				"page-",
+				"wpengine/wp-content/themes/mzcoach/page-test.php"
+			],
+			[
+				"page-pl",
+				"mzcoach/page-plain.php"
+			],
+			[
+				"nav-con",
+				"mzcoach/nav-content.php"
+			],
+			[
+				"_flag",
+				"mzcoach/scss/_flag.scss"
+			],
+			[
+				"_util",
+				"wpengine/wp-content/themes/mzcoach/scss/_utils.scss"
+			],
+			[
+				"header-in",
+				"mzcoach/header-in.php"
+			],
+			[
+				"scrip",
+				"mzcoach/js/script.js"
+			],
+			[
+				"settings",
+				"mzcoach/templates/settings.php"
+			],
+			[
+				"_but",
+				"wpengine/wp-content/themes/mzcoach/scss/_buttons.scss"
+			],
+			[
+				"_flags",
+				"mzcoach/scss/_flag.scss"
+			],
+			[
+				"_po",
+				"mzcoach/scss/_posts.scss"
+			],
+			[
+				"_osts",
+				"mzcoach/scss/_posts.scss"
+			],
+			[
+				"_ut",
+				"wpengine/wp-content/themes/mzcoach/scss/_utils.scss"
+			],
+			[
+				"profile-",
+				"mzcoach/rcp/profile-editor.php"
+			],
+			[
+				"sub-",
+				"mzcoach/rcp/subscription-details.php"
+			],
+			[
+				"_pos",
+				"mzcoach/scss/_posts.scss"
+			],
+			[
+				"style.sscs",
+				"mzcoach/scss/style.scss"
+			],
+			[
+				"lib/",
+				"mzcoach/lib/profiles.php"
+			],
+			[
+				"lib/admin",
+				"wpengine/wp-content/themes/mzcoach/lib/admin.php"
+			],
+			[
+				"rick",
+				"mzcoach/templates/rick-on-the-course.php"
+			],
+			[
+				"_typo",
+				"wpengine/wp-content/themes/mzcoach/scss/_typography.scss"
+			],
+			[
+				"jou",
+				"mzcoach/templates/shot-journal.php"
+			],
+			[
+				"he",
+				"mzcoach/header.php"
+			],
+			[
+				"page-p",
+				"mzcoach/page-plain.php"
+			],
+			[
+				"mediaelement.js",
+				"wpengine/wp-includes/js/mediaelement/mediaelement-and-player.min.js"
+			],
+			[
+				"mediaelement",
+				"wpengine/wp-includes/js/mediaelement/wp-mediaelement.js"
+			],
+			[
+				"grid-s",
+				"mzcoach/scss/_grid-settings.scss"
+			],
+			[
+				"script.js",
+				"wpengine/wp-content/themes/mzcoach/js/script.js"
+			],
+			[
+				"plugin",
+				"mzcoach/js/plugins.js"
+			],
+			[
+				"_grid",
+				"mzcoach/scss/_grid-settings.scss"
+			],
+			[
+				"wp-inc/media",
+				"wpengine/wp-includes/media.php"
+			],
+			[
+				"front-p",
+				"wpengine/wp-content/themes/mzcoach/front-page.php"
+			],
+			[
+				"_acco",
+				"mzcoach/scss/_accordion.scss"
+			],
+			[
+				"rot",
+				"mzcoach/templates/rick-on-the-course.php"
+			],
+			[
+				"wp-inc/nav-menu-t",
+				"wpengine/wp-includes/nav-menu-template.php"
 			]
 		],
 		"width": 0.0
@@ -478,12 +1500,160 @@
 		"selected_items":
 		[
 			[
-				"jtd",
-				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/JTD/wp/wp-content/themes/jtd-4/jtd.sublime-project"
+				"ogle",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/CasJam/Oglethorpe/ogle_wp.sublime-project"
+			],
+			[
+				"ogle_",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/CasJam/Oglethorpe/ogle_wp.sublime-project"
+			],
+			[
+				"met",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/MetraTech/metratech.sublime-project"
+			],
+			[
+				"ogl",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/CasJam/Oglethorpe/ogle_wp.sublime-project"
+			],
+			[
+				"ihi",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/428/iHit/wp/wp-content/themes/ihit/ihit.sublime-project"
+			],
+			[
+				"die",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/DieLine/dieline.sublime-project"
+			],
+			[
+				"tbg",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/TBG/wp/wp-content/themes/buljan/tbg.sublime-project"
+			],
+			[
+				"tb",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/TBG/wp/wp-content/themes/buljan/tbg.sublime-project"
+			],
+			[
+				"glam",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/428/GlamSketch/glam.sublime-project"
+			],
+			[
+				"arcu",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/CasJam/Arcus/WP/wp-content/themes/arcus/arcus.sublime-project"
+			],
+			[
+				"nerida",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Kynan/nerida.sublime-project"
+			],
+			[
+				"pico",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Pico/pico.sublime-project"
+			],
+			[
+				"baz",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/BaziniHopp/wp/wp-content/themes/bazini/bazini.sublime-project"
+			],
+			[
+				"mp",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MediaPro/wp/wp-content/themes/mediapro-2/mp.sublime-project"
+			],
+			[
+				"wp-",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			],
+			[
+				"rabb",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Rabbizweig/rabbi.sublime-project"
+			],
+			[
+				"rap",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/RedAntsPants/rap.sublime-project"
+			],
+			[
+				"butt",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Rinaldi/buttery.sublime-project"
 			],
 			[
 				"wp_",
 				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			],
+			[
+				"gfo",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/G-Form/gform.sublime-project"
+			],
+			[
+				"bons",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Bonsai Sandals/bonsai.sublime-project"
+			],
+			[
+				"bon",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Bonsai Sandals/bonsai.sublime-project"
+			],
+			[
+				"rab",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Rabbizweig/rabbi.sublime-project"
+			],
+			[
+				"mz",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/mzcoach.sublime-project"
+			],
+			[
+				"bz",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/BaziniHopp/wp/wp-content/themes/bazini/bazini.sublime-project"
+			],
+			[
+				"wpb",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			],
+			[
+				"base",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Pico/base.sublime-workspace"
+			],
+			[
+				"rabbi",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Rabbizweig/rabbi.sublime-project"
+			],
+			[
+				"wi",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/WI/wp/wp-content/themes/wi/wi.sublime-project"
+			],
+			[
+				"wpba",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			],
+			[
+				"wp",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/wp_base.sublime-project"
+			],
+			[
+				"hh",
+				"~/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/HH/wp/wp-content/themes/hh/hh.sublime-project"
+			],
+			[
+				"",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Uberangst/Fraud/wp/wp-content/themes/fraud/fraud.sublime-project"
+			],
+			[
+				"frau",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Uberangst/Fraud/wp/wp-content/themes/fraud/fraud.sublime-project"
+			],
+			[
+				"rev",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/revision/wp/wp-content/themes/revision/revision.sublime-project"
+			],
+			[
+				"words",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/StrangeWords/wp/wp-content/themes/words/words.sublime-project"
+			],
+			[
+				"elco",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Elco/wp/wp-content/themes/elco/elco.sublime-project"
+			],
+			[
+				"set css",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/rno1/TPUF/wp/wp-content/themes/tpuf/base.sublime-project"
+			],
+			[
+				"uber",
+				"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/Uberangst/wordpress/wp-content/themes/uberangst/uberangst.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -503,7 +1673,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 216.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

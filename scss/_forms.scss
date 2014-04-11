@@ -43,7 +43,7 @@
   list-style: none;
 
   .gfield_label {
-    @include inline-block;
+    display: inline-block;
     margin-bottom: 3px;
   }
   .gfield_required {

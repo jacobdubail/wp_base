@@ -1,23 +1,22 @@
 {
-  "url": "http://base.dev:8888",
 	"folders":
 	[
 		{
-			"path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/folder/project/wp/wp-content/themes/base",
-      "folder_exclude_patterns":[".sass-cache"]
+			"follow_symlinks": true,
+			"path": "."
 		},
-    {
-      "path": "/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/folder/project/wp/"
-    }
+		{
+			"path": "../../../"
+		}
 	],
-  "settings":
-  {
-    "word_wrap":"true"
-  },
-  "build_systems":
-  [
-    {
-      "cmd": ["bin/deploy_to_github.sh"]
-    }
-  ]
+	"settings":
+	{
+		"word_wrap":"true"
+	},
+	"build_systems":
+	[
+		{
+			"cmd": ["bin/deploy_to_github.sh"]
+		}
+	]
 }
