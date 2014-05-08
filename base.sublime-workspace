@@ -232,18 +232,10 @@
 	"buffers":
 	[
 		{
-			"file": "scss/_mixins.scss",
-			"settings":
-			{
-				"buffer_size": 1421,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "scss/_typography.scss",
 			"settings":
 			{
-				"buffer_size": 3619,
+				"buffer_size": 3720,
 				"line_ending": "Unix"
 			}
 		},
@@ -251,7 +243,7 @@
 			"file": "scss/_nav.scss",
 			"settings":
 			{
-				"buffer_size": 1909,
+				"buffer_size": 1006,
 				"line_ending": "Unix"
 			}
 		}
@@ -448,6 +440,7 @@
 	},
 	"file_history":
 	[
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/scss/_mixins.scss",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.html",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.md",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/searchform.php",
@@ -574,8 +567,7 @@
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/sidebar.php",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/owl.scss",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/js/plugins.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/js/admin-scripts.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/scripts.php"
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/js/admin-scripts.js"
 	],
 	"find":
 	{
@@ -786,89 +778,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "scss/_mixins.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1421,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								415,
-								415
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "scss/_typography.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3619,
+						"buffer_size": 3720,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								917,
-								917
-							],
-							[
-								1373,
-								1373
-							],
-							[
-								1564,
-								1564
-							],
-							[
-								1762,
-								1762
-							],
-							[
-								1965,
-								1965
-							],
-							[
-								2078,
-								2078
-							],
-							[
-								2126,
-								2126
-							],
-							[
-								2637,
-								2637
-							],
-							[
-								3293,
-								3293
+								0,
+								0
 							]
 						],
 						"settings":
@@ -880,31 +807,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 595.0,
+						"translation.y": 158.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "scss/_nav.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1909,
+						"buffer_size": 1006,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1325,
-								1325
-							],
-							[
-								1676,
-								1676
+								0,
+								0
 							]
 						],
 						"settings":
@@ -919,7 +842,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

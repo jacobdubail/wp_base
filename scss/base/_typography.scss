@@ -30,7 +30,7 @@ html {
   // @include bp( 480px ) {
   // 	font-size: 100%;
   // }
-  // @include bp( 900px ) {
+  // @include bp( md ) {
   // 	font-size: 105%;
   // }
   // @include bp( 1280px ) {
@@ -48,7 +48,7 @@ body {
 	@include fs();
 	line-height: 1.25;
 
-	@include bp( 900px ) {
+	@include bp( md ) {
 		line-height: 1.375;
 	}
 }
@@ -86,11 +86,11 @@ h4,h5,h6,
 h1,.h1{ 
 	@include fs( 2 );
 	line-height: 1.25;
-	@include bp( 900px ) {
+	@include bp( md ) {
 		@include fs( 2.5 );
 		line-height: 1.125;
 	}
-	@include bp( 1024px ) {
+	@include bp( lg ) {
 		@include fs( 3 );
 		line-height: 1.05;
 	}
@@ -99,11 +99,11 @@ h1,.h1{
 h2,.h2{ 
 	@include fs( 1.625 );
 	line-height: 1.15385615;
-	@include bp( 900px ) {
+	@include bp( md ) {
 		@include fs( 2 );
 		line-height: 1.25;
 	}
-	@include bp( 1024px ) {
+	@include bp( lg ) {
 		@include fs( 3 );
 		line-height: 1.05;
 	}
@@ -112,11 +112,11 @@ h2,.h2{
 h3,.h3{ 
 	@include fs( 1.375 );
 	line-height: 1.13636364;
-	@include bp( 900px ) {
+	@include bp( md ) {
 		@include fs( 1.5 );
 		line-height: 1.25;
 	}
-	@include bp( 1024px ) {
+	@include bp( lg ) {
 		@include fs( 1.75 );
 		line-height: 1.25;
 	}
@@ -125,7 +125,7 @@ h3,.h3{
 h4,.h4{ 
 	@include fs( 1.125 );
 	line-height: 1.1111111;
-	@include bp( 900px ) {
+	@include bp( md ) {
 		line-height: 1.2222222;
 	}
 }
@@ -165,7 +165,7 @@ blockquote {
 		color: $c6;
 		@include fs( 1.25 );
 		line-height: 1.25;
-		@include bp( 900px ) {
+		@include bp( md ) {
 			@include fs( 1.5 );
 			line-height: 1.4583333;
 		}
@@ -209,7 +209,7 @@ blockquote {
 		float: left;
 		margin: 0 27px 20px 0;
 
-		@include bp( 768px ) {
+		@include bp( sm ) {
 			float: none;
 		}
 	}
@@ -217,7 +217,7 @@ blockquote {
 		float: right;
 		margin: 0 0 20px 27px;
 
-		@include bp( 768px ) {
+		@include bp( sm ) {
 			float: none;
 		}
 	}

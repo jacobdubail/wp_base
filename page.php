@@ -6,8 +6,6 @@
 
 			<h2><?php the_title(); ?></h2>
 
-			<?php get_template_part( 'inc/meta' ); ?>
-
 			<div class="entry">
 
 				<?php the_content(); ?>
@@ -18,6 +16,6 @@
 		
 		<?php endwhile; endif; ?>
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

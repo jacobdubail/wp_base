@@ -11,7 +11,9 @@
 	],
 	"settings":
 	{
-		"word_wrap":"true"
+		"word_wrap":"true",
+		"tax_size":2,
+		"translate_tabs_to_spaces": false
 	},
 	"build_systems":
 	[

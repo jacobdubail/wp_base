@@ -1,16 +1,20 @@
-// @import "bourbon";
-// @import "grid-settings";
-// @import "neat/neat";
-// @import "compass";
-//$experimental-support-for-svg: true;
-@import "mixins";
-@import "variables";
-@import "utils";
-@import "normalize";
-@import "typography";
-@import "forms";
-@import "nav";
-@import "site";
-//@import "foxyshop";
-//@import "flexslider";
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+
+@import "base/normalize";
+@import "base/typography";
+
+@import "components/forms";
+@import "components/nav";
+@import "components/buttons";
+//@import "components/flexslider";
+
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/site";
+
+//@import "pages/";
+
 @import "print";

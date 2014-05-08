@@ -1,0 +1,102 @@
+$breakpoints: (
+	'xs': ( max-width:  767px ),
+	'sm': ( min-width:  768px ),
+	'md': ( min-width:  992px ),
+	'lg': ( min-width: 1200px ),
+	'h':  ( min-height:  40em )
+);
+
+@mixin bp($name) {
+	@if map-has-key($breakpoints, $name) { // 1
+		@media #{inspect(map-get($breakpoints, $name))} { // 2
+			@content;
+		}
+	}
+	@else { // 3
+		@warn "Couldn't find a breakpoint named `#{$name}`."; // 4
+	}
+}
+
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+	@if $IE9 == true{
+		.lt-ie9 & {
+			@content;
+		}
+	}
+
+	@media (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+		@content;
+	}
+}
+
+@mixin fs($sizeValue: 1.6){
+	font-size: $sizeValue * 10 + px;
+	font-size: $sizeValue + rem;
+}
+
+%vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+
+// http://jennifermann.ghost.io/setting-fixed-table-widths-using-sass/
+@mixin th-width($col, $width) {
+	#{$col} {  
+		width: $width;  
+	}
+}
+
+@mixin table-columns($widths) {
+	table-layout: fixed;
+	width: 100%;
+
+	th, td {
+		overflow: hidden; 
+		text-overflow: ellipsis; 
+		white-space: nowrap;
+	}
+
+	$n: 1;
+	$var: "th:nth-child(" + $n + ")";
+	@each $width in $widths {
+		@include th-width($var, $width);
+		$n: $n + 1;
+		$var: "th:nth-child(" + $n + ")";
+	}
+}
+
+@mixin el-width($col, $width) {
+	#{$col} {
+		$width: $width;
+	}
+}
+
+@mixin list-columns($widths...) {
+	width: 100%;
+
+	li {
+		overflow: auto;  
+		border-bottom: 1px solid #eeeeee;  
+		display: block;
+		& > div {
+			float: left;
+			& > div {
+				padding: 6px 12px;
+				overflow: hidden; 
+				text-overflow: ellipsis; 
+				white-space: nowrap;
+			}
+		}
+	}
+
+	$n: 1;
+	$var: "li>div:nth-child(" + $n + ")";
+	@each $width in $widths {
+		@include el-width($var, $width);
+		$n: $n + 1;
+		$var: "li>div:nth-child(" + $n + ")";
+	}
+}

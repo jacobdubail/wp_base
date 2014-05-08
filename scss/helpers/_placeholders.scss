@@ -1,41 +1,30 @@
-.chromeframe {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
-}
-
-.cf {
-	*zoom:1;
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-	}
+.clear {
+	margin-left: 0;
+	clear: both;
 }
 
 
-.ir {
+%cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+%ir {
 	text-indent: 120%;
 	overflow: hidden;
 	white-space: nowrap;
 }
-
-.clear {
-	clear: both;
-}
-
 
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 
-.hidden {
+%hidden {
 	display: none !important;
 	visibility: hidden;
 }
@@ -44,7 +33,7 @@
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 
-.visuallyhidden {
+%visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -76,6 +65,13 @@
  * Hide visually and from screenreaders, but maintain layout
  */
 
-.invisible {
-		visibility: hidden;
+%invisible {
+	visibility: hidden;
+}
+
+.chromeframe {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
 }

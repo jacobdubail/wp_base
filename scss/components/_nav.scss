@@ -37,7 +37,7 @@
 		list-style: none;
 		margin: 0;
 		width: 100%;
-		@include bp( 480px ) {
+		@include bp( xs ) {
 			width: auto;
 		}
 

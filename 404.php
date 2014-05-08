@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 			
-	<article class="post" id="post-<?php the_ID(); ?>">
+	<article class="post">
 
 		<div class="entry">
 

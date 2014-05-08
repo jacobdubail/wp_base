@@ -1,0 +1,85 @@
+$width: ($column-width * $columns) + ($gutter * ($columns - 1));
+
+// Set Base Container
+.container {
+	// Set container width if responsive
+	@if $responsive == true {
+		max-width: $width;
+	} @else {
+		width: $width;
+	}
+	margin: 0px auto;
+	padding: 0 $padding 0 $padding;
+}
+
+
+@mixin calc-grid($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      width: percentage(($index / $columns));
+      float: left;
+    }
+  }
+  @if ($type == push) {
+    .col-#{$class}-push-#{$index} {
+      left: percentage(($index / $columns));
+    }
+  }
+  @if ($type == pull) {
+    .col-#{$class}-pull-#{$index} {
+      right: percentage(($index / $columns));
+    }
+  }
+  @if ($type == offset) {
+    .col-#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $columns));
+    }
+  }
+}
+
+
+@mixin make-grid($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid($i, $class, $type);
+  }
+}
+
+@for $i from 1 through length($breakpoints) {
+	$keys : map-keys($breakpoints);
+	$size : nth( $keys, $i );
+
+	@include bp( $size ) {
+		@include make-grid($columns, $size, width);
+	  @include make-grid($columns, $size, pull);
+	  @include make-grid($columns, $size, push);
+	  @include make-grid($columns, $size, offset);
+	}
+}
+
+// @include bp(xs) {
+//   @include make-grid($columns, xs, width);
+//   @include make-grid($columns, xs, pull);
+//   @include make-grid($columns, xs, push);
+//   @include make-grid($columns, xs, offset);
+// }
+
+// @include bp(sm) {
+//   @include make-grid($columns, sm, width);
+//   @include make-grid($columns, sm, pull);
+//   @include make-grid($columns, sm, push);
+//   @include make-grid($columns, sm, offset);
+// }
+
+// @include bp(md) {
+//   @include make-grid($columns, md, width);
+//   @include make-grid($columns, md, pull);
+//   @include make-grid($columns, md, push);
+//   @include make-grid($columns, md, offset);
+// }
+
+// @include bp(lg) {
+//   @include make-grid($columns, lg, width);
+//   @include make-grid($columns, lg, pull);
+//   @include make-grid($columns, lg, push);
+//   @include make-grid($columns, lg, offset);
+// }

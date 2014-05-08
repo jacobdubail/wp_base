@@ -1,4 +1,13 @@
-$pad: 20px;
+// Set Grid (1170gs default)
+$column-width: 70px;
+$gutter: 30px;
+$columns: 12;
+$padding: $gutter / 2;
+
+// Should it be responsive?
+$responsive: true;
+
+$pad: $padding;
 
 $c0 : #000;
 $c3 : #333;
