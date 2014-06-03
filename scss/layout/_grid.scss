@@ -1,15 +1,21 @@
 $width: ($column-width * $columns) + ($gutter * ($columns - 1));
 
-// Set Base Container
 .container {
-	// Set container width if responsive
-	@if $responsive == true {
-		max-width: $width;
-	} @else {
-		width: $width;
-	}
-	margin: 0px auto;
-	padding: 0 $padding 0 $padding;
+  // Set container width if responsive
+  @if $responsive == true {
+    max-width: $width;
+  } @else {
+    width: $width;
+  }
+  margin: 0 auto;
+  @extend %cf;
+}
+
+.row {
+  margin-left: -$padding;
+  margin-right: -$padding;
+  //padding: 0 $padding 0 $padding;
+  @extend %cf;
 }
 
 
