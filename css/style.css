@@ -365,8 +365,8 @@ body {
   color: #222222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 10px;
+  font-size: 1rem;
   line-height: 1.25; }
   @media (min-width: 992px) {
     body {
@@ -450,19 +450,21 @@ h5, .h5 {
   line-height: 1.25; }
 
 p {
-  margin: 0 0 10px;
-  margin: 0 0 1rem; }
+  margin: 0;
+  margin-bottom: 10px;
+  margin-bottom: 1rem; }
 
 ul, ol {
-  margin: 0 0 10px;
-  margin: 0 0 1rem;
-  padding: 0 0 0 20px;
-  padding: 0 0 0 2rem; }
+  margin: 0px 0px 10px;
+  margin: 0rem 0rem 1rem;
+  padding: 0px 0px 0px 20px;
+  padding: 0rem 0rem 0rem 2rem; }
 
 li {
   list-style-position: outside;
-  margin: 0 0 5px;
-  margin: 0 0 .5rem; }
+  margin: 0;
+  margin-bottom: 5px;
+  margin-bottom: 0.5rem; }
   li:last-child {
     margin-bottom: 0; }
 
@@ -490,10 +492,10 @@ blockquote {
   border: 0;
   display: inline-block;
   position: relative;
-  margin: 5px 0;
-  margin: .5rem 0;
+  margin: 5px 0px;
+  margin: 0.5rem 0rem;
   padding: 5px 10px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background: #ff0800;
   color: #fff; }
   .gform_button:hover,
@@ -505,12 +507,15 @@ blockquote {
   position: relative; }
   .wp-caption.alignleft {
     float: left;
-    margin: 0 27px 20px 0; }
+    margin: 0px 27px 20px 0px;
+    margin: 0rem 2.7rem 2rem 0rem; }
     @media (min-width: 768px) {
       .wp-caption.alignleft {
         float: none; } }
   .wp-caption.alignright {
     float: right;
+    margin: 0px 0px 20px 27px;
+    margin: 0rem 0rem 2rem 2.7rem;
     margin: 0 0 20px 27px; }
     @media (min-width: 768px) {
       .wp-caption.alignright {
@@ -519,6 +524,7 @@ blockquote {
     background: #f2f2f2;
     border-top: 1px solid #fff;
     padding: 13px 20px;
+    padding: 1.3rem 2rem;
     color: #7a7a7a;
     font-size: 12px;
     font-size: 1.2rem; }

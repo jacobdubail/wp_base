@@ -1,41 +1,32 @@
 *,*:before,*:after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 
-  //behavior: url(wp-content/themes/elco/inc/boxsizing.htc);
-  //-ms-behavior: url(/wp-content/themes/mzcoach/inc/backgroundsize.min.htc);
+	//behavior: url(wp-content/themes/elco/inc/boxsizing.htc);
+	//-ms-behavior: url(/wp-content/themes/mzcoach/inc/backgroundsize.min.htc);
 }
 ::-moz-selection {
-    background: $red;
-    color: #fff;
-    text-shadow: none;
+		background: $red;
+		color: #fff;
+		text-shadow: none;
 }
 ::selection {
-    background: $red;
-    color: #fff;
-    text-shadow: none;
+		background: $red;
+		color: #fff;
+		text-shadow: none;
 }
 
 .preload,
 .preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
 }
 
 html {
 	position: relative;
-  min-height: 100%;
-  font-size: 62.5%;
-  // @include bp( 480px ) {
-  // 	font-size: 100%;
-  // }
-  // @include bp( md ) {
-  // 	font-size: 105%;
-  // }
-  // @include bp( 1280px ) {
-  // 	font-size: 110%;
-  // }
+	min-height: 100%;
+	font-size: 62.5%;
 }
 
 body {
@@ -52,14 +43,7 @@ body {
 		line-height: 1.375;
 	}
 }
-// .footer {
-// 	position: absolute;
-// 	height: 100px;
-// 	bottom: 0;
-// 	left: 0; right: 0;
-// 	padding: 10px 0;
-// 	padding: 1rem 0;
-// }
+
 
 a, a:visited { 
 	color: $linkcolor; 
@@ -136,22 +120,18 @@ h5,.h5{
 }
 
 p {
-	//@include fs( 1.2 );
-	//line-height: $baselineheight;
-	margin: 0 0 10px;
-	margin: 0 0 1rem;
+	margin: 0;
+	@include rempx('margin-bottom', 1);
 }
 
 ul, ol {
-	margin: 0 0 10px;
-	margin: 0 0 1rem;
-	padding: 0 0 0 20px;
-	padding: 0 0 0 2rem;
+	@include rempx('margin', 0, 0, 1);
+	@include rempx('padding', 0, 0, 0, 2);
 }
 li {
 	list-style-position: outside;
-	margin: 0 0 5px;
-	margin: 0 0 .5rem;
+	margin: 0;
+	@include rempx('margin-bottom', .5);
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -184,18 +164,16 @@ blockquote {
 	
 	display: inline-block;
 	position: relative;
-	margin: 5px 0;
-	margin: .5rem 0;
-	padding: 5px 10px;
-	padding: .5rem 1rem;
+	@include rempx('margin', .5, 0);
+	@include rempx('padding', .5, 1);
 
 	background: $red;
 	color: #fff;
 
-  &:hover {
-  	background: darken( $red, 4% );
-  	color: #fff;
-  }
+	&:hover {
+		background: darken( $red, 4% );
+		color: #fff;
+	}
 	
 
 
@@ -207,7 +185,7 @@ blockquote {
 
 	&.alignleft {
 		float: left;
-		margin: 0 27px 20px 0;
+		@include rempx('margin', 0, 2.7, 2, 0);
 
 		@include bp( sm ) {
 			float: none;
@@ -215,6 +193,7 @@ blockquote {
 	}
 	&.alignright {
 		float: right;
+		@include rempx('margin', 0, 0, 2, 2.7);
 		margin: 0 0 20px 27px;
 
 		@include bp( sm ) {
@@ -225,7 +204,7 @@ blockquote {
 	.wp-caption-text {
 		background: #f2f2f2;
 		border-top: 1px solid #fff;
-		padding: 13px 20px;
+		@include rempx('padding', 1.3, 2);
 		color: #7a7a7a;
 		@include fs(1.2);
 	}

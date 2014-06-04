@@ -29,10 +29,37 @@ $breakpoints: (
 	}
 }
 
-@mixin fs($sizeValue: 1.6){
-	font-size: $sizeValue * 10 + px;
-	font-size: $sizeValue + rem;
+
+@function first($list) {
+  @return nth($list, 1);
 }
+
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+@mixin rempx($elprop: 'padding-left', $sizes...) {
+
+	$pxs: ();
+	$rem: ();
+	@if length($sizes) > 1 { 
+		@each $size in $sizes {
+			$pxs: append( $pxs, $size * 10px );
+			$rem: append( $rem, $size * 1rem );
+		}
+		#{$elprop}: $pxs;
+		#{$elprop}: $rem;
+	} @else {
+		#{$elprop}: first($sizes) * 10px;
+		#{$elprop}: first($sizes) * 1rem;
+	}
+
+}
+
+@mixin fs($sizeValue: 1) {
+	@include rempx(font-size,$sizeValue);
+}
+
 
 %vertical-align {
 	position: relative;
