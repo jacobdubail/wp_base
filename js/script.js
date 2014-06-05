@@ -1,6 +1,7 @@
 /* Author: Jacob Dubail
 
 */
+var console = (window.console = window.console || {});
 (function($) {
 
 	$(window).load(function() {
