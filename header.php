@@ -48,7 +48,7 @@
     
     <header class="header">
       <nav class="main-nav" id="nav-wrap" role="navigation">
-        <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '' ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '', 'walker' => new base_nav_walker() ) ); ?>
       </nav>
       <h1>
         <a id="logo" href="<?php home_url(); ?>/">

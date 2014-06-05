@@ -1,15 +1,32 @@
 .main-nav {
 	position: relative;
 
+	.js & {
+		clip: rect(0 0 0 0);
+		max-height: 0;
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		@include bp(sm) {
+			position: relative;
+			max-height: none;
+			overflow: visible;
+			padding-bottom: 5px;
+		}
+		&.opened {
+			max-height: 900px !important;
+			overflow: visible;
+		}
+	}
+
 	.sub-menu {
 		transition: all .2s ease;
-		opacity: 0;
-		visibility: hidden;
+		display: none;
 		position: absolute;
-		top: 80%;
+		top: 90%;
 		z-index: 100;
 		background: #fff;
-		box-shadow: 0 0 4px rgba(0,0,0,0.4);
+		//box-shadow: 0 0 4px rgba(0,0,0,0.4);
 
 		li {
 			display: block;
@@ -17,7 +34,7 @@
 
 		a {
 			line-height: 28px;
-			font-size: 12px;
+			@include fs(1.2);
 
 			&:before {
 				display: none;
@@ -33,6 +50,7 @@
 		float: left;
 	}
 	li {
+		position: relative;
 		display: inline-block;
 		list-style: none;
 		margin: 0;
@@ -44,9 +62,45 @@
 		&:hover {
 			color: $red;
 			.sub-menu {
-				opacity: 1;
-				visibility: visible;
+				display: block;
 			}
+		}
+
+		.sub-menu {
+			display: none;
+			&.open {
+				display: block;
+				@include bp(sm) {
+					display: none;
+				}
+			}
+		}
+
+		.nav-arrow {
+			padding: 0 1rem;
+			display: inline-block;
+			color: #000;
+			transition: transform .2s ease;
+			svg {
+				fill: #000;
+				width: 17px;
+				vertical-align: middle;
+				pointer-events: none;
+			}
+
+			&:hover {
+				color: $red;
+				svg {
+					fill: $red;
+				}
+			}
+
+			@include bp(sm) {
+				display: none;
+			}
+		}
+		&.open .nav-arrow {
+			transform: rotate(180deg);
 		}
 
 	}
@@ -75,3 +129,40 @@
 
 }
 
+
+
+.main-nav .nav-toggle {
+	//position: absolute;
+	//top: 14px;
+	float: left;
+	right: 0;
+	padding: 9px 10px;
+	background-color: transparent;
+	border: 1px solid transparent;
+	display: inline-block;
+	z-index: 100;
+
+	// @media (max-width: $screen-xs-min) {
+		// top: -40px;
+	// }
+	
+	@include bp(sm) {
+		display: none;
+	}
+
+	// Bars
+	.icon-bar {
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 1px;
+		background: #000;
+	}
+	.icon-bar + .icon-bar {
+		margin-top: 4px;
+	}
+
+	&:hover .icon-bar {
+		background: $red;
+	}
+}

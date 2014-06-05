@@ -56,15 +56,25 @@ $breakpoints: (
 
 }
 
-@mixin fs($sizeValue: 1) {
+@mixin fs($sizeValue: 1.6) {
 	@include rempx(font-size,$sizeValue);
 }
 
 
-%vertical-align {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+@mixin center-align($dir: false) {
+	$map: (
+		top:  ( Y ),
+		left: ( X )
+	);
+
+	@if map_get($map, $dir) != null {
+		#{$dir}: 50%;
+		transform: #{"translate#{map_get($map,$dir)}(-50%)"};
+	} @else {
+		transform: translate(-50%,-50%);
+		top: 50%;
+		left: 50%;
+	}
 }
 
 

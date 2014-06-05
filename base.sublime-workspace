@@ -231,22 +231,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "scss/_typography.scss",
-			"settings":
-			{
-				"buffer_size": 3720,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scss/_nav.scss",
-			"settings":
-			{
-				"buffer_size": 1006,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/User/git_deploy.sublime-build",
 	"command_palette":
@@ -440,6 +424,8 @@
 	},
 	"file_history":
 	[
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/scss/_nav.scss",
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/scss/_typography.scss",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/scss/_mixins.scss",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.html",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/wp_base/base/README.md",
@@ -565,9 +551,7 @@
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/lib/widgets.php",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/organize-series/inc/debug/plugin_activation_errors.php",
 		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/sidebar.php",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/owl.scss",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/js/plugins.js",
-		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/plugins/restrict-content-pro/includes/js/admin-scripts.js"
+		"/Users/jacob/Desktop/Dropbox/WebDesign/Active Web Projects/JTD Projects/MZ/wpengine/wp-content/themes/mzcoach/scss/owl.scss"
 	],
 	"find":
 	{
@@ -778,73 +762,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scss/_typography.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3720,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 158.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "scss/_nav.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1006,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
