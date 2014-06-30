@@ -1,3 +1,27 @@
+.row-table.row-table-xs {
+  display: table !important;
+  width: 100%; }
+  .row-table.row-table-xs [class*="col-"] {
+    float: none !important;
+    display: table-cell !important;
+    vertical-align: middle; }
+    .row-table.row-table-xs [class*="col-"].td-top {
+      vertical-align: top !important; }
+    .row-table.row-table-xs [class*="col-"].td-bottom {
+      vertical-align: bottom !important; }
+
+@media (min-width: 768px) {
+  .row-table {
+    display: table !important;
+    width: 100%; }
+    .row-table [class*="col-"] {
+      float: none !important;
+      display: table-cell !important;
+      vertical-align: middle; }
+      .row-table [class*="col-"].td-top {
+        vertical-align: top !important; }
+      .row-table [class*="col-"].td-bottom {
+        vertical-align: bottom !important; } }
 .clear {
   margin-left: 0;
   clear: both; }
@@ -339,12 +363,12 @@ table {
   box-sizing: border-box; }
 
 ::-moz-selection {
-  background: #ff0800;
+  background: yellow;
   color: #fff;
   text-shadow: none; }
 
 ::selection {
-  background: #ff0800;
+  background: yellow;
   color: #fff;
   text-shadow: none; }
 
@@ -373,7 +397,7 @@ body {
       line-height: 1.375; } }
 
 a, a:visited {
-  color: #bada55; }
+  color: yellow; }
   a:hover, a:visited:hover {
     color: #222222; }
   a:focus, a:visited:focus {
@@ -496,11 +520,11 @@ blockquote {
   margin: 0.5rem 0rem;
   padding: 5px 10px;
   padding: 0.5rem 1rem;
-  background: #ff0800;
+  background: yellow;
   color: #fff; }
   .gform_button:hover,
   .btn:hover {
-    background: #eb0700;
+    background: #ebeb00;
     color: #fff; }
 
 .wp-caption {
@@ -564,12 +588,12 @@ blockquote {
   display: none !important; }
 
 .validation_error {
-  background: #ff0800;
+  background: yellow;
   color: #fff;
   padding: 3px 5px; }
 
 .validation_message {
-  color: #ff0800;
+  color: yellow;
   position: absolute;
   top: 22px;
   right: 5px; }
@@ -700,7 +724,7 @@ textarea {
       .main-nav li {
         width: auto; } }
     .main-nav li:hover {
-      color: #ff0800; }
+      color: yellow; }
       .main-nav li:hover .sub-menu {
         display: block; }
     .main-nav li .sub-menu {
@@ -722,9 +746,9 @@ textarea {
         vertical-align: middle;
         pointer-events: none; }
       .main-nav li .nav-arrow:hover {
-        color: #ff0800; }
+        color: yellow; }
         .main-nav li .nav-arrow:hover svg {
-          fill: #ff0800; }
+          fill: yellow; }
       @media (min-width: 768px) {
         .main-nav li .nav-arrow {
           display: none; } }
@@ -745,12 +769,12 @@ textarea {
     padding: 0 10px;
     padding: 0 1rem; }
     .main-nav a:hover {
-      color: #ff0800; }
+      color: yellow; }
   .main-nav .current-menu-item > a,
   .main-nav .current_page_parent > a,
   .main-nav .current-menu-parent > a,
   .main-nav .current_page_item > a {
-    color: #ff0800; }
+    color: yellow; }
 
 .main-nav .nav-toggle {
   float: left;
@@ -772,7 +796,7 @@ textarea {
   .main-nav .nav-toggle .icon-bar + .icon-bar {
     margin-top: 4px; }
   .main-nav .nav-toggle:hover .icon-bar {
-    background: #ff0800; }
+    background: yellow; }
 
 .btn {
   display: inline-block;
@@ -781,13 +805,13 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   cursor: pointer;
-  border: 1px solid #990500;
+  border: 1px solid #999900;
   margin: 0;
   padding: 5px 20px;
   padding: .5rem 2rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff3933), color-stop(20%, #ff0800), to(#cc0600));
-  background: -webkit-linear-gradient(top, #ff3933, #ff0800 20%, #cc0600);
-  background: linear-gradient(top, #ff3933, #ff0800 20%, #cc0600);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffff33), color-stop(20%, yellow), to(#cccc00));
+  background: -webkit-linear-gradient(top, #ffff33, yellow 20%, #cccc00);
+  background: linear-gradient(top, #ffff33, yellow 20%, #cccc00);
   color: white;
   border-radius: 4px;
   overflow: visible;
@@ -795,14 +819,14 @@ textarea {
   .btn:hover, .btn:active, .btn:focus, .btn:visited {
     text-decoration: none; }
   .btn:hover {
-    background: #cc0600; }
+    background: #cccc00; }
   .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-    background: -webkit-gradient(linear, left top, left bottom, from(#cc0600), color-stop(20%, #ff0800), to(#ff3933));
-    background: -webkit-linear-gradient(top, #cc0600, #ff0800 20%, #ff3933);
-    background: linear-gradient(top, #cc0600, #ff0800 20%, #ff3933); }
+    background: -webkit-gradient(linear, left top, left bottom, from(#cccc00), color-stop(20%, yellow), to(#ffff33));
+    background: -webkit-linear-gradient(top, #cccc00, yellow 20%, #ffff33);
+    background: linear-gradient(top, #cccc00, yellow 20%, #ffff33); }
   .btn::-moz-focus-inner {
     border: 0;
     padding: 0; }

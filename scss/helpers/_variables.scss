@@ -14,12 +14,18 @@ $c3 : #333;
 $c6 : #666;
 $c9 : #999;
 
-$red : #ff0800;
+$blue : #0000ff;
+
+$facebook : #0053a3;
+$twitter  : #0095d6;
+$linkedin : #4d83c3;
+$googplus : #d8521d;
 
 
+$red : invert($blue); //#ff0800;
 
 $textcolor: #222;
-$linkcolor: #bada55;
+$linkcolor: $red;
 $linkcolorhover: $textcolor;
 
 

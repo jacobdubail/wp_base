@@ -137,3 +137,25 @@ $breakpoints: (
 		$var: "li>div:nth-child(" + $n + ")";
 	}
 }
+
+@mixin row-table {
+  display: table !important;
+  width: 100%;
+
+  [class*="col-"]{
+    float:none!important;
+    display: table-cell!important;
+    vertical-align: middle;
+    &.td-top{ vertical-align: top!important; }
+    &.td-bottom { vertical-align: bottom!important; }
+  }  
+}
+.row-table.row-table-xs {
+  @include row-table;
+}
+
+@media (min-width: 768px) {
+  .row-table {
+    @include row-table;
+  }
+}

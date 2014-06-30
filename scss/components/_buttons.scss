@@ -38,7 +38,7 @@
 	}
 	&:active, &:focus {
 		outline:none;
-		box-shadow:0 0 5px rgba(0, 0, 0, 0.5) inset;
+		box-shadow:0 0 5px rgba(black,0.5) inset;
 		background: linear-gradient(top, darken($bg,10%), $bg 20%, lighten($bg,10%));
 	}
 	&::-moz-focus-inner {
