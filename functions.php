@@ -20,8 +20,7 @@ require_once (FUNCTIONS_PATH . 'shortcodes.php');
 //require_once (FUNCTIONS_PATH . 'shortcodes-images.php');
 require_once (FUNCTIONS_PATH . 'sidebars.php');
 require_once (FUNCTIONS_PATH . 'widget.php');
-
-//require_once (FUNCTIONS_PATH . 'posttypes.php');
+require_once (FUNCTIONS_PATH . 'nav_walker.php');
 
 
 
@@ -81,8 +80,8 @@ require_once (FUNCTIONS_PATH . 'widget.php');
 
   function complete_version_removal() { return ''; }
   add_filter('the_generator', 'complete_version_removal');
-  remove_filter('pre_user_description',    'wp_filter_kses');
-  remove_filter('pre_comment_content',     'wp_rel_nofollow');
+  remove_filter('pre_user_description', 'wp_filter_kses');
+  remove_filter('pre_comment_content', 'wp_rel_nofollow');
   
   function jtd_allow_rel() {
     global $allowedtags;
@@ -112,38 +111,6 @@ function browser_body_class($classes) {
 
 
 
-function jtd_comment_callback( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
-?>
-<li class="media">
-  <div class="pull-left">
-      <?php echo get_avatar( $comment, '64' ); ?>
-  </div>
-  <div class="media-body">
-      <?php printf(__('<h4 class="media-heading">%s <span class="says">says:</span></h4>'), get_comment_author_link()); ?>
-  
-      <?php if ($comment->comment_approved == '0') : ?>
-          <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.'); ?></p>
-      <?php endif; ?>
-
-      <?php comment_text() ?>
-
-      <p class="reply">
-          <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-      </p>
-  </div>
-<?php
-} // end comment
-
-add_filter('get_avatar','change_avatar_css');
-function change_avatar_css($class) {
-    $class = str_replace("class='avatar", "class='author_gravatar media-object ", $class) ;
-    return $class;
-}
-
-
-
 $customHeaderDefaults = array(
   'default-image'          => get_template_directory_uri() . '/images/logo.png',
   'random-default'         => false,
@@ -164,72 +131,9 @@ add_theme_support( 'custom-header', $customHeaderDefaults );
 
 add_filter("gform_submit_button", "jtd_change_gform_submit_btn", 10, 2);
 function jtd_change_gform_submit_btn($button, $form){
-  return "<button class='btn' id='gform_submit_button_{$form["id"]}'>{$form["submit"]}</button>";
+  return "<button class='btn' id='gform_submit_button_{$form["id"]}'>{$form["button"]["text"]}</button>";
 }
 
-
-
-
-
-/* PLACE HOLDER SUPPORT FOR GRAVITY FORMS */
-/* Add a custom field to the field editor (See editor screenshot) */
-add_action("gform_field_standard_settings", "jtd_gform_placeholders", 10, 2);
-
-function jtd_gform_placeholders($position, $form_id){
-
-  // Create settings on position 25 (right after Field Label)
-  if ( $position == 25 ) {
-  ?>
-      
-    <li class="admin_label_setting field_setting" style="display: list-item; ">
-      <label for="field_placeholder">Placeholder Text
-        <!-- Tooltip to help users understand what this field does -->
-        <a href="javascript:void(0);" class="tooltip tooltip_form_field_placeholder" tooltip="&lt;h6&gt;Placeholder&lt;/h6&gt;Enter the placeholder/default text for this field.">(?)</a>  
-      </label>
-      <input type="text" id="field_placeholder" class="fieldwidth-3" size="35" onkeyup="SetFieldProperty('placeholder', this.value);">
-    </li>
-  <?php
-  }
-}
-
-/* Now we execute some javascript technicalitites for the field to load correctly */
-
-add_action("gform_editor_js", "jtd_gform_editor_js");
-function jtd_gform_editor_js(){
-?>
-  <script>
-    //binding to the load field settings event to initialize the checkbox
-    jQuery(document).bind("gform_load_field_settings", function(event, field, form){
-      jQuery("#field_placeholder").val(field["placeholder"]);
-    });
-  </script>
-
-<?php
-}
-
-/* We use jQuery to read the placeholder value and inject it to its field */
-add_action('gform_pre_render',"jtd_gform_enqueue_scripts", 10, 2);
-function jtd_gform_enqueue_scripts($form, $is_ajax=false) {
-?>
-  <script>
-    jQuery(document).bind('gform_post_render',function(){
-    <?php
-      /* Go through each one of the form fields */
-      foreach($form['fields'] as $i=>$field) {
-        /* Check if the field has an assigned placeholder */
-        if(isset($field['placeholder']) && !empty($field['placeholder'])){
-          /* If a placeholder text exists, inject it as a new property to the field using jQuery */
-          ?>
-          jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>')
-            .attr('placeholder',"<?php echo $field['placeholder']?>");
-        <?php
-        }
-      }
-    ?>
-    });
-  </script>
-<?php
-}
 
 /**
  * Fix Gravity Form Tabindex Conflicts
@@ -240,20 +144,3 @@ function gform_tabindexer() {
     $starting_index = 1000; // if you need a higher tabindex, update this number
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
-
-
-
-
-
-if(!function_exists('jtd_log')){
-  function jtd_log( $message ) {
-    if( WP_DEBUG === true && is_user_logged_in() ){
-      if( is_array( $message ) || is_object( $message ) ){
-        error_log( print_r( $message, true ) );
-      } else {
-        error_log( $message );
-      }
-    }
-  }
-}
-

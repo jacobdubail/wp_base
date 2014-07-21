@@ -1,9 +1,8 @@
 $breakpoints: (
-	'xs': ( max-width:  767px ),
+	'xs': ( min-width:  500px ),
 	'sm': ( min-width:  768px ),
 	'md': ( min-width:  992px ),
-	'lg': ( min-width: 1200px ),
-	'h':  ( min-height:  40em )
+	'lg': ( min-width: 1200px )
 );
 
 @mixin bp($name) {
@@ -44,8 +43,13 @@ $breakpoints: (
 	$rem: ();
 	@if length($sizes) > 1 { 
 		@each $size in $sizes {
-			$pxs: append( $pxs, $size * 10px );
-			$rem: append( $rem, $size * 1rem );
+			@if $size != auto {
+				$pxs: append( $pxs, $size * 10px );
+				$rem: append( $rem, $size * 1rem );
+			} @else {
+				$pxs: append( $pxs, $size );
+				$rem: append( $rem, $size );
+			}
 		}
 		#{$elprop}: $pxs;
 		#{$elprop}: $rem;

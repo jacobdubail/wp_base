@@ -99,18 +99,26 @@ class base_nav_walker extends Walker_Nav_Menu {
 			}
 		}
 
-		$item_output = $args->before;
+		if ( isset( $args->before ) ) 
+			$item_output = $args->before;
+
 		$item_output .= '<a'. $attributes .'>';
-		/** This filter is documented in wp-includes/post-template.php */
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+
+		if ( isset( $args->link_before ) ) 
+			$item_output .= $args->link_before;
+
+		$item_output .= apply_filters( 'the_title', $item->title, $item->ID );
+
+		if ( isset( $args->link_after ) ) 
+			$item_output .= $args->link_after;
 		
-		if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+		if ( isset($item->classes) && in_array( 'menu-item-has-children', $item->classes ) )
 			$item_output .= '<i class="nav-arrow icon-chevron-down"></i>';
-		}
 
 		$item_output .= '</a>';
 
-		$item_output .= $args->after;
+		if ( isset( $args->after ) ) 
+			$item_output .= $args->after;
 
 		/**
 		 * Filter a menu item's starting output.
