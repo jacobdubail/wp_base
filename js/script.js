@@ -35,13 +35,24 @@ var console = (window.console = window.console || {});
 		},
 
 		setup_resp_nav : function() {
-			var label = "<span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span>";
+			var label = "<span></span>";
 			
 			responsiveNav( "#menu-main-nav", {
 				label      : label,
 				animate    : false,
 				transition : 300,
-				insert     : 'before'
+				insert     : 'before',
+				openPos    : 'relative',
+				init       : function() {
+					VMT.toggle = $(".nav-toggle");
+				},
+				open       : function() {
+					VMT.toggle.addClass('open');
+					console.log("HEY");
+				},
+				close      : function() {
+					VMT.toggle.removeClass('open');
+				}
 			});
 		}
 

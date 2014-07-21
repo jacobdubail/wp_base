@@ -1,23 +1,24 @@
-.main-nav {
+.site__nav {
 	position: relative;
 
-	.js & {
-		clip: rect(0 0 0 0);
-		max-height: 0;
-		position: absolute;
-		display: block;
-		overflow: hidden;
-		@include bp(sm) {
-			position: relative;
-			max-height: none;
-			overflow: visible;
-			padding-bottom: 5px;
-		}
-		&.opened {
-			max-height: 900px !important;
-			overflow: visible;
-		}
-	}
+	// .js & .menu {
+	// 	clip: rect(0 0 0 0);
+	// 	max-height: 0;
+	// 	position: absolute;
+	// 	display: block;
+	// 	overflow: hidden;
+	// 	@include bp(sm) {
+	// 		position: relative;
+	// 		max-height: none;
+	// 		overflow: visible;
+	// 		padding-bottom: 5px;
+	// 		clip: none
+	// 	}
+	// 	&.opened {
+	// 		max-height: 900px !important;
+	// 		overflow: visible;
+	// 	}
+	// }
 
 	.sub-menu {
 		transition: all .2s ease;
@@ -46,8 +47,8 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		width: 100%;
-		float: left;
+		// width: 100%;
+		// float: left;
 	}
 	li {
 		position: relative;
@@ -131,38 +132,114 @@
 
 
 
-.main-nav .nav-toggle {
-	//position: absolute;
-	//top: 14px;
-	float: left;
+.nav-toggle {
+	float: right;
 	right: 0;
-	padding: 9px 10px;
+	margin: 0 10px 0 0;
+	padding: 15px 0;
 	background-color: transparent;
 	border: 1px solid transparent;
 	display: inline-block;
 	z-index: 100;
+	cursor: pointer;
+	width: 30px;
+	height: 50px;
+	position: relative;
 
-	// @media (max-width: $screen-xs-min) {
-		// top: -40px;
-	// }
-	
-	@include bp(sm) {
-		display: none;
-	}
-
-	// Bars
-	.icon-bar {
+	> span {
+		position: absolute;
+		top: 50%;
+		left: 0;
 		display: block;
-		width: 22px;
+		width: 100%;
 		height: 2px;
-		border-radius: 1px;
-		background: #000;
-	}
-	.icon-bar + .icon-bar {
-		margin-top: 4px;
+		margin-top: -2px;
+		background-color: $blue;
+		font-size: 0px;
+		-webkit-touch-callout: none;
+		user-select: none;
+		transition: background-color 0.3s;
+
+		&:before, &:after {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $blue;
+			content: '';
+			transition: transform 0.3s;
+		}
+		&:before {
+			transform: translateY(-250%);
+		}
+		&:after {
+			transform: translateY(250%);
+		}
 	}
 
-	&:hover .icon-bar {
-		background: $red;
+	&.open > span,
+	&.open:hover > span {
+		background-color: transparent;
+		&:before {
+			transform: translateY(0) rotate(45deg);
+		}
+		&:after {
+			transform: translateY(0) rotate(-45deg);
+		}
 	}
+
+	&:hover span {
+		background: $blue;
+	}
+}
+
+
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@include bp(sm) {
+  .js .nav-collapse {
+    position: relative;
+    clip: none;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+    position: relative !important;
+    overflow: visible;
+  }
+  .nav-toggle {
+    display: none;
+  }
 }
