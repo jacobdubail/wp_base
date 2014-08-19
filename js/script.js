@@ -14,6 +14,7 @@ var console = (window.console = window.console || {});
 		w         : $(window),
 		main_nav  : $("#main-nav"),
 		hash      : window.location.hash,
+		toggle    : '',
 
 		init : function() {
 			
@@ -44,14 +45,13 @@ var console = (window.console = window.console || {});
 				insert     : 'before',
 				openPos    : 'relative',
 				init       : function() {
-					VMT.toggle = $(".nav-toggle");
+					BASE.toggle = $(".nav-toggle");
 				},
 				open       : function() {
-					VMT.toggle.addClass('open');
-					console.log("HEY");
+					BASE.toggle.addClass('open');
 				},
 				close      : function() {
-					VMT.toggle.removeClass('open');
+					BASE.toggle.removeClass('open');
 				}
 			});
 		}

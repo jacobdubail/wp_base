@@ -93,7 +93,7 @@ require_once (FUNCTIONS_PATH . 'nav_walker.php');
 
 add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {
-      global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $is_ipad;
+  global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $is_ipad;
 
   if($is_lynx) $classes[]       = 'lynx';
   elseif($is_gecko) $classes[]  = 'gecko';
