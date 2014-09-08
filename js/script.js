@@ -54,7 +54,19 @@ var console = (window.console = window.console || {});
 					BASE.toggle.removeClass('open');
 				}
 			});
-		}
+		},
+
+		back_to_top : function(e) {
+			e.preventDefault();
+
+			var dist  = Math.abs( $(window).scrollTop() - $("body").offset().top ),
+					speed = ( dist / 150 ) * 100;
+
+			$("html,body").animate({
+				scrollTop: 0
+			}, speed );
+
+		},
 
 	}; // end base
 
