@@ -300,9 +300,8 @@ input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -316,7 +315,6 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -358,9 +356,8 @@ table {
   border-spacing: 0; }
 
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+       box-sizing: border-box; }
 
 ::-moz-selection {
   background: yellow;
@@ -386,7 +383,7 @@ html {
 
 body {
   font-family: sans-serif;
-  color: #222222;
+  color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -399,7 +396,7 @@ body {
 a, a:visited {
   color: yellow; }
   a:hover, a:visited:hover {
-    color: #222222; }
+    color: #222; }
   a:focus, a:visited:focus {
     outline: thin dotted; }
 
@@ -496,7 +493,7 @@ blockquote {
   position: relative;
   clear: both; }
   blockquote p {
-    color: #666666;
+    color: #666;
     font-size: 12.5px;
     font-size: 1.25rem;
     line-height: 1.25; }
@@ -602,7 +599,7 @@ blockquote {
   margin: 20px 0 0;
   padding: 0; }
   .gform_fields [class*="ico-"]:before {
-    color: #999999; }
+    color: #999; }
 
 .gfield {
   position: relative;
@@ -647,7 +644,7 @@ blockquote {
   .ginput_complex .ginput_right label,
   .ginput_complex .ginput_left label {
     margin-top: 2px;
-    color: #666666; }
+    color: #666; }
 
 .protected-post-form p {
   width: 300px; }
@@ -661,8 +658,8 @@ input[type=url],
 textarea {
   padding: 5px 10px;
   background: #f2f2f2;
-  color: #999999;
-  border: 1px solid #999999; }
+  color: #999;
+  border: 1px solid #999; }
   input[type=text]:focus,
   input[type=email]:focus,
   input[type=password]:focus,
@@ -671,9 +668,9 @@ textarea {
   input[type=url]:focus,
   textarea:focus {
     background: #fff;
-    color: #333333;
+    color: #333;
     outline: none;
-    border: 1px solid #333333; }
+    border: 1px solid #333; }
 
 .site__nav {
   position: relative; }
@@ -748,7 +745,7 @@ textarea {
     position: relative;
     text-decoration: none;
     outline: none;
-    color: #333333;
+    color: #333;
     padding: 0 10px;
     padding: 0 1rem; }
     .site__nav a:hover {
@@ -780,7 +777,7 @@ textarea {
     width: 100%;
     height: 2px;
     margin-top: -2px;
-    background-color: blue;
+    background-color: #0000ff;
     font-size: 0px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -794,7 +791,7 @@ textarea {
       left: 0;
       width: 100%;
       height: 100%;
-      background: blue;
+      background: #0000ff;
       content: '';
       -webkit-transition: -webkit-transform 0.3s;
               transition: transform 0.3s; }
@@ -817,7 +814,7 @@ textarea {
           -ms-transform: translateY(0) rotate(-45deg);
               transform: translateY(0) rotate(-45deg); }
   .nav-toggle:hover span {
-    background: blue; }
+    background: #0000ff; }
 
 .nav-collapse ul {
   margin: 0;
@@ -871,10 +868,9 @@ textarea {
   margin: 0;
   padding: 5px 20px;
   padding: .5rem 2rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffff33), color-stop(20%, yellow), to(#cccc00));
   background: -webkit-linear-gradient(top, #ffff33, yellow 20%, #cccc00);
   background: linear-gradient(top, #ffff33, yellow 20%, #cccc00);
-  color: white;
+  color: #fff;
   border-radius: 4px;
   overflow: visible;
   text-decoration: none; }
@@ -884,9 +880,7 @@ textarea {
     background: #cccc00; }
   .btn:active, .btn:focus {
     outline: none;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-    background: -webkit-gradient(linear, left top, left bottom, from(#cccc00), color-stop(20%, yellow), to(#ffff33));
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
     background: -webkit-linear-gradient(top, #cccc00, yellow 20%, #ffff33);
     background: linear-gradient(top, #cccc00, yellow 20%, #ffff33); }
   .btn::-moz-focus-inner {
@@ -1577,8 +1571,7 @@ Inlined to avoid required HTTP connection: h5bp.com/r
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
     text-shadow: none !important; }
 
   a,

@@ -29,6 +29,11 @@ $breakpoints: (
 }
 
 
+@function palette($palette, $tone: 'base') {
+	@return map-get(map-get($palettes, $palette), $tone);
+}
+
+
 @function first($list) {
   @return nth($list, 1);
 }
