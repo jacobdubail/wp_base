@@ -1,0 +1,62 @@
+h1,h2,h3,
+h4,h5,h6,
+.h1,.h2,.h3,
+.h4,.h5,.h6{
+	margin: 0;
+	font-weight: normal;
+	a {
+		text-decoration: none;
+	}
+}
+
+h1,.h1{ 
+	@include fs( 2 );
+	line-height: 1.25;
+	@include bp( md ) {
+		@include fs( 2.5 );
+		line-height: 1.125;
+	}
+	@include bp( lg ) {
+		@include fs( 3 );
+		line-height: 1.05;
+	}
+}
+
+h2,.h2{ 
+	@include fs( 1.625 );
+	line-height: 1.15385615;
+	@include bp( md ) {
+		@include fs( 2 );
+		line-height: 1.25;
+	}
+	@include bp( lg ) {
+		@include fs( 3 );
+		line-height: 1.05;
+	}
+}
+
+h3,.h3{ 
+	@include fs( 1.375 );
+	line-height: 1.13636364;
+	@include bp( md ) {
+		@include fs( 1.5 );
+		line-height: 1.25;
+	}
+	@include bp( lg ) {
+		@include fs( 1.75 );
+		line-height: 1.25;
+	}
+}
+
+h4,.h4{ 
+	@include fs( 1.125 );
+	line-height: 1.1111111;
+	@include bp( md ) {
+		line-height: 1.2222222;
+	}
+}
+
+h5,.h5{ 
+	@include fs( 1 );
+	line-height: 1.25;
+}

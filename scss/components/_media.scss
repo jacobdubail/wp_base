@@ -1,0 +1,47 @@
+
+.wp-caption {
+	position: relative;
+
+	&.alignleft {
+		float: left;
+		@include rempx('margin', 0, 2.7, 2, 0);
+
+		@include bp( sm ) {
+			float: none;
+		}
+	}
+	&.alignright {
+		float: right;
+		@include rempx('margin', 0, 0, 2, 2.7);
+		margin: 0 0 20px 27px;
+
+		@include bp( sm ) {
+			float: none;
+		}
+	}
+
+	.wp-caption-text {
+		background: #f2f2f2;
+		border-top: 1px solid #fff;
+		@include rempx('padding', 1.3, 2);
+		color: #7a7a7a;
+		@include fs(1.2);
+	}
+}
+
+
+.wp-caption {
+	outline: none;
+}
+.wp-caption-text {
+	outline: none;
+}
+.sticky {
+	outline: none;
+}
+.gallery-caption {
+	outline: none;
+}
+.bypostauthor {
+	outline: none;
+}
