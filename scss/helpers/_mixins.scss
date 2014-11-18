@@ -110,6 +110,12 @@ $point : null;
 }
 
 
+@mixin box($size: 2) {
+	@include rempx(width, $size);
+	@include rempx(height, $size);
+}
+
+
 
 // http://jennifermann.ghost.io/setting-fixed-table-widths-using-sass/
 @mixin th-width($col, $width) {
