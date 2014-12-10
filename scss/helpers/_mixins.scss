@@ -215,3 +215,17 @@ $point : null;
     }
   }
 }
+
+
+$baseline-height: 20px!default;
+$baseline-color: #94d4ff!default;
+@mixin baseline($baseline: $baseline-height, $baseline-color: $baseline-color) {
+ 
+	//background-image: -webkit-repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
+	//background-image: -moz-repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
+	background-image: repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
+ 
+	// Background Sizing to contstrain the size of the gradient to the desired height.
+	//-webkit-background-size: 1px $baseline;
+	background-size: 1px $baseline;
+}
