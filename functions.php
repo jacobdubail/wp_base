@@ -23,6 +23,16 @@ require_once (FUNCTIONS_PATH . 'widget.php');
 require_once (FUNCTIONS_PATH . 'nav_walker.php');
 
 
+if ( function_exists('acf_add_options_page') ) {
+  acf_add_options_page();
+}
+
+function jtd_include_field_types_gravity_forms( $version ) {
+  include_once( FUNCTIONS_PATH . 'acfgfv5.php');
+}
+add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms'); 
+
+
 
   add_action('wp_enqueue_scripts', 'base_register_scripts');
   function base_register_scripts() {
