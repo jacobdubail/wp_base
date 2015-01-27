@@ -38,13 +38,15 @@ add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms');
   function base_register_scripts() {
     wp_enqueue_script( 'jquery' );
 
-    wp_register_script('base_plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', false, '1', true );
+    $vers = ".01";
+
+    wp_register_script('base_plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', false, $vers, true );
     wp_enqueue_script('base_plugins');
     
-    wp_register_script('base_functions', get_stylesheet_directory_uri() . '/js/script.min.js', array('base_plugins'), '1', true );
+    wp_register_script('base_functions', get_stylesheet_directory_uri() . '/js/script.min.js', array('base_plugins'), $vers, true );
     wp_enqueue_script('base_functions');    
     
-    wp_register_style('base_styles', get_stylesheet_directory_uri() . '/css/style.css', '', '1', 'all');
+    wp_register_style('base_styles', get_stylesheet_directory_uri() . '/css/style.css', '', $vers, 'all');
     wp_enqueue_style('base_styles');
     
   }
@@ -105,14 +107,14 @@ add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {
   global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $is_ipad;
 
-  if($is_lynx) $classes[]       = 'lynx';
-  elseif($is_gecko) $classes[]  = 'gecko';
-  elseif($is_opera) $classes[]  = 'opera';
-  elseif($is_NS4) $classes[]    = 'ns4';
-  elseif($is_safari) $classes[] = 'safari';
-  elseif($is_chrome) $classes[] = 'chrome';
-  elseif($is_IE) $classes[]     = 'ie';
-  else $classes[]               = 'unknown';
+ // if($is_lynx) $classes[]       = 'lynx';
+  //if($is_gecko) $classes[]  = 'gecko';
+  //elseif($is_opera) $classes[]  = 'opera';
+  //elseif($is_NS4) $classes[]    = 'ns4';
+  //elseif($is_safari) $classes[] = 'safari';
+  //elseif($is_chrome) $classes[] = 'chrome';
+  if($is_IE) $classes[]     = 'ie';
+  //else $classes[]               = 'unknown';
 
 	if($is_iphone) $classes[] = 'iphone';
   if($is_ipad) $classes[]   = 'ipad';
@@ -126,8 +128,8 @@ $customHeaderDefaults = array(
   'random-default'         => false,
   'width'                  => 202,
   'height'                 => 72,
-  'flex-height'            => false,
-  'flex-width'             => false,
+  'flex-height'            => true,
+  'flex-width'             => true,
   'default-text-color'     => '',
   'header-text'            => '',
   'uploads'                => true,
@@ -149,8 +151,8 @@ function jtd_change_gform_submit_btn($button, $form){
  * Fix Gravity Form Tabindex Conflicts
  * http://gravitywiz.com
  */
-add_filter("gform_tabindex", "gform_tabindexer");
-function gform_tabindexer() {
-    $starting_index = 1000; // if you need a higher tabindex, update this number
-    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
-}
+// add_filter("gform_tabindex", "gform_tabindexer");
+// function gform_tabindexer() {
+//     $starting_index = 1000; // if you need a higher tabindex, update this number
+//     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+// }

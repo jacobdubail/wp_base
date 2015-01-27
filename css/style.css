@@ -364,29 +364,6 @@ a, a:visited {
   a:focus, a:visited:focus {
     outline: thin dotted; }
 
-.btn {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  margin: 0;
-  border-radius: 0;
-  text-decoration: none; }
-  .btn:hover, .btn:active, .btn:focus, .btn:visited {
-    text-decoration: none; }
-  .btn:active, .btn:focus {
-    outline: none; }
-
-.btn {
-  border: 1px solid inherit;
-  padding: 5px 20px;
-  padding: 0.5rem 2rem;
-  background: transparent;
-  color: #2a2850; }
-  .btn:hover {
-    background: #2a2850;
-    color: #fff; }
-
 h1, h2, h3,
 h4, h5, h6,
 .h1, .h2, .h3,
@@ -861,6 +838,29 @@ blockquote {
 
 .text-right {
   text-align: right; }
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 0;
+  text-decoration: none; }
+  .btn:hover, .btn:active, .btn:focus, .btn:visited {
+    text-decoration: none; }
+  .btn:active, .btn:focus {
+    outline: none; }
+
+.btn {
+  border: 1px solid inherit;
+  padding: 5px 20px;
+  padding: 0.5rem 2rem;
+  background: transparent;
+  color: #2a2850; }
+  .btn:hover {
+    background: #2a2850;
+    color: #fff; }
 
 /*
  * jQuery FlexSlider v2.0

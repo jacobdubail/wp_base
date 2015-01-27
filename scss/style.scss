@@ -1,8 +1,8 @@
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/placeholders";
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/placeholders";
 
-@import "base/normalize";
+@import "base/reset";
 @import "base/*";
 
 @import "components/*";
