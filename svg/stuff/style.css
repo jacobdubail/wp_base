@@ -1,0 +1,165 @@
+.icon {
+	display: inline-block;
+	color: #000000;
+	fill: currentColor;
+}
+.icon-caret-down {
+	width: 16px;
+	height: 28px;
+}
+.icon-caret-up {
+	width: 16px;
+	height: 28px;
+}
+.icon-caret-left {
+	width: 10px;
+	height: 28px;
+}
+.icon-caret-right {
+	width: 10px;
+	height: 28px;
+}
+.icon-chevron-down {
+	width: 20px;
+	height: 20px;
+}
+.icon-chevron-left {
+	width: 20px;
+	height: 20px;
+}
+.icon-chevron-right {
+	width: 20px;
+	height: 20px;
+}
+.icon-chevron-up {
+	width: 20px;
+	height: 20px;
+}
+.icon-box {
+	width: 32px;
+	height: 32px;
+}
+#icon-box .path1 {
+	fill: currentcolor;
+}
+#icon-box .path2 {
+	fill: currentcolor;
+}
+#icon-box .path3 {
+	fill: currentcolor;
+}
+#icon-box .path4 {
+	fill: currentcolor;
+}
+#icon-box .path5 {
+	fill: currentcolor;
+}
+.icon-cart {
+	width: 32px;
+	height: 32px;
+}
+#icon-cart .path1 {
+	fill: currentcolor;
+}
+#icon-cart .path2 {
+	fill: currentcolor;
+}
+#icon-cart .path3 {
+	fill: currentcolor;
+}
+.icon-check {
+	width: 32px;
+	height: 32px;
+}
+.icon-external-link {
+	width: 32px;
+	height: 32px;
+}
+#icon-external-link .path1 {
+	fill: currentcolor;
+}
+#icon-external-link .path2 {
+	fill: currentcolor;
+}
+.icon-image {
+	width: 32px;
+	height: 32px;
+}
+#icon-image .path1 {
+	fill: currentcolor;
+}
+#icon-image .path2 {
+	fill: currentcolor;
+}
+#icon-image .path3 {
+	fill: currentcolor;
+}
+.icon-search {
+	width: 32px;
+	height: 32px;
+}
+.icon-user {
+	width: 32px;
+	height: 32px;
+}
+#icon-user .path1 {
+	fill: currentcolor;
+}
+#icon-user .path2 {
+	fill: currentcolor;
+}
+.icon-google-plus {
+	width: 32px;
+	height: 32px;
+}
+.icon-facebook {
+	width: 32px;
+	height: 32px;
+}
+.icon-instagram {
+	width: 32px;
+	height: 32px;
+}
+.icon-twitter {
+	width: 32px;
+	height: 32px;
+}
+.icon-feed2 {
+	width: 32px;
+	height: 32px;
+}
+.icon-youtube {
+	width: 32px;
+	height: 32px;
+}
+#icon-youtube .path1 {
+	fill: currentcolor;
+}
+#icon-youtube .path2 {
+	fill: currentcolor;
+}
+#icon-youtube .path3 {
+	fill: currentcolor;
+}
+#icon-youtube .path4 {
+	fill: currentcolor;
+}
+#icon-youtube .path5 {
+	fill: currentcolor;
+}
+#icon-youtube .path6 {
+	fill: currentcolor;
+}
+.icon-linkedin2 {
+	width: 32px;
+	height: 32px;
+}
+#icon-linkedin2 .path1 {
+	fill: currentcolor;
+}
+#icon-linkedin2 .path2 {
+	fill: currentcolor;
+}
+#icon-linkedin2 .path3 {
+	fill: currentcolor;
+}

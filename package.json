@@ -1,0 +1,23 @@
+{
+  "name": "default",
+  "version": "0.1.0",
+  "description": "default wp theme",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobdubail/wp_base.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "jacobdubail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobdubail/wp_base/issues"
+  },
+  "homepage": "https://github.com/jacobdubail/wp_base",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-svgstore": "^0.5.0"
+  }
+}
