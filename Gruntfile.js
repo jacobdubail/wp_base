@@ -3,15 +3,17 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // uglify: {
-    //   options: {
-    //     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-    //   },
-    //   build: {
-    //     src: 'src/<%= pkg.name %>.js',
-    //     dest: 'build/<%= pkg.name %>.min.js'
-    //   }
-    // },
+    uglify: {
+      options: {
+        mangle: false
+      },
+      my_target: {
+        files: {
+          'js/main.min.js': ['js/main.js'],
+          'js/plugins.min.js': ['js/plugins.js']
+        }
+      }
+    },
     svgstore: {
       options: {
         prefix : 'icon-', // This will prefix each ID
@@ -28,12 +30,23 @@ module.exports = function(grunt) {
         }
       },
     },
+    sass: {                              // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'compressed'
+        },
+        files: {                         // Dictionary of files
+          'css/main.css': 'scss/main.scss'        // 'destination': 'source'
+        }
+      }
+    }
   });
 
-  //grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task(s).
-  grunt.registerTask('default', ['svgstore']);
+  grunt.registerTask('default', ['svgstore','sass','uglify']);
 
 };

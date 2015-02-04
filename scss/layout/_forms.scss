@@ -1,0 +1,111 @@
+.gform_wrapper {
+  @extend %cf;
+
+  .gform_ajax_spinner {
+    width: auto !important;
+    margin-left: 10px;
+  }
+}
+
+.gform_body {
+
+}
+
+.gform_validation_container {
+  display: none !important;
+}
+
+.validation_error {
+  background: palette(error);
+  color: #fff;
+  padding: 3px 5px;
+}
+.validation_message {
+  color: palette(error);
+  position: absolute;
+  top: 22px;
+  right: 5px;
+}
+
+.gform_fields {
+  margin: 20px 0 0;
+  padding: 0;
+
+  [class*="ico-"]:before {
+    color: palette(brand);
+  }
+
+}
+
+.gfield {
+  position: relative;
+  list-style: none;
+
+  .gfield_label {
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+  .gfield_required {
+    display: none;
+  }
+}
+
+.gfield_checkbox,
+.gfield_radio {
+  margin: 5px 0;
+  padding: 0 0 0 10px;
+
+  li {
+    margin: 0 0 5px;
+  }
+  label {
+    margin: 0 0 0 4px;
+  }
+
+}
+
+.ginput_complex {
+  @extend %cf;
+  .ginput_left {
+    margin-right: 4%;
+  }
+  .ginput_right,
+  .ginput_left {
+    display: block;
+    float: left;
+    width: 48%;
+    position: relative;
+
+    @include bp(xs) {
+      float: none;
+      width: 100%;
+      margin: 0 0 10px;
+    }
+
+    input,
+    label {
+      display: block;
+    }
+    label {
+      margin-top: 2px;
+      color: palette(grey);
+    }
+  }
+}
+
+
+
+.gform_footer {
+
+}
+
+
+
+
+.protected-post-form {
+
+  p {
+    width: 300px;
+  }
+}
+

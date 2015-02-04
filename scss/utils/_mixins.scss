@@ -1,43 +1,23 @@
-$breakpoints: (
-	'xs': ( min-width:  500px ),
-	'sm': ( min-width:  768px ),
-	'md': ( min-width:  992px ),
-	'lg': ( min-width: 1200px )
-);
 
-@mixin bp($name) {
-	@if map-has-key($breakpoints, $name) { // 1
-		@media #{inspect(map-get($breakpoints, $name))} { // 2
-			@content;
-		}
-	}
-	@else { // 3
-		@warn "Couldn't find a breakpoint named `#{$name}`."; // 4
-	}
-}
-
-/**/
-$xs: ( max:  767px );
-$sm: ( min:  768px );
-$md: ( min:  992px );
-$lg: ( min: 1200px );
-$sm-only: ( min: map-get($sm, min), max: map-get($md, min) - 1 );
-$md-only: ( min: map-get($md, min), max: map-get($lg, min) - 1 );
-$point : null;
-@mixin breakpoint($point) {
+@mixin bp($point) { // = xs, sm, md
   $query: "";
-  @if map-has-key($point, min) { 
-  	$query: append($query, "(min-width: #{map-get($point, min)})") 
-  }
-  @if map-has-key($point, min) and map-has-key($point, max) { 
-  	$query: append($query, "and") 
-  }
-  @if map-has-key($point, max) { 
-  	$query: append($query, "(max-width: #{map-get($point, max)})") 
-  }
-  @media screen and #{$query} { @content; }
+  @if map-has-key($breakpoints, $point) {
+	$key: map-get($breakpoints, $point);
+	  @if map-has-key($key, min) {
+		$query: append($query, "(min-width: #{map-get($key, min)})")
+	  }
+	  @if map-has-key($key, min) and map-has-key($key, max) {
+		$query: append($query, "and")
+	  }
+	  @if map-has-key($key, max) {
+		$query: append($query, "(max-width: #{map-get($key, max)})")
+	  }
+	  @media screen and #{$query} { @content; }
+	}
+	@else {
+		@content;
+	}
 }
-/**/
 
 @mixin mq($point, $IE9: false, $query1: min, $query2: width) {
 	@if $IE9 == true{
@@ -48,6 +28,42 @@ $point : null;
 
 	@media (#{$query1}-#{$query2}: $point) {
 		@content;
+	}
+}
+
+
+@mixin b($block) {
+	.#{$block} {
+		@content;
+	}
+}
+
+@mixin e($element) {
+	$selector: '&';
+	$block: getBlock($selector);
+	@if containsModifier($selector) {
+		@at-root {
+			#{$selector} {
+			  #{$block+$elementSeparator+$element} {
+			  	@content;
+			  }
+			}
+		}
+	}
+	@else {
+		@at-root {
+			#{$selector+$elementSeparator+$element} {
+			  @content;
+			}
+		}
+	}
+}
+
+@mixin m($modifier) {
+	@at-root {
+		#{'&'}#{$modifierSeparator+$modifier} {
+			@content;
+		}
 	}
 }
 
@@ -65,32 +81,7 @@ $point : null;
   @return nth($list, length($list));
 }
 
-@mixin rempx($elprop: 'padding-left', $sizes...) {
 
-	$pxs: ();
-	$rem: ();
-	@if length($sizes) > 1 { 
-		@each $size in $sizes {
-			@if $size != auto and unit($size) != '%' {
-				$pxs: append( $pxs, $size * 10px );
-				$rem: append( $rem, $size * 1rem );
-			} @else {
-				$pxs: append( $pxs, $size );
-				$rem: append( $rem, $size );
-			}
-		}
-		#{$elprop}: $pxs;
-		#{$elprop}: $rem;
-	} @else {
-		#{$elprop}: first($sizes) * 10px;
-		#{$elprop}: first($sizes) * 1rem;
-	}
-
-}
-
-@mixin fs($sizeValue: 1.6) {
-	@include rempx(font-size,$sizeValue);
-}
 
 
 @mixin center-align($dir: false) {
@@ -99,9 +90,11 @@ $point : null;
 		left: ( X )
 	);
 
+	$val: map_get($map,$dir);
+
 	@if map_get($map, $dir) != null {
 		#{$dir}: 50%;
-		transform: #{"translate#{map_get($map,$dir)}(-50%)"};
+		transform: translate#{$val}(-50%);//#{"translate#{$val}(-50%)"};
 	} @else {
 		transform: translate(-50%,-50%);
 		top: 50%;
@@ -111,121 +104,59 @@ $point : null;
 
 
 @mixin box($size: 2) {
-	@include rempx(width, $size);
-	@include rempx(height, $size);
+	width: $size;
+	height: $size;
 }
 
 
 
-// http://jennifermann.ghost.io/setting-fixed-table-widths-using-sass/
-@mixin th-width($col, $width) {
-	#{$col} {  
-		width: $width;  
-	}
-}
 
-@mixin table-columns($widths) {
-	table-layout: fixed;
-	width: 100%;
+//
 
-	th, td {
-		overflow: hidden; 
-		text-overflow: ellipsis; 
-		white-space: nowrap;
-	}
 
-	$n: 1;
-	$var: "th:nth-child(" + $n + ")";
-	@each $width in $widths {
-		@include th-width($var, $width);
-		$n: $n + 1;
-		$var: "th:nth-child(" + $n + ")";
-	}
-}
 
-@mixin el-width($col, $width) {
-	#{$col} {
-		$width: $width;
-	}
-}
+/* GRID MIXINS */
+@mixin calc-grid($index, $class) {
 
-@mixin list-columns($widths...) {
-	width: 100%;
+	$width: percentage(($index / $columns));
 
-	li {
-		overflow: auto;  
-		border-bottom: 1px solid #eeeeee;  
-		display: block;
-		& > div {
-			float: left;
-			& > div {
-				padding: 6px 12px;
-				overflow: hidden; 
-				text-overflow: ellipsis; 
-				white-space: nowrap;
-			}
+	.col--#{$class}-#{$index} {
+		flex-basis: $width;
+		max-width: $width;
+		.no-flexbox & {
+			width: $width;
 		}
 	}
-
-	$n: 1;
-	$var: "li>div:nth-child(" + $n + ")";
-	@each $width in $widths {
-		@include el-width($var, $width);
-		$n: $n + 1;
-		$var: "li>div:nth-child(" + $n + ")";
+	.col-#{$class}-push-#{$index} {
+		left: $width;
+	}
+	.col-#{$class}-pull-#{$index} {
+		right: $width;
+	}
+	.col-#{$class}-offset-#{$index} {
+		margin-left: $width;
 	}
 }
 
-@mixin row-table {
-  display: table !important;
-  width: 100%;
-
-  [class*="col-"]{
-    float:none!important;
-    display: table-cell!important;
-    vertical-align: middle;
-    &.td-top{ vertical-align: top!important; }
-    &.td-bottom { vertical-align: bottom!important; }
-  }  
-}
-.row-table.row-table-xs {
-  @include row-table;
-}
-
-@media (min-width: 768px) {
-  .row-table {
-    @include row-table;
-  }
+@mixin make-grid($columns, $class) {
+	@for $i from 0 through $columns {
+		@include calc-grid($i, $class);
+	}
 }
 
 
 
-@mixin debug-map($map) {
-  @at-root {
-    @debug-map {
-      __toString__: inspect($map);
-      __length__: length($map);
-      __depth__: depth($map);
-      __keys__: map-keys($map);
-      __properties__ {
-        @each $key, $value in $map {
-          #{'(' + type-of($value) + ') ' + $key}: inspect($value);
-        }
-      }
-    }
-  }
+@mixin btn( $bg: transparent, $color: palette(brand), $hoverbg: inherit, $hovercolor: #fff ) {
+	@extend %btn;
+	border: 0;
+	padding: .75rem 2rem;
+	background: $bg;
+	color: $color;
+
+	&:hover{
+		background: $hoverbg;
+		color: $hovercolor;
+	}
+
 }
 
-
-$baseline-height: 20px!default;
-$baseline-color: #94d4ff!default;
-@mixin baseline($baseline: $baseline-height, $baseline-color: $baseline-color) {
- 
-	//background-image: -webkit-repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
-	//background-image: -moz-repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
-	background-image: repeating-linear-gradient(180deg, transparent, transparent ($baseline - 1), $baseline-color ($baseline - 1), $baseline-color $baseline);
- 
-	// Background Sizing to contstrain the size of the gradient to the desired height.
-	//-webkit-background-size: 1px $baseline;
-	background-size: 1px $baseline;
-}

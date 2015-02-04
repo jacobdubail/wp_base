@@ -3,51 +3,80 @@ $column-width: 70px;
 $gutter: 30px;
 $columns: 12;
 $padding: $gutter / 2;
+$gutter-compensation: $gutter/2 * - 1;
 
-// Should it be responsive?
-$responsive: true;
+$width: ($column-width * $columns) + ($gutter * ($columns - 1));
 
-$pad: $padding;
 
-$_color-base-grey: rgb(229,231,234);
+$elementSeparator: '__';
+$modifierSeparator: '--';
+
+
+$fonts: (
+	nav : "Novecentosanswide-DemiBold, sans-serif",
+	body : "nimbus-sans, sans-serif",
+	headings : "open-sans, Georgia",
+);
+
+
+$columnpoints: (
+	'xs': ( max-width: 31.1875em ),
+	'sm': ( min-width: 31.25em ),
+	'md': ( min-width: 48em ),
+	'lg': ( min-width: 64em ),
+	'xl': ( min-width: 78em )
+);
+
+$breakpoints: (
+	'mini':( max: 339px ),
+	'xs': ( max: 499px ),
+	'xs-only': ( min: 340px, max:  499px ),
+	'sm': ( min:  500px ),
+	'sm-only': ( min: 500px, max: 767px ),
+	'md': ( min:  768px ),
+	'md-only': ( min: 768px, max: 1023px ),
+	'md-max': ( max: 767px ),
+	'lg': ( min: 1024px ),
+	'lg-max': ( max: 1023px ),
+	'xl': ( min: 1340px ),
+	'xl-max': (max: 1340px ),
+	'lg-xl': ( min: 1024px, max: 1340px )
+);
+
+
+$rootsizes: (
+  rootsize-0: 12,
+  rootsize-1: 14,
+  rootsize-2: 15,
+  rootsize-3: 17,
+  rootsize-4: 19
+);
+
+$points: map-keys($columnpoints);
+$sizes: map-values($rootsizes);
 
 $palettes: (
 	brand: (
-		base:   rgb(42,40,80),
-		light:  rgb(51,46,140),
-		dark:   rgb(40,38,65)
+		base: #5ab1d5,
 	),
 	grey: (
-		base:  $_color-base-grey,
-		light: lighten($_color-base-grey, 10%),
-		dark: darken($_color-base-grey, 10%)
+		base: #f2f2f2,
+	),
+	error: (
+		base: #ff0000,
 	)
 );
 
-$c0 : #000;
-$c3 : #333;
-$c6 : #666;
-$c9 : #999;
-
-$blue : #0000ff;
-
-$facebook : #0053a3;
-$twitter  : #0095d6;
-$linkedin : #4d83c3;
-$googplus : #dd4b39;
-$youtube  : #cd201f;
-$instagram: #517fa4;
-$pinterest: #cb2027;
-$vimeo    : #aad450;
-$rss      : #ff9900;
+$social: (
+	facebook : #0053a3,
+	twitter  : #0095d6,
+	linkedin : #4d83c3,
+	googplus : #dd4b39,
+	youtube  : #cd201f,
+	instagram: #517fa4,
+	pinterest: #cb2027,
+	vimeo    : #aad450,
+	rss      : #ff9900,
+);
 
 
-$red : invert($blue); //#ff0800;
-
-$textcolor: #222;
-$linkcolor: $red;
-$linkcolorhover: $textcolor;
-
-
-$fontsize: 1.4;
-$baselineheight: 1.35;

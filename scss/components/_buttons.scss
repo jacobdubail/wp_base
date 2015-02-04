@@ -1,34 +1,13 @@
-%btn {
-	display:inline-block;
-	vertical-align:middle;
-	white-space:nowrap;
-	cursor:pointer;	
-	margin:0;
-	border-radius: 0;
-	text-decoration: none;
-	&:hover, &:active, &:focus, &:visited {
-		text-decoration: none;
+@include b(btn) {
+	@include btn(palette(brand),#fff,palette(brand));
+	//margin: 1rem 0;
+	text-transform: lowercase;
+
+	@include m(jumbotron) {
+
 	}
-	&:active, &:focus {
-		outline:none;
+
+	@include m(upper) {
+		text-transform: uppercase;
 	}
 }
-
-@mixin btn( $bg: transparent, $color: palette(brand), $border: inherit ) {
-	@extend %btn;
-	border: 1px solid $border;
-	@include rempx(padding, .5, 2);
-	background: $bg;
-	color: $color;
-		
-	&:hover{
-		background: $color;
-		color: #fff;
-	}
-	
-}
-
-.btn {
-	@include btn();
-}
-

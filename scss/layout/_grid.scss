@@ -1,91 +1,146 @@
-$width: ($column-width * $columns) + ($gutter * ($columns - 1));
+@include b(container) {
+	// Set container width if responsive
+	max-width: $width;
 
-.container {
-  // Set container width if responsive
-  @if $responsive == true {
-    max-width: $width;
-  } @else {
-    width: $width;
-  }
-  margin: 0 auto;
-  @extend %cf;
+	padding: 0 5%;
+	@include bp(xl) {
+		padding: 0;
+	}
+	margin: 0 auto;
+	@extend %cf;
+
+
+	@include m(relative) {
+		position: relative;
+	}
+
 }
 
-.row {
-  margin-left: -$padding;
-  margin-right: -$padding;
-  //padding: 0 $padding 0 $padding;
-  @extend %cf;
-}
+@include b(row) {
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: row;
+	//flex-wrap: wrap;
+	//margin-right: $gutter-compensation;
+	//margin-left: $gutter-compensation;
+
+	@include b(row) {
+		margin-right: $gutter-compensation;
+		margin-left: $gutter-compensation;
+	}
+
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+
+	@include m(v-center) {
+		align-items: center;
+	}
 
 
-@mixin calc-grid($index, $class, $type) {
-  @if ($type == width) and ($index > 0) {
-    .col-#{$class}-#{$index} {
-      width: percentage(($index / $columns));
-      float: left;
-    }
-  }
-  @if ($type == push) {
-    .col-#{$class}-push-#{$index} {
-      left: percentage(($index / $columns));
-    }
-  }
-  @if ($type == pull) {
-    .col-#{$class}-pull-#{$index} {
-      right: percentage(($index / $columns));
-    }
-  }
-  @if ($type == offset) {
-    .col-#{$class}-offset-#{$index} {
-      margin-left: percentage(($index / $columns));
-    }
-  }
-}
-
-
-@mixin make-grid($columns, $class, $type) {
-  @for $i from 0 through $columns {
-    @include calc-grid($i, $class, $type);
-  }
-}
-
-@for $i from 1 through length($breakpoints) {
-	$keys : map-keys($breakpoints);
-	$size : nth( $keys, $i );
-
-	@include bp( $size ) {
-		@include make-grid($columns, $size, width);
-	  @include make-grid($columns, $size, pull);
-	  @include make-grid($columns, $size, push);
-	  @include make-grid($columns, $size, offset);
+	.no-flexbox & {
+		margin-left: 0;
+		margin-right: 0;
+		display: block;
+		@include bp(sm) {
+			margin-left: -$padding;
+			margin-right: -$padding;
+		}
+		@extend %cf;
+		@include bp(xs) {
+			max-width: 100%;
+		}
 	}
 }
 
-// @include bp(xs) {
-//   @include make-grid($columns, xs, width);
-//   @include make-grid($columns, xs, pull);
-//   @include make-grid($columns, xs, push);
-//   @include make-grid($columns, xs, offset);
-// }
+.col {
+	flex-direction: column;
+	display: flex;
+	&.reverse {
+		flex-direction: column-reverse;
+	}
+}
 
-// @include bp(sm) {
-//   @include make-grid($columns, sm, width);
-//   @include make-grid($columns, sm, pull);
-//   @include make-grid($columns, sm, push);
-//   @include make-grid($columns, sm, offset);
-// }
 
-// @include bp(md) {
-//   @include make-grid($columns, md, width);
-//   @include make-grid($columns, md, pull);
-//   @include make-grid($columns, md, push);
-//   @include make-grid($columns, md, offset);
-// }
 
-// @include bp(lg) {
-//   @include make-grid($columns, lg, width);
-//   @include make-grid($columns, lg, pull);
-//   @include make-grid($columns, lg, push);
-//   @include make-grid($columns, lg, offset);
-// }
+[class*=col--] {
+	// display: flex;
+	flex: 0 1 auto;
+	// flex-direction: column;
+	// flex-grow: 0;
+	// flex-shrink: 0;
+	padding-right: $padding;
+	padding-left: $padding;
+
+	.no-flexbox & {
+		width: 100%;
+		// padding-left: $padding;
+		// padding-right: $padding;
+		position: relative;
+		@include bp(sm) {
+			float: left;
+		}
+	}
+}
+
+
+
+
+
+@for $i from 1 through length($columnpoints) {
+	$keys : map-keys($columnpoints);
+	$size : nth( $keys, $i );
+
+	@include bp( $size ) {
+		@include make-grid($columns, $size);
+
+		.col-#{$size} {
+			flex-grow: 1;
+			flex-basis: 0;
+			max-width: 100%;
+		}
+
+		.start-#{$size} {
+			justify-content: flex-start;
+			text-align: start;
+		}
+
+		.center-#{$size} {
+			justify-content: center;
+			text-align: center;
+		}
+
+		.end-#{$size} {
+			justify-content: flex-end;
+			text-align: end;
+		}
+
+		.top-#{$size} {
+			align-items: flex-start;
+		}
+
+		.middle-#{$size} {
+			align-items: center;
+		}
+
+		.bottom-#{$size} {
+			align-items: flex-end;
+		}
+
+		.around-#{$size} {
+			justify-content: space-around;
+		}
+
+		.between-#{$size} {
+			justify-content: space-between;
+		}
+
+		.first-#{$size} {
+			order: -1;
+		}
+
+		.last-#{$size} {
+			order: 1;
+		}
+	}
+}

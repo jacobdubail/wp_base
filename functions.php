@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 /**
@@ -30,7 +30,7 @@ if ( function_exists('acf_add_options_page') ) {
 function jtd_include_field_types_gravity_forms( $version ) {
   include_once( FUNCTIONS_PATH . 'acfgfv5.php');
 }
-add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms'); 
+add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms');
 
 
 
@@ -42,16 +42,16 @@ add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms');
 
     wp_register_script('base_plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', false, $vers, true );
     wp_enqueue_script('base_plugins');
-    
-    wp_register_script('base_functions', get_stylesheet_directory_uri() . '/js/script.min.js', array('base_plugins'), $vers, true );
-    wp_enqueue_script('base_functions');    
-    
-    wp_register_style('base_styles', get_stylesheet_directory_uri() . '/css/style.css', '', $vers, 'all');
+
+    wp_register_script('base_functions', get_stylesheet_directory_uri() . '/js/main.min.js', array('base_plugins'), $vers, true );
+    wp_enqueue_script('base_functions');
+
+    wp_register_style('base_styles', get_stylesheet_directory_uri() . '/css/main.css', '', $vers, 'all');
     wp_enqueue_style('base_styles');
-    
+
   }
 
-      
+
   if ( ! isset( $content_width ) ) $content_width = 1200;
 
 
@@ -69,14 +69,14 @@ add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms');
   add_filter('post_class', 'category_id_class');
   add_filter('body_class', 'category_id_class');
 
-      
+
   add_theme_support( 'automatic-feed-links' );
   add_theme_support('nav-menus');
   add_action( 'init', 'register_my_menu' );
   function register_my_menu() {
     register_nav_menu( 'main-nav', __( 'Main Nav' ) );
   }
-  
+
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'automatic_feed_links' );
   remove_action('wp_head', 'rsd_link');
@@ -88,19 +88,19 @@ add_action('acf/include_field_types', 'jtd_include_field_types_gravity_forms');
   remove_action('wp_head', 'start_post_rel_link', 10, 0);
   remove_action('wp_head', 'parent_post_rel_link', 10, 0);
   remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-  
+
 
   function complete_version_removal() { return ''; }
   add_filter('the_generator', 'complete_version_removal');
   remove_filter('pre_user_description', 'wp_filter_kses');
   remove_filter('pre_comment_content', 'wp_rel_nofollow');
-  
+
   function jtd_allow_rel() {
     global $allowedtags;
     $allowedtags['a']['rel'] = array ();
   }
   add_action( 'wp_loaded', 'jtd_allow_rel' );
-  
+
 
 
 add_filter('body_class','browser_body_class');

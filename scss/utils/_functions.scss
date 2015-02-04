@@ -1,0 +1,32 @@
+@function containsModifier($selector) {
+	$selector: selectorToString($selector);
+	//@debug "Selector: " $selector;
+	@if str-index($selector, $modifierSeparator) {
+		@return true;
+	} @else {
+		@return false;
+	}
+}
+
+@function selectorToString($selector) {
+	$selector: inspect($selector); //cast to string
+	//@debug "Selctor: " $selector;
+	$selector: str-slice($selector, 2, -3); //remove brackets
+	//@debug "Selctor: " $selector;
+	@return $selector;
+}
+
+@function getBlock($selector) {
+	$selector: selectorToString($selector);
+	$modifierStart: str-index($selector, $modifierSeparator);
+	//@debug "Modifier Start: " $modifierStart;
+	@if ( type_of($modifierStart) == number ) {
+		@return str-slice($selector, 0, $modifierStart);
+	} @else {
+		@return $selector;
+	}
+}
+
+@function ff($family: 'body') {
+	@return unquote(map-get($fonts,$family));
+}

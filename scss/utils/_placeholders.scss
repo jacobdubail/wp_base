@@ -20,6 +20,29 @@
 }
 
 
+%btn {
+	display:inline-block;
+	vertical-align:middle;
+	white-space:nowrap;
+	cursor:pointer;
+	margin:0;
+	border-radius: 0;
+	text-decoration: none;
+	font-family: ff('headings');
+	box-sizing: border-box;
+	font-size: .875em; // 16px at 100%
+	line-height: 1;
+
+	&:hover, &:active, &:focus, &:visited {
+		text-decoration: none;
+	}
+	&:active, &:focus {
+		outline:none;
+	}
+}
+
+
+
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
