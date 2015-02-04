@@ -18,5 +18,6 @@
 	ga('send', 'pageview');
 </script>
 
+<script src="//localhost:1337/livereload.js"></script>
 </body>
 </html>
