@@ -27,6 +27,12 @@ if ( function_exists('acf_add_options_page') ) {
   acf_add_options_page();
 }
 
+add_filter('embed_defaults','base_oembed_default');
+function base_oembed_default($defaults) {
+	$defaults['width'] = 1160;
+	return $defaults;
+}
+
 function jtd_include_field_types_gravity_forms( $version ) {
   include_once( FUNCTIONS_PATH . 'acfgfv5.php');
 }

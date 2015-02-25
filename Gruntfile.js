@@ -32,18 +32,47 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					sourcemap: 'none'
 				},
 				files: {
-					'css/main.css': 'scss/main.scss'
+					'css/raw/main.css': 'scss/main.scss'
 				}
 			}
 		},
+		autoprefixer: {
+			options: {
+				// Task-specific options go here.
+				browsers: ['last 2 version', 'safari 5.1', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
+				map: true
+			},
+			single_file: {
+				// Target-specific file lists and/or options go here.
+				src: 'css/raw/main.css',
+				dest: 'css/main.min.css'
+			},
+		},
+
+		imagemin: {
+      options: {
+        optimizationLevel: 3,
+        progressive: true
+      },
+	    dynamic: {
+	      files: [{
+	        expand: true,
+	        cwd: 'images',
+	        src: ['**/*.{png,jpg,gif}'],
+	        dest: 'images'
+	      }]
+	    }
+	  },
+
 		watch: {
 			options: {
 				livereload: 1337,
 			},
-			files: ['scss/*','js/*','svg/*','images/*'],
+			files: ['scss/**/*','js/main.js','js/plugins.js','svg/*','images/*','**/*.php'],
 			tasks: 'default',
 		},
 	});
@@ -52,9 +81,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-svgstore');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	// Default task(s).
-	grunt.registerTask('default', ['svgstore','sass','uglify']);
+	grunt.registerTask('default', ['svgstore','sass','autoprefixer','uglify','imagemin']);
 
 	// grunt.event.on('watch', function(action, filepath, target) {
 	//   grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
