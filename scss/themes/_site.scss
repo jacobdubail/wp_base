@@ -1,0 +1,17 @@
+@include b(site__social) {
+	@for $i from 1 through length($social) {
+		$keys   : map-keys($social);
+		$values : map-values($social);
+		$color  : nth( $keys, $i );
+		$name   : nth( $values, $i );
+		@include b(network-#{$color}) {
+			background-color: $name;
+			// &:hover {
+			// 	border-color: $name;
+			// 	svg {
+			// 		fill: $name;
+			// 	}
+			// }
+		}
+	}
+}

@@ -1,12 +1,12 @@
 ul, ol {
-	@include rempx('margin', 0, 0, 1);
-	@include rempx('padding', 0, 0, 0, 2);
+	margin: 0 0 1rem;
+	padding: 0 0 0 2rem;
 }
 li {
 	list-style-position: outside;
 	margin: 0;
-	@include rempx('margin-bottom', .5);
-	&:last-child {
-		margin-bottom: 0;
+
+	& + & {
+		margin-top: .5rem;
 	}
 }

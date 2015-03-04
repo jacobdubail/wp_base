@@ -7,14 +7,14 @@ input[type=url],
 textarea {
   padding: 5px 10px;
   background: #f2f2f2;
-  color: $c9;
-  border: 1px solid $c9;
+  color: palette(grey);
+  border: 1px solid palette(grey);
 
   &:focus {
     background: #fff;
-    color: $c3;
+    color: palette(grey);
     outline: none;
-    border: 1px solid $c3;
+    border: 1px solid palette(grey);
   }
 
 }

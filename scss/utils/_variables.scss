@@ -3,7 +3,7 @@ $column-width: 70px;
 $gutter: 30px;
 $columns: 12;
 $padding: $gutter / 2;
-$gutter-compensation: $gutter/2 * - 1;
+$gutter-compensation: ( ($gutter/2) * -1 );
 
 $width: ($column-width * $columns) + ($gutter * ($columns - 1));
 
@@ -78,5 +78,3 @@ $social: (
 	vimeo    : #aad450,
 	rss      : #ff9900,
 );
-
-

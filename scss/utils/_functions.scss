@@ -27,6 +27,38 @@
 	}
 }
 
+
+
+
+
+@function palette($palette, $tone: 'base') {
+	@return map-get(map-get($palettes, $palette), $tone);
+}
+
 @function ff($family: 'body') {
 	@return unquote(map-get($fonts,$family));
+}
+
+
+@function first($list) {
+  @return nth($list, 1);
+}
+
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+
+@function lower-bound($range){
+	@if length($range) <= 0 {
+		@return 0;
+	}
+	@return nth($range,1);
+}
+
+@function upper-bound($range) {
+	@if length($range) < 2 {
+		@return 9999999;
+	}
+	@return nth($range, 2);
 }

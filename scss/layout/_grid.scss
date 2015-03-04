@@ -20,9 +20,9 @@
 	display: flex;
 	flex: 0 1 auto;
 	flex-direction: row;
-	//flex-wrap: wrap;
-	//margin-right: $gutter-compensation;
-	//margin-left: $gutter-compensation;
+	flex-wrap: wrap;
+	margin-right: $gutter-compensation;
+	margin-left: $gutter-compensation;
 
 	@include b(row) {
 		margin-right: $gutter-compensation;
@@ -74,8 +74,6 @@
 
 	.no-flexbox & {
 		width: 100%;
-		// padding-left: $padding;
-		// padding-right: $padding;
 		position: relative;
 		@include bp(sm) {
 			float: left;
@@ -96,7 +94,7 @@
 
 		.col-#{$size} {
 			flex-grow: 1;
-			flex-basis: 0;
+			flex-basis: 100%;
 			max-width: 100%;
 		}
 
@@ -113,6 +111,9 @@
 		.end-#{$size} {
 			justify-content: flex-end;
 			text-align: end;
+			.no-flexbox & {
+				text-align: right;
+			}
 		}
 
 		.top-#{$size} {
@@ -133,6 +134,10 @@
 
 		.between-#{$size} {
 			justify-content: space-between;
+			.no-flexbox & > * {
+				display: inline-block;
+				vertical-align: middle;
+			}
 		}
 
 		.first-#{$size} {
@@ -141,6 +146,9 @@
 
 		.last-#{$size} {
 			order: 1;
+			.no-flexbox & {
+				float: right;
+			}
 		}
 	}
 }

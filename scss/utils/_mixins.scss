@@ -31,6 +31,15 @@
 	}
 }
 
+@mixin iehack {
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		@content;
+	}
+	.ie9 & {
+		@content;
+	}
+}
+
 
 @mixin b($block) {
 	.#{$block} {
@@ -39,7 +48,7 @@
 }
 
 @mixin e($element) {
-	$selector: '&';
+	$selector: &;
 	$block: getBlock($selector);
 	@if containsModifier($selector) {
 		@at-root {
@@ -61,26 +70,11 @@
 
 @mixin m($modifier) {
 	@at-root {
-		#{'&'}#{$modifierSeparator+$modifier} {
+		#{&}#{$modifierSeparator+$modifier} {
 			@content;
 		}
 	}
 }
-
-
-@function palette($palette, $tone: 'base') {
-	@return map-get(map-get($palettes, $palette), $tone);
-}
-
-
-@function first($list) {
-  @return nth($list, 1);
-}
-
-@function last($list) {
-  @return nth($list, length($list));
-}
-
 
 
 
@@ -111,7 +105,15 @@
 
 
 
-//
+
+@mixin iehack {
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		@content;
+	}
+	.ie9 & {
+		@content;
+	}
+}
 
 
 
@@ -125,6 +127,8 @@
 		max-width: $width;
 		.no-flexbox & {
 			width: $width;
+			vertical-align: middle;
+			display: inline-block;
 		}
 	}
 	.col-#{$class}-push-#{$index} {
@@ -142,6 +146,11 @@
 	@for $i from 0 through $columns {
 		@include calc-grid($i, $class);
 	}
+}
+
+@mixin box($size: 2rem) {
+	width: $size;
+	height: $size;
 }
 
 
