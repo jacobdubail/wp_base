@@ -1,10 +1,9 @@
-			</section>
+</main>
 
-			<footer class="footer">
-				<p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
-			</footer>
+<footer class="site__footer">
+	<p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
+</footer>
 
-		</div>
 
 <?php wp_footer(); ?>
 

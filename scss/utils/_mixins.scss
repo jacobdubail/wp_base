@@ -49,20 +49,19 @@
 
 @mixin e($element) {
 	$selector: &;
-	$block: getBlock($selector);
 	@if containsModifier($selector) {
+	$block: getBlock($selector);
 		@at-root {
 			#{$selector} {
-			  #{$block+$elementSeparator+$element} {
-			  	@content;
-			  }
+				#{$block+$elementSeparator+$element} {
+					@content;
+				}
 			}
 		}
-	}
-	@else {
+	} @else {
 		@at-root {
 			#{$selector+$elementSeparator+$element} {
-			  @content;
+				@content;
 			}
 		}
 	}

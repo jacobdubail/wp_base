@@ -1,7 +1,7 @@
 {
   "name": "default",
   "version": "0.1.0",
-  "description": "default wp theme",
+  "description": "default",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",

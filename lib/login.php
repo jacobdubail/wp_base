@@ -18,7 +18,13 @@ class jtd_login {
 
 
 	function custom_logo() {
-		echo '<style type="text/css"> h1 a { background-image:url('.get_template_directory_uri().'/images/logo_admin.png)  !important; } </style>';
+		echo '<style type="text/css">
+		#login h1 a {
+			background-image:url('.get_template_directory_uri().'/images/logo_admin.png)  !important;
+			background-size: 100%;
+			width: 170px;
+		}
+		</style>';
 	}
 
 	function change_url() {

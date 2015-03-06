@@ -12,12 +12,12 @@ var console = (window.console = window.console || {});
 	var BASE = {
 
 		w         : $(window),
-		main_nav  : $("#main-nav"),
+		main_nav  : $("#menu-main-nav"),
 		hash      : window.location.hash,
 		toggle    : '',
 
 		init : function() {
-			
+
 			var that = this;
 
 			this.setup_resp_nav();
@@ -37,7 +37,7 @@ var console = (window.console = window.console || {});
 
 		setup_resp_nav : function() {
 			var label = "<span></span>";
-			
+
 			responsiveNav( "#menu-main-nav", {
 				label      : label,
 				animate    : false,

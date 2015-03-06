@@ -28,7 +28,7 @@ class jtd_admin {
 
     // https://gist.github.com/hitautodestruct/b6801fd070c4b638c55a
     add_action( 'get_header', array( &$this, 'filter_head' ) );
-    add_action( 'wp_head',    array( &$this, 'admin_css' ) );
+    //add_action( 'wp_head',    array( &$this, 'admin_css' ) );
 
     // add editor styles
     add_action( 'init', array( &$this, 'add_editor_styles' ) );
@@ -149,7 +149,7 @@ class jtd_admin {
       $contactmethods['facebook']       = 'Facebook';
       $contactmethods['twitter']        = 'Twitter';
       unset($contactmethods['aim']);
-      unset($contactmethods['yim']);    
+      unset($contactmethods['yim']);
       unset($contactmethods['jabber']);
       return $contactmethods;
     }
@@ -193,7 +193,7 @@ class jtd_admin {
   function add_editor_styles() {
     add_editor_style( 'css/editor-style.css' );
   }
-    
+
 
 }
 $jtd_admin = new jtd_admin();

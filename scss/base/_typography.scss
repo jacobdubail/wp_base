@@ -21,12 +21,12 @@
 html {
 	position: relative;
 	min-height: 100%;
-	font-size: nth($sizes, 1) / 16 * 100%;
+	font-size: nth($sizes, 1) / 10 * 62.5%;
 
 	// Loop through columnpoints.
 	@for $i from 2 through length($columnpoints) {
 	  @include bp(nth($points, $i)) {
-			font-size: nth($sizes, $i) / 16 * 100%;
+			font-size: nth($sizes, $i) / 10 * 62.5%;
 	  }
 	}
 }

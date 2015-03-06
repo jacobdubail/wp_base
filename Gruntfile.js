@@ -84,11 +84,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-	// Default task(s).
-	grunt.registerTask('default', ['svgstore','sass','autoprefixer','uglify','imagemin']);
+	grunt.registerTask('default', ['svgstore','sass','autoprefixer','uglify']);
 
-	// grunt.event.on('watch', function(action, filepath, target) {
-	//   grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
-	// });
+	grunt.registerTask('images', ['imagemin']);
+
 
 };
