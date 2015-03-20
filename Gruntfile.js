@@ -14,6 +14,23 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		svgmin: {
+			options: {
+				plugins: [
+					{ removeViewBox: false },
+					{ removeUselessStrokeAndFill: true },
+					{ removeEmptyAttrs: false },
+					{ removeUnknownsAndDefaults: false },
+					{ cleanupIDs: false }
+				]
+			},
+			dist: {
+				expand: true,
+				cwd: 'svg',
+				src: ['*.svg'],
+				dest: 'svg/o'
+			}
+		},
 		svgstore: {
 			options: {
 				prefix : 'icon-', // This will prefix each ID
@@ -78,13 +95,14 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-svgmin');
 	grunt.loadNpmTasks('grunt-svgstore');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-	grunt.registerTask('default', ['svgstore','sass','autoprefixer','uglify']);
+	grunt.registerTask('default', ['svgmin','svgstore','sass','autoprefixer','uglify']);
 
 	grunt.registerTask('images', ['imagemin']);
 
