@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			single_file: {
 				// Target-specific file lists and/or options go here.
 				src: 'css/raw/main.css',
-				dest: 'css/main.min.css'
+				dest: 'style.css'
 			},
 		},
 

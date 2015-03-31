@@ -21,7 +21,7 @@ register_field_group(array (
 			),
 			'min' => '',
 			'max' => '',
-			'layout' => 'row',
+			'layout' => 'table',
 			'button_label' => 'Add Network',
 			'sub_fields' => array (
 				array (
@@ -29,7 +29,7 @@ register_field_group(array (
 					'label' => 'Link',
 					'name' => 'link',
 					'prefix' => '',
-					'type' => 'text',
+					'type' => 'url',
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
@@ -38,7 +38,7 @@ register_field_group(array (
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '#0',
+					'default_value' => 'http://google.com',
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',

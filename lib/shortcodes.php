@@ -31,4 +31,3 @@ class jtd_shortcodes {
 
 }// end class
 $jtd_shortcodes = new jtd_shortcodes();
-?>

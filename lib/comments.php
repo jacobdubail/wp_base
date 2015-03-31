@@ -18,4 +18,3 @@ class jtd_comments {
 	}
 }
 $jtd_comments = new jtd_comments();
-?>

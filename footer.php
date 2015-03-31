@@ -13,7 +13,9 @@
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-<?php the_field("google_analytics_id", "options"); ?>', 'example.com');
+	<?php $host = parse_url(site_url(), PHP_URL_HOST); ?>
+
+	ga('create', 'UA-<?php the_field("google_analytics_id", "options"); ?>', '<?php echo $host; ?>');
 	ga('send', 'pageview');
 </script>
 
