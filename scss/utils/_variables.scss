@@ -7,6 +7,9 @@ $gutter-compensation: ( ($gutter/2) * -1 );
 
 $width: ($column-width * $columns) + ($gutter * ($columns - 1));
 
+$gutter-percentage: ($gutter / $width)*100%;
+$padding-percentage: ($gutter-percentage / 2);
+
 
 $elementSeparator: '__';
 $modifierSeparator: '--';
