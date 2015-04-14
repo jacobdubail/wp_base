@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="preload no-js ie lt-ie9 lt-ie8 lt-ie7" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>         <html class="preload no-js ie lt-ie9 lt-ie8" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>         <html class="preload no-js ie lt-ie9" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9]>         <html class="preload no-js ie ie9" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="preload no-js" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if lt IE 9]>         <html class="no-js oldie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]>         <html class="no-js ie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
+<!--[if !IE]><!--> <html class="no-js" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

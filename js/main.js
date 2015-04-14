@@ -4,11 +4,6 @@
 var console = (window.console = window.console || {});
 (function($) {
 
-	$(window).load(function() {
-    $("html").removeClass("preload");
-  });
-
-
 	var BASE = {
 
 		w         : $(window),
@@ -22,16 +17,6 @@ var console = (window.console = window.console || {});
 
 			this.setup_resp_nav();
 
-			that.main_nav.on('click','span.nav-arrow',function(e) {
-				var $this = $(this);
-
-				e.stopPropagation();
-				e.preventDefault();
-
-				$this.parent().parent().toggleClass('open');
-				$this.parent().next().toggleClass('open');
-				return false;
-			});
 
 		},
 
@@ -57,6 +42,17 @@ var console = (window.console = window.console || {});
 				transition : 300,
 				insert     : 'before',
 				openPos    : 'relative',
+			});
+
+			BASE.main_nav.on('click','span.nav-arrow',function(e) {
+				var $this = $(this);
+
+				e.stopPropagation();
+				e.preventDefault();
+
+				$this.parent().parent().toggleClass('open');
+				$this.parent().next().toggleClass('open');
+				return false;
 			});
 		},
 
