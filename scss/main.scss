@@ -16,6 +16,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   'utils/placeholders';
 
 @import
+	'vendors/mappy';
+
+@import
   'base/reset',
   'base/headings',
   'base/typography',
@@ -31,8 +34,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 @import
   'components/buttons',
-  'components/carousel',
-  'components/media',
+  'components/media';
+
+@import
+	'components/carousel',
   'components/tablesaw';
 
 @import

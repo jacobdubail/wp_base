@@ -35,6 +35,19 @@ var console = (window.console = window.console || {});
 
 		},
 
+		accordion : function(el) {
+			el.find('.accordion__toggle').on( 'click', function() {
+				var $this = $(this);
+
+				//Expand or collapse this panel
+				$this.toggleClass('open').next().toggleClass('open');
+
+				//Hide the other panels
+				el.find('.open').not($this).not($this.next()).removeClass('open');
+
+			});
+		},
+
 		setup_resp_nav : function() {
 			var label = "<span></span>";
 
@@ -44,15 +57,6 @@ var console = (window.console = window.console || {});
 				transition : 300,
 				insert     : 'before',
 				openPos    : 'relative',
-				init       : function() {
-					BASE.toggle = $(".nav-toggle");
-				},
-				open       : function() {
-					BASE.toggle.addClass('open');
-				},
-				close      : function() {
-					BASE.toggle.removeClass('open');
-				}
 			});
 		},
 
