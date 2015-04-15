@@ -1,36 +1,4 @@
 
-// @mixin bp($point) { // = xs, sm, md
-//   $query: "";
-//   @if map-has-key($breakpoints, $point) {
-// 	$key: map-get($breakpoints, $point);
-// 	  @if map-has-key($key, min) {
-// 		$query: append($query, "(min-width: #{map-get($key, min)})")
-// 	  }
-// 	  @if map-has-key($key, min) and map-has-key($key, max) {
-// 		$query: append($query, "and")
-// 	  }
-// 	  @if map-has-key($key, max) {
-// 		$query: append($query, "(max-width: #{map-get($key, max)})")
-// 	  }
-// 	  @media screen and #{$query} { @content; }
-// 	}
-// 	@else {
-// 		@content;
-// 	}
-// }
-
-// @mixin mq($point, $IE9: false, $query1: min, $query2: width) {
-// 	@if $IE9 == true{
-// 		.lt-ie9 & {
-// 			@content;
-// 		}
-// 	}
-
-// 	@media (#{$query1}-#{$query2}: $point) {
-// 		@content;
-// 	}
-// }
-
 @mixin iehack {
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		@content;
@@ -130,12 +98,12 @@
 			display: inline-block;
 		}
 	}
-	.col-#{$class}-push-#{$index} {
-		left: $width;
-	}
-	.col-#{$class}-pull-#{$index} {
-		right: $width;
-	}
+	// .col-#{$class}-push-#{$index} {
+	// 	left: $width;
+	// }
+	// .col-#{$class}-pull-#{$index} {
+	// 	right: $width;
+	// }
 	.col-#{$class}-offset-#{$index} {
 		margin-left: $width;
 	}
@@ -156,8 +124,6 @@
 
 @mixin btn( $bg: transparent, $color: palette(brand), $hoverbg: inherit, $hovercolor: #fff ) {
 	@extend %btn;
-	border: 0;
-	padding: .75rem 2rem;
 	background: $bg;
 	color: $color;
 

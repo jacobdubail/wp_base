@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			},
 			default: {
 				files: {
-					"inc/svg-defs.php": ["svg/*.svg"]
+					"parts/svg-defs.php": ["svg/*.svg"]
 				}
 			},
 		},
@@ -50,10 +50,10 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
-					sourcemap: 'none'
+					//sourcemap: 'none'
 				},
 				files: {
-					'css/raw/main.css': 'scss/main.scss'
+					'css/main.css': 'scss/main.scss'
 				}
 			}
 		},
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 			},
 			single_file: {
 				// Target-specific file lists and/or options go here.
-				src: 'css/raw/main.css',
+				src: 'css/main.css',
 				dest: 'style.css'
 			},
 		},
