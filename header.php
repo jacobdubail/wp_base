@@ -42,15 +42,26 @@
 	<![endif]-->
 
 		<header class="site__header">
-			<nav class="site__nav" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '', 'walker' => new base_nav_walker() ) ); ?>
-			</nav>
-			<a class="site__logo" href="<?php home_url(); ?>/">
-				<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
-			</a>
-			<h2 class="site__description">
-				<?php bloginfo('description'); ?>
-			</h2>
+			<div class="container">
+				<div class="row">
+					<a class="site__logo" href="<?php home_url(); ?>/">
+						<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+					</a>
+					<nav class="site__nav" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'main-nav',
+									'menu_class'     => 'menu main__nav',
+									'container'      => '',
+									'walker'         => new base_nav_walker()
+								)
+							);
+						?>
+						<?php get_template_part('parts/header-utils'); ?>
+					</nav>
+				</div>
+			</div>
 		</header>
 
 		<main class="site__content" role="main">
