@@ -2,102 +2,77 @@
 	Selectric
 ======================================================================*/
 
-.selectric-wrapper {
+.selectricWrapper {
 	position: relative;
 	margin: 0;
-	width: 100%;
+	width: auto;
 	cursor: pointer;
-
-	&.selectric-small {
-		display: inline-block;
-		.selectric {
-			width: 50%;
-		}
-	}
 }
 
-.selectric-responsive {
+.selectricResponsive {
 	width: 100%;
 }
 
 .selectric {
 	background: #fff;
-	font-size: .88888rem;
-  padding: .3333rem .75rem;
+	color: palette(grey,label);
+	font-weight: 400;
+	border: 1px solid palette(brand,medium);
+	border-radius: .4211rem;
+	font-size: .84211rem;
 	position: relative;
-	display: inline-block;
-	border-radius: .277777rem;
-	margin-right: $gutter;
-	border: 1px solid;
-	color: palette();
-	cursor: pointer;
-	width: 100%;
+	transition: all .2s ease;
+	box-shadow: inset 0 1px 1px rgba(black,.15);
+	padding: 2px 0;
 
 	.label {
 		display: block;
 		white-space: nowrap;
 		overflow: hidden;
 		margin: 0 30px 0 0;
+		padding: 6px;
+		line-height: 18px;
+		min-height: 18px;
+		font-weight: 400;
 	}
 	.button {
-		display: none;
+		display: block;
 		position: absolute;
-		right: 0;
-		top: 0;
-		width: 30px;
-		height: 30px;
-		color: palette(grey);
+		right: 3px;
+		top: 7px;
+		width: 20px;
+		height: 20px;
+		fill: palette(brand,medium);
 		text-align: center;
 		font: 0/0 a;
-		/* IE Fix */
-		//*font: 20px/30px Lucida Sans Unicode, Arial Unicode MS, Arial;
-		&:after {
-			content: " ";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-			width: 0;
-			height: 0;
-			border: 4px solid transparent;
-			border-top-color: palette(grey,label);
-			border-bottom: none;
-		}
 	}
 }
 
-.selectric-hover .selectric {
+.selectricHover .selectric {
 	border-color: #CCC;
 	.button {
-		color: #888;
-		&:after {
-			border-top-color: #888;
-		}
+		fill: pallete(grey);
 	}
 }
 
-.selectric-open {
+.selectricOpen {
 	z-index: 9999;
 	.selectric {
 		background-color: #fff;
-		color: palette(grey,dark);
+		color: palette(grey);
     outline: none;
-    border-color: palette(brand,light);
-    border-radius: .277777rem .277777rem 0 0;
+    border-color: palette();
+    border-radius: .4211rem .4211rem 0 0;
 	}
-	.selectric-items {
+	.button {
+		fill: palette(grey);
+	}
+	.selectricItems {
 		display: block;
-	}
-	&.selectric-above {
-		.selectric {
-			border-radius: 0 0 .277777rem .277777rem;
-		}
 	}
 }
 
-.selectric-disabled {
+.selectricDisabled {
 	filter: alpha(opacity=50);
 	opacity: 0.5;
 	cursor: default;
@@ -105,7 +80,7 @@
 	user-select: none;
 }
 
-.selectric-hide-select {
+.selectricHideSelect {
 	position: relative;
 	overflow: hidden;
 	width: 0;
@@ -117,7 +92,7 @@
 	}
 }
 
-.selectric-input {
+.selectricInput {
 	position: absolute !important;
 	top: 0 !important;
 	left: 0 !important;
@@ -133,35 +108,32 @@
 	background: none !important;
 }
 
-.selectric-temp-show {
+.selectricTempShow {
 	position: absolute !important;
 	visibility: hidden !important;
 	display: block !important;
 }
 
 /* Items box */
-.selectric-items {
+.selectricItems {
 	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;
 	background: #fff;
-  border: 1px solid palette(brand,light);
+	border: 1px solid palette();
 	border-top: 0;
 	z-index: -1;
 	//box-shadow: 0 0 10px -6px;
-	border-radius: 0 0 .277777rem .277777rem;
+	border-radius: 0 0 .4211rem .4211rem;
 
-	.selectric-scroll {
+	.selectricScroll {
 		height: 100%;
 		overflow: auto;
 	}
-	.selectric-above & {
+	.selectricAbove & {
 		top: auto;
 		bottom: 100%;
-		border-radius: .277777rem .277777rem 0 0;
-		border-bottom: 0;
-		border-top: 1px solid palette(brand,light);
 	}
 	ul, li {
 		list-style: none;
@@ -176,17 +148,12 @@
 		padding: 5px;
 		border-top: 1px solid #fff;
 		border-bottom: 1px solid palette(brand,light);
-		font-size: .777778rem;
-		color: palette(grey);
+		font-size: .7368422rem;
+		color: palette(grey,base);
 		cursor: pointer;
 
 		&:last-child {
-			border-radius: 0 0 .277777rem .277777rem;
-			border-bottom: 0;
-		}
-
-		.selectric-above &:first-child {
-			border-radius: .277777rem .277777rem 0 0;
+			border-radius: 0 0 .4211rem .4211rem;
 		}
 
 		&.selected {
@@ -195,12 +162,13 @@
 			border-top-color: #E0E0E0;
 		}
 		&:hover {
-			background: palette(grey,bg);
-			color: palette(grey);
+			background: palette(grey,light);
+			color: palette(grey,text);
 		}
 		&.disabled {
 			background: palette(grey,light);
-			color: palette(grey,dark);
+			color: palette(grey,label);;
+			//border-top-color: #FAFAFA;
 			cursor: default;
 		}
 		&.selected.disabled {

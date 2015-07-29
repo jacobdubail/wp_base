@@ -167,3 +167,5 @@ $use-respond-mixins: false !default;
 		}
 	}
 }
+
+@include tablesaw-stack();
