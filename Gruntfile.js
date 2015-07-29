@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
-					sourcemap: 'none'
+					//sourcemap: 'none'
 				},
 				files: {
 					'css/main.css': 'scss/main.scss'

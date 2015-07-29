@@ -47,7 +47,7 @@
 			margin-right: -$padding;
 		}
 		@extend %cf;
-		@include mappy-bp(xs) {
+		@include mappy-bp(max sm) {
 			max-width: 100%;
 		}
 	}

@@ -36,21 +36,32 @@
 
 </head>
 <body <?php body_class(); ?>>
-	<?php get_template_part('inc/svg-defs'); ?>
+	<?php get_template_part('parts/svg-defs'); ?>
 	<!--[if lt IE 9]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 
 		<header class="site__header">
-			<nav class="site__nav" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '', 'walker' => new base_nav_walker() ) ); ?>
-			</nav>
-			<a class="site__logo" href="<?php home_url(); ?>/">
-				<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
-			</a>
-			<h2 class="site__description">
-				<?php bloginfo('description'); ?>
-			</h2>
+			<div class="container">
+				<div class="row">
+					<a class="site__logo" href="<?php home_url(); ?>/">
+						<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+					</a>
+					<nav class="site__nav" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'main-nav',
+									'menu_class'     => 'menu main__nav',
+									'container'      => '',
+									'walker'         => new base_nav_walker()
+								)
+							);
+						?>
+						<?php get_template_part('parts/header-utils'); ?>
+					</nav>
+				</div>
+			</div>
 		</header>
 
 		<main class="site__content" role="main">
