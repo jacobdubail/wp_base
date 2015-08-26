@@ -149,8 +149,7 @@ table.tablesaw {
 }
 
 @mixin tablesaw-stack( $breakpoint: md ) {
-
-	@include bp(max $breakpoint) {
+	@include bp(max $breakpoint ) {
 		@include tablesaw-stack-max;
 	}
 	@include bp($breakpoint) {
