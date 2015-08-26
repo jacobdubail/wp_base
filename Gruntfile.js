@@ -35,14 +35,14 @@ module.exports = function(grunt) {
 			options: {
 				prefix : 'icon-', // This will prefix each ID
 				svg: {
-					viewBox : '0 0 100 100',
+					//viewBox : '0 0 100 100',
 					xmlns: 'http://www.w3.org/2000/svg',
 					style: "display: none;"
 				}
 			},
 			default: {
 				files: {
-					"inc/svg-defs.php": ["svg/*.svg"]
+					"parts/svg-defs.php": ["svg/o/*.svg"]
 				}
 			},
 		},
@@ -50,22 +50,22 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
-					sourcemap: 'none'
+					//sourcemap: 'none'
 				},
 				files: {
-					'css/raw/main.css': 'scss/main.scss'
+					'css/main.css': 'scss/main.scss'
 				}
 			}
 		},
 		autoprefixer: {
 			options: {
 				// Task-specific options go here.
-				browsers: ['last 2 version', 'safari 5.1', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
+				browsers: ['last 2 version', 'safari 6', 'ie 8', 'opera 12.1', 'ios 6', 'android 4'],
 				map: true
 			},
 			single_file: {
 				// Target-specific file lists and/or options go here.
-				src: 'css/raw/main.css',
+				src: 'css/main.css',
 				dest: 'style.css'
 			},
 		},
@@ -87,10 +87,27 @@ module.exports = function(grunt) {
 
 		watch: {
 			options: {
-				livereload: 1337,
+				livereload: 1737,
 			},
-			files: ['scss/**/*','js/main.js','js/plugins.js','svg/*','images/*','**/*.php'],
-			tasks: 'default',
+			css : {
+				files: ['scss/**/*'],
+				tasks: 'css',
+			},
+			js : {
+				files: ['js/main.js','js/plugins.js'],
+				tasks: 'js',
+			},
+			images : {
+				files: ['images/*'],
+				tasks: 'images',
+			},
+			svg : {
+				files: ['svg/*'],
+				tasks: 'svg',
+			},
+			php : {
+				files: ['**/*.php']
+			}
 		},
 	});
 
@@ -104,7 +121,11 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['svgmin','svgstore','sass','autoprefixer','uglify']);
 
+	grunt.registerTask('css', ['sass','autoprefixer']);
+	grunt.registerTask('js', ['uglify']);
+	grunt.registerTask('svg', ['svgmin','svgstore']);
 	grunt.registerTask('images', ['imagemin']);
+	grunt.registerTask('php', ['uglify']);
 
 
 };

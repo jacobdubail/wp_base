@@ -37,32 +37,6 @@ $breakpoints: (
 	'xl': 1340px,
 );
 
-
-// $columnpoints: (
-// 	'xs': ( max-width: 31.1875em ),
-// 	'sm': ( min-width: 31.25em ),
-// 	'md': ( min-width: 48em ),
-// 	'lg': ( min-width: 64em ),
-// 	'xl': ( min-width: 78em )
-// );
-
-// $breakpoints: (
-// 	'mini':( max: 339px ),
-// 	'xs': ( max: 499px ),
-// 	'xs-only': ( min: 340px, max:  499px ),
-// 	'sm': ( min:  500px ),
-// 	'sm-only': ( min: 500px, max: 767px ),
-// 	'md': ( min:  768px ),
-// 	'md-only': ( min: 768px, max: 1023px ),
-// 	'md-max': ( max: 767px ),
-// 	'lg': ( min: 1024px ),
-// 	'lg-max': ( max: 1023px ),
-// 	'xl': ( min: 1340px ),
-// 	'xl-max': (max: 1340px ),
-// 	'lg-xl': ( min: 1024px, max: 1340px )
-// );
-
-
 $rootsizes: (
   rootsize-0: 18,
   rootsize-1: 17,
@@ -76,14 +50,24 @@ $sizes: map-values($rootsizes);
 
 $palettes: (
 	brand: (
-		base: #5ab1d5,
 	),
 	grey: (
-		base: #f2f2f2,
+		100: #F8F8F8,
+		200: #F9F7F1,
+		500: #9B9B9B,
+		600: #4A4A4A,
 	),
 	error: (
-		base: #ff0000,
+		500: #FA1E1D,
 	)
+);
+
+
+$colors: (
+	'brand': #FA1E1D,
+	'beige': #E1D5B7,
+	'green': #00A958,
+	'yellow': #FFC618
 );
 
 $social: (

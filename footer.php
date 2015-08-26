@@ -19,6 +19,9 @@
 	ga('send', 'pageview');
 </script>
 
-<script src="//localhost:1337/livereload.js"></script>
+<?php if ( $host === 'base.dev' ) : ?>
+	<script src="//localhost:1337/livereload.js"></script>
+<?php endif; ?>
+
 </body>
 </html>
