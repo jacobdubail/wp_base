@@ -9,7 +9,9 @@ class jtd_admin {
     $this->remove_notifications();
 
     // prevent access to admin editors
-    define ( 'DISALLOW_FILE_EDIT', true );
+    if ( ! defined('DISALLOW_FILE_EDIT' ) {
+    	define ( 'DISALLOW_FILE_EDIT', true );
+    }
 
     add_filter( 'admin_footer_text',  array( &$this, 'change_admin_footer' ) );
     add_action( 'pre_ping', array( &$this, 'no_self_ping' ) );

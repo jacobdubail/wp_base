@@ -2,6 +2,9 @@
 
 if ( ! isset( $content_width ) ) $content_width = 1200;
 
+
+/* Theme Support Function */
+function jtd_theme_supports()  {
 	$customHeaderDefaults = array(
 		'default-image'          => get_template_directory_uri() . '/images/logo.png',
 		'random-default'         => false,
@@ -16,10 +19,6 @@ if ( ! isset( $content_width ) ) $content_width = 1200;
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-
-
-/* Theme Support Function */
-function jtd_theme_supports()  {
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'widgets' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );

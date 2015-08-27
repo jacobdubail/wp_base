@@ -14,6 +14,18 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		compress: {
+		  main: {
+		    options: {
+		      mode: 'gzip'
+		    },
+		    files: [
+		      // Each of the files in the src/ folder will be output to
+		      // the dist/ folder each with the extension .gz.js
+		      {expand: true, src: ['js/main.min.js','js/plugins.min.js'], dest: 'js/', ext: '.gz.js'}
+		    ]
+		  }
+		},
 		svgmin: {
 			options: {
 				plugins: [
