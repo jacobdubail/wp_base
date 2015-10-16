@@ -1,5 +1,20 @@
 <?php
 
+function jtd_remove_blog_active_link_on_cpt( $classes, $item, $args = array() ) {
+	if ( ! is_singular('post') && ! is_category() && ! is_tag()) {
+	  $blog_page_id = intval( get_option('page_for_posts') );
+	  if ( $blog_page_id != 0 ) {
+      if ( $item->object_id == $blog_page_id ) {
+				unset( $classes[array_search( 'current_page_parent', $classes )] );
+			}
+	  }
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class','jtd_remove_blog_active_link_on_cpt',10,3);
+
+
+
 class base_nav_walker extends Walker_Nav_Menu {
 
 	/**
@@ -99,25 +114,25 @@ class base_nav_walker extends Walker_Nav_Menu {
 			}
 		}
 
-		if ( isset( $args->before ) ) 
+		if ( isset( $args->before ) )
 			$item_output = $args->before;
 
 		$item_output .= '<a'. $attributes .'>';
 
-		if ( isset( $args->link_before ) ) 
+		if ( isset( $args->link_before ) )
 			$item_output .= $args->link_before;
 
 		$item_output .= apply_filters( 'the_title', $item->title, $item->ID );
 
-		if ( isset( $args->link_after ) ) 
+		if ( isset( $args->link_after ) )
 			$item_output .= $args->link_after;
-		
+
 		if ( isset($item->classes) && in_array( 'menu-item-has-children', $item->classes ) )
 			$item_output .= '<i class="nav-arrow icon-chevron-down"></i>';
 
 		$item_output .= '</a>';
 
-		if ( isset( $args->after ) ) 
+		if ( isset( $args->after ) )
 			$item_output .= $args->after;
 
 		/**
@@ -135,9 +150,9 @@ class base_nav_walker extends Walker_Nav_Menu {
 		 * @param array  $args        An array of arguments. @see wp_nav_menu()
 		 */
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-		
-	
+
+
 	} // end start el
 
-	
+
 }

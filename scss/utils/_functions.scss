@@ -140,12 +140,33 @@
 }
 
 
-@function generate-color-palette() {
-	$color_values: map-values($colors);
-	$color_names: map-keys($colors);
 
-	$tints: (200%,400%,600%,800%);
-	$shades: (100%,200%,300%,400%);
+
+@function generate-tints($color,$color_map) {
+	@for $t from 1 through length($tints) {
+		$hundreds : nth( $t_keys, $t );
+		$percent  : nth( $t_vals, $t );
+		$tint: tint( $color, $percent );
+
+		$color_map: map-set( $color_map, $hundreds, $tint );
+		//@debug( $color_map );
+	}
+	@return $color_map;
+}
+
+@function generate-shades($color,$color_map) {
+	@for $s from 1 through length($shades) {
+		$hundreds : nth( $s_keys, $s );
+		$percent  : nth( $s_vals, $s );
+		$shade: shade( $color, $percent );
+
+		$color_map: map-set( $color_map, $hundreds, $shade );
+		//@debug( $color_map );
+	}
+	@return $color_map;
+}
+
+@function generate-color-palette($palettes) {
 
 	@for $i from 1 through length($color_values) {
 		$color: nth($color_values, $i);
@@ -155,25 +176,13 @@
 			500: $color
 		);
 
-		@for $t from 1 through length($tints) {
-			$percentage: nth($tints, $t);
-			$key: str-slice( inspect($percentage), 1, 3);
-			$tint: tint( $color, $percentage/10 );
+		$color_map: generate-shades($color,$color_map);
 
-			$color_map: map-set( $color_map, $key, $tint );
-			//@debug( $color_map );
-		}
-
-		@for $s from 1 through length($shades) {
-			$percentage: nth($shades,$s);
-			$key: str-slice( inspect($percentage), 1, 3);
-			$shade: shade( $color, $percentage/10 );
-
-			$color_map: map-set( $color_map, $key, $shade );
-			//@debug( $color_map );
-		}
+		$color_map: generate-tints($color,$color_map);
 
 		$palettes: map-set( $palettes, $name, $color_map );
-		@debug($palettes);
 	}
+
+	//@debug $palettes;
+	@return $palettes;
 }

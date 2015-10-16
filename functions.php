@@ -38,6 +38,21 @@ function base_register_scripts() {
 }
 
 
+function osl_remove_foxyshop_images_box() {
+	remove_meta_box('product_images_meta', 'foxyshop_product', 'normal');
+}
+add_action( 'admin_init' , 'osl_remove_foxyshop_images_box' );
+
+add_action('admin_head', 'osl_show_featured_image_box');
+function osl_show_featured_image_box() {
+  echo '<style>
+    html body.post-type-foxyshop_product #postimagediv {
+			display: block;
+		}
+  </style>';
+}
+
+
 if ( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
