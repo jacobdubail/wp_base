@@ -13,7 +13,16 @@ var console = (window.console = window.console || {});
 
 		init : function() {
 
-			var that = this;
+			var that  = this;
+			var doc   = document.body || document.documentElement;
+			var style = doc.style;
+
+			if ( !style.webkitFlexWrap == '' ||
+			    !style.msFlexWrap == '' ||
+			    !style.flexWrap == '' ) {
+			  doc.className += " no-flex-support";
+			}
+
 
 			this.setup_resp_nav();
 
@@ -89,4 +98,11 @@ function ss_plugin_loadpopup_js(em){
 			'width=550,height=420,left='+ left +',top='+ top +',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1'
 	);
 	return false;
+}
+
+
+function base_lerp(position, targetPosition) {
+	// update position by 20% of the distance between position and target position
+	position.x += (targetPosition.x - position.x)*0.2;
+	position.y += (targetPosition.y - position.y)*0.2;
 }

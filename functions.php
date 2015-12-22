@@ -22,6 +22,13 @@ if ( ! current_user_can( 'manage_options' ) ) {
 	show_admin_bar( false );
 }
 
+add_action('after_setup_theme', 'base_remove_admin_bar');
+function base_remove_admin_bar() {
+	if ( ! current_user_can('administrator') && !is_admin() ) {
+	  show_admin_bar(false);
+	}
+}
+
 add_action('wp_enqueue_scripts', 'base_register_scripts');
 function base_register_scripts() {
 	wp_enqueue_script( 'jquery' );
