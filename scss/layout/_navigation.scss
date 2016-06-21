@@ -37,7 +37,7 @@
 		list-style: none;
 		margin: 0;
 		width: 100%;
-		@include mappy-bp(max sm) {
+		@include bp(max sm) {
 			width: auto;
 		}
 
@@ -52,7 +52,7 @@
 			display: none;
 			&.open {
 				display: block;
-				@include mappy-bp(sm) {
+				@include bp(sm) {
 					display: none;
 				}
 			}
@@ -77,15 +77,15 @@
 				}
 			}
 
-			@include mappy-bp(sm) {
+			@include bp(sm) {
 				display: none;
 			}
 		}
 		&.open .nav-arrow {
 			transform: rotate(180deg);
 		}
-
 	}
+
 	a {
 		font-size: 1.4rem;
 		transition: all .2s ease;
@@ -99,8 +99,8 @@
 		&:hover {
 			color: palette();
 		}
-
 	}
+
 	.current-menu-item > a,
 	.current_page_parent > a,
 	.current-menu-parent > a,
@@ -169,7 +169,7 @@
 			background: palette();
 		}
 
-		@include mappy-bp(md) {
+		@include bp(md) {
 			display: none;
 		}
 	}
@@ -214,7 +214,7 @@
   user-select: none;
 }
 
-@include mappy-bp(sm) {
+@include bp(sm) {
   .js .nav-collapse {
     position: relative;
     clip: none;

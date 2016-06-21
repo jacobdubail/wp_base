@@ -42,7 +42,8 @@ class jtd_admin {
 
 	function remove_notifications() {
 		global $user_login;
-		get_currentuserinfo();
+		//get_currentuserinfo();
+		wp_get_current_user();
 		if ( !current_user_can( 'activate_plugins' ) ) {
 			add_action( 'init', array( &$this, 'remove_wp_check' ) );
 			add_filter( 'pre_option_update_core', array( &$this, 'return null' ) );
