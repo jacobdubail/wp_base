@@ -1,19 +1,27 @@
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
-var sourcemaps   = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-//var nodemon      = require('gulp-nodemon');
-var browserSync  = require('browser-sync');
-var sequence     = require('run-sequence');
-//var notifier     = require('node-notifier');
-var util         = require('gulp-util');
-var svgstore     = require('gulp-svgstore');
-var rename       = require('gulp-rename');
-var svgmin       = require('gulp-svgmin');
-var cheerio      = require('gulp-cheerio');
+var
+	gulp         = require('gulp'),
+	sass         = require('gulp-sass'),
+	sourcemaps   = require('gulp-sourcemaps'),
+	autoprefixer = require('gulp-autoprefixer'),
+	browserSync  = require('browser-sync'),
+	sequence     = require('run-sequence'),
+	util         = require('gulp-util'),
+	svgstore     = require('gulp-svgstore'),
+	rename       = require('gulp-rename'),
+	svgmin       = require('gulp-svgmin'),
+	cheerio      = require('gulp-cheerio'),
+	postcss      = require('gulp-postcss'),
 
-//var concat       = require('gulp-concat');
-//var uglify       = require('gulp-uglify');
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify'),
+
+
+	source     = require( 'vinyl-source-stream' ),
+	buffer     = require( 'vinyl-buffer' ),
+	browserify = require('browserify'),
+	babelify   = require('babelify'),
+	watchify   = require('watchify'),
+	notify     = require('gulp-notify');
 
 var BROWSER_SYNC_RELOAD_DELAY = 1000;
 
@@ -30,24 +38,63 @@ var autoprefixerOptions = {
 	browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 };
 
-
-
-// Standard error handler
-function standardHandler(err) {
-  // Notification
-  notifier.notify({
-    message: 'Error: ' + err.message
-  });
-  // Log to console
-  util.log(util.colors.red('Error'), err.message);
+function handleErrors() {
+  var args = Array.prototype.slice.call(arguments);
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error.message %>'
+  }).apply(this, args);
+  this.emit('end'); // Keep gulp from hanging on this task
 }
 
-function sassErrorHandler(err) {
-  standardHandler({
-    message: err
-  });
+
+function swallowError (error) {
+	util.log(error);
+	this.emit('end');
 }
 
+
+/*
+Bundle React Task
+ */
+function buildScript(file, watch) {
+
+  var props = {
+    entries: ['./js/components/' + file],
+    debug : true,
+    transform:  [babelify]
+  };
+
+  // watchify() if watch requested, otherwise run browserify() once
+  var bundler = watch ? watchify(browserify(props)).transform('babelify', {presets: ['react','es2015']}) : browserify(props).transform('babelify', {presets: ['react','es2015']});
+
+  function rebundle() {
+    var stream = bundler.bundle();
+    return stream
+      .on('error', handleErrors)
+      .pipe(source(file))
+      .pipe(gulp.dest('./js/'))
+      // If you also want to uglify it
+      // .pipe(buffer())
+      // .pipe(uglify())
+      // .pipe(rename('app.min.js'))
+      // .pipe(gulp.dest('./build'))
+      .pipe(browserSync.reload({stream:true}))
+  }
+
+  // listen for an update and run rebundle
+  bundler.on('update', function() {
+    rebundle();
+    gutil.log('Rebundle...');
+  });
+
+  // run it once the first time buildScript is called
+  return rebundle();
+}
+
+gulp.task('build-react', function() {
+  return buildScript('Kada.js', false); // this will only run once because we set watch to false
+});
 
 /*
 STYLES Task
@@ -56,15 +103,14 @@ gulp.task('styles', function() {
   util.log('Building Styles');
 
   return gulp.src(input)
-		.pipe(sourcemaps.init())
-    .pipe(sass({
-      onError: sassErrorHandler
-    }))
-    .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(sourcemaps.write())
-    .pipe(rename("./style.css"))
-    .pipe(gulp.dest(output))
-    .pipe(browserSync.stream());
+		//.pipe( sourcemaps.init() )
+    .pipe( sass({outputStyle: 'compressed'}).on('error', swallowError) )
+    .pipe( postcss([ require('autoprefixer'), require('postcss-flexibility') ]) )
+    //.pipe( autoprefixer(autoprefixerOptions) )
+    .pipe( sourcemaps.write() )
+    .pipe( rename("./style.css") )
+    .pipe( gulp.dest(output) )
+    .pipe( browserSync.stream() );
 });
 
 
@@ -74,10 +120,10 @@ gulp.task('styles', function() {
 SCRIPTS Task
  */
 gulp.task('plugins', function () {
-	return gulp.src(['./js/plugins/*.js'])
+	return gulp.src(['./js/plugins/**/*.js'])
 		.pipe(concat('plugins.min.js')) //the name of the resulting file
-		.pipe(uglify())
-		.pipe(gulp.dest('public/js'))
+		.pipe(uglify().on('error', swallowError))
+		.pipe(gulp.dest('./js'))
 		.pipe(browserSync.stream());
 
 	util.log('Finished minifying Plugins');
@@ -85,10 +131,11 @@ gulp.task('plugins', function () {
 
 
 gulp.task('js', function () {
-	return gulp.src('./main.js')
+	util.log('Begin minifying Scripts');
+	return gulp.src('./js/main.js')
 		.pipe(concat('main.min.js')) //the name of the resulting file
-		.pipe(uglify())
-		.pipe(gulp.dest('public/js'))
+		.pipe(uglify().on('error', swallowError))
+		.pipe(gulp.dest('./js'))
 		.pipe(browserSync.stream());
 
 	util.log('Finished minifying Scripts');
@@ -98,6 +145,7 @@ gulp.task('js', function () {
 SVG Task
  */
 gulp.task('svg', function() {
+	util.log('Begin SVG task');
 	return gulp.src('./svg/*.svg')
 		.pipe(rename({prefix: 'icon-'}))
 		.pipe(svgmin({
@@ -164,8 +212,12 @@ gulp.task('watch', function() {
   gulp.watch('./svg/*.svg', ['svg'], browserSync.reload);
 
   util.log('watching js')
-  gulp.watch('./js/plugins/*.js', ['plugins'], browserSync.reload);
+  gulp.watch('./js/plugins/**/*.js', ['plugins'], browserSync.reload);
   gulp.watch('./js/main.js', ['js'], browserSync.reload);
+
+  util.log('watching pests')
+  //return buildScript('js/components/*.js', false)
+  gulp.watch('./js/components/*.js', ['build-react'], browserSync.reload);
 
   browserSync.reload({
     stream: false
@@ -184,7 +236,7 @@ BROWSER-SYNC Task
 gulp.task('browser-sync', ['styles'], function() {
 
   browserSync.init({
-   proxy: "carte.dev"
+   proxy: "kada.dev"
   });
 
   util.log('watching browser')
