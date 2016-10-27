@@ -3,4 +3,4 @@
 bin
 bin/*
 *.sublime-
-/node_modules
+node_modules

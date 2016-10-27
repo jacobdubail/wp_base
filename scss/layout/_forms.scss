@@ -1,44 +1,9 @@
 .gform_wrapper {
 
-	.space_me {
-		padding: 1rem .5rem;
+	.use-placeholders .gfield_label {
+		@extend %visuallyhidden;
 	}
 
-  .gform_ajax_spinner {
-    width: auto !important;
-    margin-left: .75rem;
-  }
-  .gf_page_steps {
-  	display: none;
-  }
-
-  .row > li {
-  	width: 100%;
-  	& + li {
-	  	@include bp(sm) {
-		  	margin-top: 0;
-	  	}
-	  }
-	  @include bp(sm) {
-			&:nth-child(n+3) {
-				margin-top: .5rem;
-			}
-		}
-		@include bp(lg) {
-			&.col--lg-3 {
-				&:nth-child(n+3) {
-					margin-top: 0;
-				}
-			}
-		}
-  }
-
-  #map {
-  	height: 100px;
-  	&.render {
-  		height: 200px;
-  	}
-  }
 }
 
 
@@ -48,122 +13,83 @@
 
 .gfield_creditcard_warning_message,
 .validation_error {
-  background: palette(error);
-  color: #fff;
-  padding: .5rem 1rem;
-  //font-family: ff(bold);
+  color: #f80000;
+  //padding: .5rem 1rem;
   margin-bottom: 1rem;
-  font-size: .8888rem;
+  font-size: 1.6rem;
 }
 
 .validation_message {
-  color: palette(error);
   position: absolute;
   top: 22px;
   right: 5px;
+  display: none;
 }
 
 .gform_fields {
   margin: 0;
   padding: 0;
-  &.row {
-  	margin-right: -$padding-percentage;
-		margin-left: -$padding-percentage;
-  }
 }
 
 .gfield {
   position: relative;
   list-style: none;
+  margin: 0;
 
-  .vertical-align {
-  	transform: translateY(100%);
-  }
+  &.show_label .gfield_label {
+  	display: block;
 
-  &.gform_hidden,
-	&.hide_instruction .instruction,
-  &.hide_label .gfield_label {
-  	margin: 0;
-  	display: none;
-  }
-
-	&.gsection_title .gfield_label,
-  &.section_title .gfield_label {
-		font-size: 1.052632rem;
-		line-height: 1.25;
-		margin: 0 0 1rem 0;
-		font-weight: 700;
   }
 
   .gfield_label {
-    display: inline-block;
+    //display: inline-block;
     margin-bottom: 3px;
-    font-size: .88889rem;
     font-weight: 600;
-    &:empty {
-    	display: none;
-    }
-  }
-  .gfield_required {
     display: none;
   }
+  // .gfield_required {
+  //   display: none;
+  // }
 }
 
-.gsection_title .gfield_label,
-.gsection_title {
-	font-size: 1.052632rem;
-	line-height: 1.25;
-	margin: 2rem 0 1.5rem 0;
-	font-weight: 700;
-	.no-top-margin & {
-		margin-top: 0;
+.gfield_error {
+	.gfield_checkbox, .gfield_radio {
+		border: 1px solid #f80000;
 	}
 }
-
 
 .gfield_checkbox,
 .gfield_radio {
-  margin: 0;
+  margin: 1rem 0 2rem;
   padding: 0;
 	list-style: none;
 
+	li {
+		margin: 0 0 1rem;
+	}
+
+	.inline_values & li {
+		margin: 0 0 1rem 2rem;
+		display: inline-block;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
 	label {
-		font-size: .8333rem;
+		//font-size: .8333rem;
 		margin-left: 3px;
 	}
 
-  .inline_inputs & {
-  	li {
-  		display: inline-block;
-			width: 50%;
 
-			@include bp(sm) {
-				width: 33.33%;
-			}
-			@include bp(md) {
-				width: 25%;
-			}
-  	} // li
-  } // inline
-  // .columns & {
-  // 	columns: 2;
-  // 	@include bp(md) {
-  // 		columns: 3;
-  // 	}
-  // 	@include bp(lg) {
-	 //  	columns: 4;
-  // 	}
-  // 	li {
-  // 		margin-top: .5rem;
-  // 	}
-  // }
 }
 .gfield_radio label {
 	margin-left: 5px;
 }
 
 .ginput_complex {
-	@extend .row;
+	display: flex;
+	flex-wrap: wrap;
 
   .name_first,
   .name_last,
@@ -171,8 +97,6 @@
   .ginput_right,
   .ginput_left {
   	flex: 0 1 auto;
-  	padding-right: $padding-percentage;
-		padding-left: $padding-percentage;
     flex-basis: 50%;
 	  max-width: 50%;
 
@@ -182,11 +106,24 @@
       flex-basis: 100%;
       margin: .5rem 0 0;
     }
-		@include bp(sm) {
-			&:nth-child(n+3) {
-				margin-top: .5rem;
-			}
-		}
+
+  }
+
+  .ginput_full {
+  	flex: 100%;
+  	max-width: none;
+  }
+  .name_first,
+  .ginput_left {
+  	@include bp(sm) {
+  		padding-right: 1.5rem;
+  	}
+  }
+	.name_last,
+  .ginput_right {
+  	@include bp(sm) {
+  		padding-left: 1.5rem;
+  	}
   }
 
   .ginput_full.ginput_cardextras {
@@ -213,213 +150,14 @@
   }
 
 	label {
-		margin: 3px 0 0 2px;
-	  font-size: .7778rem;
+		display: none;
+		// margin: 3px 0 0 2px;
+	 //  font-size: .7778rem;
 
-	  .field_sublabel_above & {
-	  	font-size: .8333rem;
-	  	margin: 0 0 3px 2px;
-	  	font-weight: 600;
-	  }
+	  // .field_sublabel_above & {
+	  // 	font-size: .8333rem;
+	  // 	margin: 0 0 3px 2px;
+	  // 	font-weight: 600;
+	  // }
 	}
-}
-
-.clear-multi {
-	@extend .row;
-	[class*=gfield_date_dropdown] {
-		flex: 0 1 auto;
-  	padding-right: $padding-percentage;
-		padding-left: $padding-percentage;
-    flex-basis: 33.333%;
-	  max-width: 33.333%;
-
-	  select {
-	  	width: 100%;
-	  }
-	}
-}
-
-
-
-.gform_page_footer,
-.gform_footer {
-	margin-top: 2.5rem;
-
-	.btn,
-	.button,
-	.gform_save_link {
-		width: 100%;
-		text-align: center;
-		margin-bottom: .5rem;
-		@include bp(sm) {
-			width: auto;
-			margin-bottom: 0;
-		}
-	}
-
-	.gform_previous_button ~ .gform_next_button,
-	.gform_previous_button ~ .btn,
-	.gform_button,
-	.gform_save_link {
-		@include bp(sm) {
-			margin-left: .5rem;
-		}
-	}
-}
-
-.gfield_list {
-	table-layout: fixed;
-	width: 100%;
-}
-col#gfield_list_49_col_1,
-col#gfield_list_49_col_2 {
-  width: 48%;
-}
-col#gfield_list_49_col_3 {
-  width: 4%;
-}
-
-td.gfield_list_cell {
-	padding: 7px 2% 7px 0;
-}
-td.gfield_list_icons {
-  vertical-align: middle;
-  text-align: center;
-}
-
-
-.protected-post-form {
-
-  p {
-    width: 300px;
-  }
-}
-
-
-
-@include b(form) {
-
-	@include e(input_group) {
-		position: relative;
-		& + & {
-			margin-top: .75rem;
-		}
-	}
-
-	@include e(actions) {
-		margin-top: 1rem;
-	}
-
-	@include e(subtotal) {
-		margin-bottom: .5rem;
-	}
-
-}
-
-
-
-@include b(gform_payment_option) {
-	font-size: .8333rem;
-}
-
-@include b(gform_card_icon_container) {
-	position: relative;
-	margin-top: .5rem;
-	margin-bottom: .5rem;
-	input[type=radio] {
-		font-size: .78888rem;
-		margin-right: .5rem;
-		vertical-align: middle;
-	}
-
-	@include b(gform_card_icon) {
-		vertical-align: middle;
-		width: 1.72222rem;
-		height: 1.11111rem;
-		text-indent: 120%;
-		overflow: hidden;
-		white-space: nowrap;
-		display: inline-block;
-		background-size: 1.72222rem 1.1111rem;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		background-color: transparent;
-
-
-		&.gform_card_icon_visa {
-			background-image: url(./images/visa.svg);
-		}
-		&.gform_card_icon_mastercard {
-			background-image: url(./images/mastercard.svg);
-		}
-		&.gform_card_icon_discover {
-			background-image: url(./images/discover.svg);
-		}
-		&.gform_card_icon_amex {
-			background-image: url(./images/amex.svg);
-		}
-
-		filter: gray;
-		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-		filter: grayscale(1);
-
-		&.gform_card_icon_selected {
-			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-    	filter: grayscale(0);
-		}
-
-
-		& + .gform_card_icon {
-			margin-left: .5rem;
-		}
-	}
-}
-
-
-@include b(ginput_card_expiration_container) {
-
-	select,
-	.selectric-ginput_card_expiration {
-		display: inline-block;
-		width: 7rem;
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: 1rem;
-		&:first-of-type {
-			margin-left: 0;
-		}
-	}
-}
-
-@include b(ginput_cardinfo_right) {
-
-	@include b(ginput_card_security_code) {
-		display: inline-block;
-		vertical-align: middle;
-		width: 20%;
-		min-width: 5rem;
-	}
-
-	@include b(ginput_card_security_code_icon) {
-		width: 1.72222rem;
-		height: 1.11111rem;
-		margin-left: .25rem;
-		background-image: url(images/ccv.svg);
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		background-size: 1.72222rem 1.1111rem;
-		position: relative;
-		vertical-align: middle;
-		display: inline-block;
-		zoom: 1;
-	}
-}
-
-
-
-
-img.grayscale {
-	filter: gray;
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-	filter: grayscale(1);
 }

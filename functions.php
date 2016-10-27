@@ -77,6 +77,17 @@ function jtd_change_gform_submit_btn($button, $form){
 add_filter("gform_submit_button", "jtd_change_gform_submit_btn", 10, 2);
 
 
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+/**
+ *  Set Yoast SEO plugin metabox priority to low
+ */
+function jtd_lowpriority_yoastseo() {
+  return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'jtd_lowpriority_yoastseo' );
+
+
 
 
 /*

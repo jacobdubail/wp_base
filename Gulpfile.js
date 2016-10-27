@@ -2,7 +2,7 @@ var
 	gulp         = require('gulp'),
 	sass         = require('gulp-sass'),
 	sourcemaps   = require('gulp-sourcemaps'),
-	autoprefixer = require('gulp-autoprefixer'),
+	autoprefixer = require('autoprefixer'),
 	browserSync  = require('browser-sync'),
 	sequence     = require('run-sequence'),
 	util         = require('gulp-util'),
@@ -11,41 +11,16 @@ var
 	svgmin       = require('gulp-svgmin'),
 	cheerio      = require('gulp-cheerio'),
 	postcss      = require('gulp-postcss'),
-
 	concat       = require('gulp-concat'),
 	uglify       = require('gulp-uglify'),
-
-
-	source     = require( 'vinyl-source-stream' ),
-	buffer     = require( 'vinyl-buffer' ),
-	browserify = require('browserify'),
-	babelify   = require('babelify'),
-	watchify   = require('watchify'),
-	notify     = require('gulp-notify');
+	imagemin     = require('gulp-imagemin');
 
 var BROWSER_SYNC_RELOAD_DELAY = 1000;
 
 
-var input = './scss/main.scss';
-var output = './';
+var input = 'scss/main.scss';
+var output = '';
 
-var sassOptions = {
-	errLogToConsole: true,
-	outputStyle: 'expanded'
-};
-
-var autoprefixerOptions = {
-	browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-};
-
-function handleErrors() {
-  var args = Array.prototype.slice.call(arguments);
-  notify.onError({
-    title: 'Compile Error',
-    message: '<%= error.message %>'
-  }).apply(this, args);
-  this.emit('end'); // Keep gulp from hanging on this task
-}
 
 
 function swallowError (error) {
@@ -54,47 +29,7 @@ function swallowError (error) {
 }
 
 
-/*
-Bundle React Task
- */
-function buildScript(file, watch) {
 
-  var props = {
-    entries: ['./js/components/' + file],
-    debug : true,
-    transform:  [babelify]
-  };
-
-  // watchify() if watch requested, otherwise run browserify() once
-  var bundler = watch ? watchify(browserify(props)).transform('babelify', {presets: ['react','es2015']}) : browserify(props).transform('babelify', {presets: ['react','es2015']});
-
-  function rebundle() {
-    var stream = bundler.bundle();
-    return stream
-      .on('error', handleErrors)
-      .pipe(source(file))
-      .pipe(gulp.dest('./js/'))
-      // If you also want to uglify it
-      // .pipe(buffer())
-      // .pipe(uglify())
-      // .pipe(rename('app.min.js'))
-      // .pipe(gulp.dest('./build'))
-      .pipe(browserSync.reload({stream:true}))
-  }
-
-  // listen for an update and run rebundle
-  bundler.on('update', function() {
-    rebundle();
-    gutil.log('Rebundle...');
-  });
-
-  // run it once the first time buildScript is called
-  return rebundle();
-}
-
-gulp.task('build-react', function() {
-  return buildScript('Kada.js', false); // this will only run once because we set watch to false
-});
 
 /*
 STYLES Task
@@ -105,10 +40,12 @@ gulp.task('styles', function() {
   return gulp.src(input)
 		//.pipe( sourcemaps.init() )
     .pipe( sass({outputStyle: 'compressed'}).on('error', swallowError) )
-    .pipe( postcss([ require('autoprefixer'), require('postcss-flexibility') ]) )
-    //.pipe( autoprefixer(autoprefixerOptions) )
+    .pipe(
+    	postcss([ autoprefixer({ browsers: ['last 2 versions', 'iOS 7'] }),
+    	require('postcss-flexibility') ])
+    )
     .pipe( sourcemaps.write() )
-    .pipe( rename("./style.css") )
+    .pipe( rename("style.css") )
     .pipe( gulp.dest(output) )
     .pipe( browserSync.stream() );
 });
@@ -120,10 +57,10 @@ gulp.task('styles', function() {
 SCRIPTS Task
  */
 gulp.task('plugins', function () {
-	return gulp.src(['./js/plugins/**/*.js'])
+	return gulp.src(['js/plugins/**/*.js'])
 		.pipe(concat('plugins.min.js')) //the name of the resulting file
 		.pipe(uglify().on('error', swallowError))
-		.pipe(gulp.dest('./js'))
+		.pipe(gulp.dest('js'))
 		.pipe(browserSync.stream());
 
 	util.log('Finished minifying Plugins');
@@ -132,10 +69,10 @@ gulp.task('plugins', function () {
 
 gulp.task('js', function () {
 	util.log('Begin minifying Scripts');
-	return gulp.src('./js/main.js')
+	return gulp.src('js/main.js')
 		.pipe(concat('main.min.js')) //the name of the resulting file
 		.pipe(uglify().on('error', swallowError))
-		.pipe(gulp.dest('./js'))
+		.pipe(gulp.dest('js'))
 		.pipe(browserSync.stream());
 
 	util.log('Finished minifying Scripts');
@@ -146,7 +83,7 @@ SVG Task
  */
 gulp.task('svg', function() {
 	util.log('Begin SVG task');
-	return gulp.src('./svg/*.svg')
+	return gulp.src('svg/*.svg')
 		.pipe(rename({prefix: 'icon-'}))
 		.pipe(svgmin({
 			plugins: [
@@ -182,7 +119,7 @@ gulp.task('svg', function() {
 		.pipe(cheerio({
 			run: function ($) {
 				$('[fill]').removeAttr('fill');
-				$('[stroke]').removeAttr('stroke');
+				//$('[stroke]').removeAttr('stroke');
 				$('style').remove();
 			},
 			parserOptions: { xmlMode: true }
@@ -195,8 +132,19 @@ gulp.task('svg', function() {
 			path.basename = "svg-defs",
 			path.extname = ".php"
 		}))
-		.pipe(gulp.dest('./lib/'))
+		.pipe(gulp.dest('lib/'))
 });
+
+
+/*
+IMAGES TASK
+ */
+gulp.task('images', function() {
+	return gulp.src('images/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('images/'))
+});
+
 
 
 
@@ -206,18 +154,14 @@ WATCH Task
 gulp.task('watch', function() {
 
   util.log('watching sass')
-  gulp.watch('./scss/**/*.scss', ['styles'], browserSync.reload);
+  gulp.watch('scss/**/*.scss', ['styles'], browserSync.reload);
 
   util.log('watching svg')
-  gulp.watch('./svg/*.svg', ['svg'], browserSync.reload);
+  gulp.watch('svg/*.svg', ['svg'], browserSync.reload);
 
   util.log('watching js')
-  gulp.watch('./js/plugins/**/*.js', ['plugins'], browserSync.reload);
-  gulp.watch('./js/main.js', ['js'], browserSync.reload);
-
-  util.log('watching pests')
-  //return buildScript('js/components/*.js', false)
-  gulp.watch('./js/components/*.js', ['build-react'], browserSync.reload);
+  gulp.watch('js/plugins/**/*.js', ['plugins'], browserSync.reload);
+  gulp.watch('js/main.js', ['js'], browserSync.reload);
 
   browserSync.reload({
     stream: false
@@ -236,12 +180,12 @@ BROWSER-SYNC Task
 gulp.task('browser-sync', ['styles'], function() {
 
   browserSync.init({
-   proxy: "kada.dev"
+   proxy: "base.dev"
   });
 
   util.log('watching browser')
 
-  gulp.watch("./*.php").on('change', browserSync.reload);
+  gulp.watch("*.php").on('change', browserSync.reload);
 
 });
 

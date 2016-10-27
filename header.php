@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]>         <html class="no-js oldie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 8]>         <html class="no-js ie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
+<!--[if lte IE 9]> <html class="no-js oldie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
 <!--[if !IE]><!--> <html class="no-js" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -11,15 +10,10 @@
 	<?php } ?>
 
 	<title><?php wp_title(''); ?></title>
-	<!-- <meta name="google-site-verification" content=""> -->
 	<meta name="viewport" content="width=device-width">
 
-	<!-- <link rel="apple-touch-icon" href="/touchicon.png"> -->
 	<link rel="icon" href="/favicon.png">
-	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
-	<!-- or, set /favicon.ico for IE10 win -->
 	<meta name="msapplication-TileColor" content="#bada55">
-	<!-- <meta name="msapplication-TileImage" content="/tileicon.png">  -->
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
 
@@ -30,14 +24,14 @@
 
 	<?php wp_head(); ?>
 
-	<!--[if lt IE 9]>
+	<!--[if lte IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.js"></script>
 	<![endif]-->
 
 </head>
 <body <?php body_class(); ?>>
-	<?php get_template_part('parts/svg-defs'); ?>
-	<!--[if lt IE 9]>
+	<?php get_template_part('lib/svg-defs'); ?>
+	<!--[if lte IE 9]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 
@@ -48,17 +42,22 @@
 						<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
 					</a>
 					<nav class="site__nav" role="navigation">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+							&#9776;
+						</button>
 						<?php
+							$in = ( wp_is_mobile() ) ? '' : 'in';
 							wp_nav_menu(
 								array(
-									'theme_location' => 'main-nav',
-									'menu_class'     => 'menu main__nav',
-									'container'      => '',
-									'walker'         => new base_nav_walker()
+									'theme_location'  => 'main-nav',
+									'menu_class'      => 'menu main__nav',
+									'container'       => 'div',
+									'container_id'    => 'main-nav',
+									'container_class' => 'collapse ' . $in,
+									//'walker'         => new tpr_nav_walker()
 								)
 							);
 						?>
-						<?php get_template_part('parts/header-utils'); ?>
 					</nav>
 				</div>
 			</div>

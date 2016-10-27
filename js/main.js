@@ -13,19 +13,6 @@ var console = (window.console = window.console || {});
 
 		init : function() {
 
-			var that  = this;
-			var doc   = document.body || document.documentElement;
-			var style = doc.style;
-
-			if ( !style.webkitFlexWrap == '' ||
-			    !style.msFlexWrap == '' ||
-			    !style.flexWrap == '' ) {
-			  doc.className += " no-flex-support";
-			}
-
-
-			this.setup_resp_nav();
-
 
 		},
 
@@ -39,29 +26,6 @@ var console = (window.console = window.console || {});
 				//Hide the other panels
 				el.find('.open').not($this).not($this.next()).removeClass('open');
 
-			});
-		},
-
-		setup_resp_nav : function() {
-			var label = "<span></span>";
-
-			responsiveNav( "#menu-main-nav", {
-				label      : label,
-				animate    : false,
-				transition : 300,
-				insert     : 'before',
-				openPos    : 'relative',
-			});
-
-			BASE.main_nav.on('click','span.nav-arrow',function(e) {
-				var $this = $(this);
-
-				e.stopPropagation();
-				e.preventDefault();
-
-				$this.parent().parent().toggleClass('open');
-				$this.parent().next().toggleClass('open');
-				return false;
 			});
 		},
 
