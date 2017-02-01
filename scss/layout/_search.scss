@@ -1,10 +1,10 @@
-@include b(site) {
+.site {
 
-	@include e(search) {
+	&__search {
 		position: relative;
 		line-height: 2;
 
-		@include e(label) {
+		&__label {
 			margin: 0;
 			padding: 0;
 			color: #fff;
@@ -25,7 +25,7 @@
 			}
 		}
 
-		@include e(close) {
+		&__close {
 			display: none;
 
 		}

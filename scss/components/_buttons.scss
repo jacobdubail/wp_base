@@ -1,13 +1,13 @@
-@include b(btn) {
+.btn {
 	@include btn(palette(brand),#fff,palette(brand));
 	//margin: 1rem 0;
 	text-transform: lowercase;
 
-	@include m(jumbotron) {
+	&--jumbotron {
 
 	}
 
-	@include m(upper) {
+	&--upper {
 		text-transform: uppercase;
 	}
 }

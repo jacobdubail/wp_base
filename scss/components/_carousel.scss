@@ -57,8 +57,8 @@
 }
 
 
-@include b(projects) {
-	@include e(carousel) {
+.projects {
+	&__carousel {
 		.owl-wrapper-outer {
 			padding-bottom: 180px;
 		}
@@ -79,7 +79,7 @@
 			transition: opacity .5s ease;
 
 			h3 {
-				font-family: ff(nav);
+				//font-family: ff(nav);
 				color: palette(grey);
 				margin-bottom: 0;
 			}
@@ -94,7 +94,7 @@
 	}
 }
 
-@include b(projects-nav) {
+.projects-nav {
 	position: absolute;
 	top: -150px;
 	left: 50%;

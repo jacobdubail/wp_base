@@ -1,4 +1,4 @@
-@include b(container) {
+.container {
 	// Set container width if responsive
 	max-width: $width;
 
@@ -10,13 +10,13 @@
 	@extend %cf;
 
 
-	@include m(relative) {
+	&--relative {
 		position: relative;
 	}
 
 }
 
-@include b(row) {
+.row {
 	display: flex;
 	flex: 0 1 auto;
 	flex-direction: row;
@@ -24,7 +24,7 @@
 	margin-right: $gutter-compensation;
 	margin-left: $gutter-compensation;
 
-	@include b(row) {
+	.row {
 		margin-right: $gutter-compensation;
 		margin-left: $gutter-compensation;
 	}
@@ -33,7 +33,7 @@
 		flex-direction: row-reverse;
 	}
 
-	@include m(v-center) {
+	&--v-center {
 		align-items: center;
 	}
 
@@ -64,18 +64,14 @@
 
 
 [class*=col--] {
-	// display: flex;
 	flex: 0 1 auto;
-	// flex-direction: column;
-	// flex-grow: 0;
-	// flex-shrink: 0;
 	padding-right: $padding;
 	padding-left: $padding;
 
 	.no-flexbox & {
 		width: 100%;
 		position: relative;
-		@include mappy-bp(sm) {
+		@include bp(sm) {
 			float: left;
 		}
 	}
@@ -92,7 +88,7 @@
 	$bp   : nth( $vals, $i );
 
 
-	@include mappy-bp( $bp ) {
+	@include bp( $bp ) {
 		@include make-grid($columns, $size);
 
 		.col-#{$size} {
