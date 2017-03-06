@@ -3,12 +3,12 @@
 }
 
 ::-moz-selection {
-	background: palette(error);
+	background: $error;
 	color: #fff;
 	text-shadow: none;
 }
 ::selection {
-	background: palette(error);
+	background: $error;
 	color: #fff;
 	text-shadow: none;
 }
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-	font-family: ff('body');
+	font-family: $font;
 	font-size: .875em; // 16px at 100%
 	line-height: 1.57;
 	-webkit-font-smoothing: antialiased;

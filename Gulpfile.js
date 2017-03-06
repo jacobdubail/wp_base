@@ -185,7 +185,7 @@ gulp.task('browser-sync', ['styles'], function() {
 
   util.log('watching browser')
 
-  gulp.watch("*.php").on('change', browserSync.reload);
+  gulp.watch("**/*.php").on('change', browserSync.reload);
 
 });
 

@@ -15,13 +15,9 @@
 
 	<?php $host = parse_url(site_url(), PHP_URL_HOST); ?>
 
-	ga('create', 'UA-<?php the_field("google_analytics_id", "options"); ?>', '<?php echo $host; ?>');
+	ga('create', 'UA-<?php the_field("google_analytics_id", "options"); ?>', '');
 	ga('send', 'pageview');
 </script>
-
-<?php if ( $host === 'base.dev' ) : ?>
-	<script src="//localhost:1337/livereload.js"></script>
-<?php endif; ?>
 
 </body>
 </html>

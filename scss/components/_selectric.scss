@@ -15,9 +15,9 @@
 
 .selectric {
 	background: #fff;
-	color: palette(grey,label);
+	color: $brand;
 	font-weight: 400;
-	border: 1px solid palette(brand,medium);
+	border: 1px solid $brand;
 	border-radius: .4211rem;
 	font-size: .84211rem;
 	position: relative;
@@ -42,7 +42,7 @@
 		top: 7px;
 		width: 20px;
 		height: 20px;
-		fill: palette(brand,medium);
+		fill: $brand;
 		text-align: center;
 		font: 0/0 a;
 	}
@@ -59,13 +59,13 @@
 	z-index: 9999;
 	.selectric {
 		background-color: #fff;
-		color: palette(grey);
+		color: $brand;
     outline: none;
-    border-color: palette();
+    border-color: $brand;
     border-radius: .4211rem .4211rem 0 0;
 	}
 	.button {
-		fill: palette(grey);
+		fill: $brand;
 	}
 	.selectricItems {
 		display: block;
@@ -121,7 +121,7 @@
 	top: 100%;
 	left: 0;
 	background: #fff;
-	border: 1px solid palette();
+	border: 1px solid $brand;
 	border-top: 0;
 	z-index: -1;
 	//box-shadow: 0 0 10px -6px;
@@ -147,9 +147,9 @@
 		display: block;
 		padding: 5px;
 		border-top: 1px solid #fff;
-		border-bottom: 1px solid palette(brand,light);
+		border-bottom: 1px solid $brand;
 		font-size: .7368422rem;
-		color: palette(grey,base);
+		color: $brand;
 		cursor: pointer;
 
 		&:last-child {
@@ -162,12 +162,12 @@
 			border-top-color: #E0E0E0;
 		}
 		&:hover {
-			background: palette(grey,light);
-			color: palette(grey,text);
+			background: $brand;
+			color: $brand;
 		}
 		&.disabled {
-			background: palette(grey,light);
-			color: palette(grey,label);;
+			background: $brand;
+			color: $brand;
 			//border-top-color: #FAFAFA;
 			cursor: default;
 		}

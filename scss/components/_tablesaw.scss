@@ -112,7 +112,7 @@ table.tablesaw {
 		text-transform: uppercase;
 		svg {
 			height: 18px;
-			fill: palette();
+			fill: $brand;
 			position: relative;
 			top: -2px;
 			display: block;

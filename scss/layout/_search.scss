@@ -17,7 +17,7 @@
 				top: 2px;
 				width: .777778rem;
 				height: .777778rem;
-				fill: palette(grey,dark);
+				fill: $brand;
 			}
 
 			&:hover {
@@ -49,7 +49,7 @@
 				height: auto;
 				padding: .5rem 1rem;
 				background-color: #fff;
-				border-color: palette();
+				border-color: $brand;
 				width: 20rem;
 				~ label {
 					opacity: 1;

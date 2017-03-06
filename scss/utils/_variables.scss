@@ -15,12 +15,8 @@ $elementSeparator: '__';
 $modifierSeparator: '--';
 
 
-$fonts: (
-	nav : "Novecentosanswide-DemiBold, sans-serif",
-	body : "nimbus-sans, sans-serif",
-	headings : "open-sans, Georgia",
-);
-
+$headings: "Roboto Condensed, sans-serif";
+$font: "Source Sans Pro, sans-serif";
 
 $columnpoints: (
 	'xs': max 500px,
@@ -48,46 +44,8 @@ $rootsizes: (
 $points: map-keys($columnpoints);
 $sizes: map-values($rootsizes);
 
-$colors: (
-	brand: #70242D,
-	red: #70242D,
-	gold: #FFAD2E,
-	teal: #285863,
-	green: #A3AF99,
-	blue: #C7EFEF,
-	pink: #F77465,
-	grey: #808080,
-);
-$color_values: map-values($colors);
-$color_names: map-keys($colors);
-
-$tints: (
-	600: 80%,
-	700: 60%,
-	800: 40%,
-	900: 20%
-);
-$shades: (
-	100: 20%,
-	200: 40%,
-	300: 60%,
-	400: 80%
-);
-
-$t_keys : map-keys($tints); //900,800,700,600
-$t_vals : map-values($tints); //20%,40%,60%,80%
-$s_keys : map-keys($shades);
-$s_vals : map-values($shades);
-
-$palettes: (
-	error: (
-		base: #ff0000,
-	)
-);
-
-
-$palettes: generate-color-palette($palettes);
-
+$brand: #bada55;
+$error: #f80000;
 
 $social: (
 	facebook : #0053a3,

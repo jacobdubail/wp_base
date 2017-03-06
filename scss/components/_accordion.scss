@@ -2,13 +2,13 @@
 	position: relative;
 
 	@include e(title) {
-		border-bottom: 1px solid palette();
+		border-bottom: 1px solid $brand;
 		margin-top: .8rem;
 		padding-bottom: 5px;
 	}
 
 	@include e(time) {
-		color: palette();
+		color: $brand;
 		font-weight: 600;
 		border-bottom: 1px solid;
 		display: block;
@@ -27,8 +27,8 @@
 		@include b(icon) {
 			width: 24px;
 			height: 24px;
-			fill: palette();
-			border: 1px solid palette();
+			fill: $brand;
+			border: 1px solid $brand;
 			border-radius: 50%;
 			padding: 2px;
 			transition: all .2s ease;

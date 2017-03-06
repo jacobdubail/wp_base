@@ -79,8 +79,7 @@
 			transition: opacity .5s ease;
 
 			h3 {
-				font-family: ff(nav);
-				color: palette(grey);
+				color: $brand;
 				margin-bottom: 0;
 			}
 		}
@@ -104,12 +103,12 @@
 	justify-content: space-between;
 	z-index: 1020;
 	svg {
-		fill: palette(grey);
+		fill: $grey;
 	}
 	.prev:hover,
 	.next:hover {
 		svg {
-			fill: palette(brand);
+			fill: $brand;
 		}
 	}
 }
@@ -131,14 +130,14 @@
 		max-width: 1600px;
 		@include center-align(top);
 		div {
-			background-color: palette(brand);
+			background-color: $brand;
 			border-radius: 5px 0 0 5px;
 			width: 50px;
 			height: 57px;
 			text-align: center;
 			position: absolute;
 			&:hover {
-				background-color: palette(brand);
+				background-color: $brand;
 			}
 			svg {
 				position: absolute;
@@ -173,12 +172,12 @@
 		width: $column-width;
 		height: 5px;
 		display: inline-block;
-		background-color: palette(brand);
+		background-color: $brand;
 		&.active {
-			background-color: palette(brand);
+			background-color: $brand;
 		}
 		&:hover {
-			background-color: palette(brand);
+			background-color: $brand;
 		}
 	}
 }

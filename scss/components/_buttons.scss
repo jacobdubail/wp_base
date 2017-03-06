@@ -1,5 +1,5 @@
 @include b(btn) {
-	@include btn(palette(brand),#fff,palette(brand));
+	@include btn($brand,#fff,$brand);
 	//margin: 1rem 0;
 	text-transform: lowercase;
 
