@@ -21,19 +21,19 @@
 html {
 	position: relative;
 	min-height: 100%;
-	font-size: nth($sizes, 1) / 10 * 62.5%;
+	font-size: 62.5%; // nth($sizes, 1) / 10 * 62.5%
 
-	// Loop through columnpoints.
-	@for $i from 2 through length($columnpoints) {
-	  @include bp(nth($points, $i)) {
-			font-size: nth($sizes, $i) / 10 * 62.5%;
-	  }
-	}
+	// // Loop through columnpoints.
+	// @for $i from 2 through length($columnpoints) {
+	//   @include bp(nth($points, $i)) {
+	// 		font-size: nth($sizes, $i) / 10 * 62.5%;
+	//   }
+	// }
 }
 
 body {
 	font-family: $font;
-	font-size: .875em; // 16px at 100%
+	font-size: 1rem; // 16px at 100%
 	line-height: 1.57;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

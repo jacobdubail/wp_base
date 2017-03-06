@@ -1,4 +1,4 @@
-@include b(accordion) {
+.accordion {
 	position: relative;
 
 	@include e(title) {
@@ -15,7 +15,7 @@
 		padding-bottom: .8rem;
 	}
 
-	@include e(toggle) {
+	&__toggle {
 		cursor: pointer;
 		font-weight: 500;
 		font-size: 1rem;
@@ -24,7 +24,7 @@
 		border-bottom: 1px solid;
 		display: flex;
 
-		@include b(icon) {
+		.icon {
 			width: 24px;
 			height: 24px;
 			fill: $brand;
@@ -36,13 +36,13 @@
 
 		&.open {
 			border-bottom-color: transparent;
-			@include b(icon) {
+			.icon {
 				transform: rotate(180deg);
 			}
 		}
 	}
 
-	@include e(body) {
+	&__body {
 		max-height: 0;
 		overflow: hidden;
 		visibility: hidden;

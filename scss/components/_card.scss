@@ -1,6 +1,6 @@
-@include b(card) {
+.card {
 
-	@include e(link) {
+	&__link {
 		text-decoration: none;
 		&:hover {
 			text-decoration: none;
@@ -9,32 +9,32 @@
 			}
 		}
 	}
-	@include e(figure) {
+	&__figure {
 		text-align: left;
 		//background-color: #fff;
 		overflow: hidden;
 	}
 
-	@include e(media) {
+	&__media {
 		width: 100%;
 		height: auto;
 		max-width: 100%;
 		transition: all .2s ease;
 	}
-	@include e(caption) {
+	&__caption {
 		padding: .75rem 1rem 1rem;
 		background-color: #fff;
 		z-index: 10;
 		position: relative;
 	}
-	@include e(title) {
+	&__title {
 		color: #000;
 	}
 	@include e(text) {
 		color: $brand;
 	}
 
-	@include e(badge) {
+	&__badge {
 
 	}
 

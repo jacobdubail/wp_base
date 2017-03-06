@@ -14,7 +14,6 @@ $padding-percentage: ($gutter-percentage / 2);
 $elementSeparator: '__';
 $modifierSeparator: '--';
 
-
 $headings: "Roboto Condensed, sans-serif";
 $font: "Source Sans Pro, sans-serif";
 
@@ -46,6 +45,7 @@ $sizes: map-values($rootsizes);
 
 $brand: #bada55;
 $error: #f80000;
+
 
 $social: (
 	facebook : #0053a3,

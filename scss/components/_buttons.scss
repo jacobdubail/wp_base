@@ -3,11 +3,11 @@
 	//margin: 1rem 0;
 	text-transform: lowercase;
 
-	@include m(jumbotron) {
+	&--jumbotron {
 
 	}
 
-	@include m(upper) {
+	&--upper {
 		text-transform: uppercase;
 	}
 }
