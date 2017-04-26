@@ -8,11 +8,13 @@ Version: 1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+/*
+  'utils/functions',
+  'utils/mixins',
+*/
 
 @import
-  'utils/functions',
   'utils/variables',
-  'utils/mixins',
   'utils/placeholders';
 
 @import
@@ -26,7 +28,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   'base/lists';
 
 @import
-  'layout/grid',
   'layout/navigation',
   'layout/header',
   'layout/footer',
@@ -41,7 +42,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   'components/tablesaw';
 
 @import
-  'pages/entry';
+  'pages/*';
 
 @import
   'themes/site';

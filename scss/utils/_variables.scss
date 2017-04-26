@@ -1,29 +1,6 @@
 // Set Grid (1170gs default)
-$column-width: 70px;
-$gutter: 30px;
-$columns: 12;
-$padding: $gutter / 2;
-$gutter-compensation: ( ($gutter/2) * -1 );
-
-$width: ($column-width * $columns) + ($gutter * ($columns - 1));
-
-$gutter-percentage: ($gutter / $width)*100%;
-$padding-percentage: ($gutter-percentage / 2);
-
-
-$elementSeparator: '__';
-$modifierSeparator: '--';
-
 $headings: "Roboto Condensed, sans-serif";
 $font: "Source Sans Pro, sans-serif";
-
-$columnpoints: (
-	'xs': max 500px,
-	'sm': 500px,
-	'md': 768px,
-	'lg': 1024px,
-	'xl': 1340px,
-);
 
 $breakpoints: (
 	'sm': 500px,
@@ -31,17 +8,6 @@ $breakpoints: (
 	'lg': 1024px,
 	'xl': 1340px,
 );
-
-$rootsizes: (
-  rootsize-0: 18,
-  rootsize-1: 17,
-  rootsize-2: 16,
-  rootsize-3: 17,
-  rootsize-4: 18
-);
-
-$points: map-keys($columnpoints);
-$sizes: map-values($rootsizes);
 
 $brand: #bada55;
 $error: #f80000;

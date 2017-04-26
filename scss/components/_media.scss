@@ -4,7 +4,7 @@
 
 	&.alignleft {
 		float: left;
-		margin: 0 2.7rem 2rem 0;
+		margin: 0 27px 20px 0;
 
 		@include bp( sm ) {
 			float: none;
@@ -12,7 +12,7 @@
 	}
 	&.alignright {
 		float: right;
-		margin: 0 0 2rem 2.7rem;
+		margin: 0 0 20px 27px;
 
 		@include bp( sm ) {
 			float: none;
@@ -22,7 +22,7 @@
 	.wp-caption-text {
 		background: #f2f2f2;
 		border-top: 1px solid #fff;
-		padding: 1.3rem 2rem;
+		padding: 13px 20px;
 		color: #7a7a7a;
 	}
 }

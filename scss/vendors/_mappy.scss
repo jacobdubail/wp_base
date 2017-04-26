@@ -165,6 +165,7 @@ $breakpoints: () !default;
 
 @function mappy-convert-to-rem($val) {
 	@if unit($val) == "px" or $val == 0 {
+		@return $val;
 		@return mappy-rem($val);
 	}
 

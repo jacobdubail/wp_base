@@ -13,10 +13,9 @@
 
 .gfield_creditcard_warning_message,
 .validation_error {
-  color: #f80000;
-  //padding: .5rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+  color: $error;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .validation_message {
@@ -47,29 +46,26 @@
     font-weight: 600;
     display: none;
   }
-  // .gfield_required {
-  //   display: none;
-  // }
 }
 
 .gfield_error {
 	.gfield_checkbox, .gfield_radio {
-		border: 1px solid #f80000;
+		border: 1px solid $error;
 	}
 }
 
 .gfield_checkbox,
 .gfield_radio {
-  margin: 1rem 0 2rem;
+  margin: 10px 0 20px;
   padding: 0;
 	list-style: none;
 
 	li {
-		margin: 0 0 1rem;
+		margin: 0 0 10px;
 	}
 
 	.inline_values & li {
-		margin: 0 0 1rem 2rem;
+		margin: 0 0 10px 20px;
 		display: inline-block;
 		&:first-child {
 			margin-left: 0;
@@ -104,7 +100,7 @@
       width: 100%;
       max-width: 100%;
       flex-basis: 100%;
-      margin: .5rem 0 0;
+      margin: 5px 0 0;
     }
 
   }
@@ -116,13 +112,13 @@
   .name_first,
   .ginput_left {
   	@include bp(sm) {
-  		padding-right: 1.5rem;
+  		padding-right: 15px;
   	}
   }
 	.name_last,
   .ginput_right {
   	@include bp(sm) {
-  		padding-left: 1.5rem;
+  		padding-left: 15px;
   	}
   }
 
@@ -130,7 +126,7 @@
 		flex-basis: 100%;
   	max-width: 100%;
   	width: 100%;
-  	margin-top: .5rem;
+  	margin-top: 5px;
 
   	.ginput_cardinfo_left,
   	.ginput_cardinfo_right {
@@ -138,10 +134,10 @@
   		width: auto;
   	}
   	.ginput_cardinfo_right {
-  		margin-top: .5rem;
+  		margin-top: 5px;
   		@include bp(sm) {
   			margin-top: 0;
-	  		margin-left: 1rem;
+	  		margin-left: 10px;
 	  	}
   	}
   	label {
@@ -151,13 +147,5 @@
 
 	label {
 		display: none;
-		// margin: 3px 0 0 2px;
-	 //  font-size: .7778rem;
-
-	  // .field_sublabel_above & {
-	  // 	font-size: .8333rem;
-	  // 	margin: 0 0 3px 2px;
-	  // 	font-weight: 600;
-	  // }
 	}
 }

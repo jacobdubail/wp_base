@@ -1,8 +1,3 @@
-.clear {
-	margin-left: 0;
-	clear: both;
-}
-
 
 %cf {
   &:after {
@@ -30,10 +25,10 @@
 	text-decoration: none;
 	font-family: $headings;
 	box-sizing: border-box;
-	font-size: .875em; // 16px at 100%
+	font-size: 18px; // 16px at 100%
 	line-height: 1;
 	border: 0;
-	padding: .75rem 2rem;
+	padding: 10px 20px;
 
 	&:hover, &:active, &:focus, &:visited {
 		text-decoration: none;
