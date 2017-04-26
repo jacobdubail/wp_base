@@ -3,7 +3,7 @@
 /* Functions for comments
 /*-----------------------------------------------------------------------------------*/
 class jtd_comments {
-	public function jtd_comments() {
+	public function __construct() {
 		// Enable threaded comments
 		add_action( 'get_header', array( &$this, 'enable_threaded_comments' ) );
 	}

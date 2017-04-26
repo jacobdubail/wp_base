@@ -3,7 +3,7 @@
 /* Functions for menus
 /*-----------------------------------------------------------------------------------*/
 class jtd_language {
-	public function jtd_language() {
+	public function __construct() {
 
 
 

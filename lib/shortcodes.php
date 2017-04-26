@@ -3,7 +3,7 @@
 /* Functions for menus
 /*-----------------------------------------------------------------------------------*/
 class jtd_shortcodes {
-	public function jtd_shortcodes() {
+	public function __construct() {
 
 		add_filter( 'the_content', array( &$this, 'shortcode_empty_paragraph_fix' ) );
 		add_shortcode( 'email', array( &$this, 'email_encode_' ) );

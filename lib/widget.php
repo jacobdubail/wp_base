@@ -4,7 +4,7 @@
 /*-----------------------------------------------------------------------------------*/
 class jtd_sidebars {
 
-	public function jtd_sidebars() {
+	public function __construct() {
 
 		// Unregister default widgets
 		add_action( 'widgets_init', array( &$this, 'unregister_default_widgets' ) );

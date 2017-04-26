@@ -11,6 +11,15 @@ var console = (window.console = window.console || {});
 		hash      : window.location.hash,
 		toggle    : '',
 
+
+		boot : function() {
+			if ( BASE.browserSupportsAllFeatures() ) {
+				BASE.init();
+			} else {
+				BASE.loadScript('/wp-content/themes/BASE/js/polyfills.min.js', BASE.init);
+			}
+		},
+
 		init : function() {
 
 
@@ -41,9 +50,31 @@ var console = (window.console = window.console || {});
 
 		},
 
+		loadScript : function(src, done) {
+		  var js = document.createElement('script');
+		  js.src = src;
+		  js.onload = function() {
+		    done();
+		  };
+		  js.onerror = function() {
+		    done(new Error('Failed to load script ' + src));
+		  };
+		  document.head.appendChild(js);
+		},
+
+
+		browserSupportsAllFeatures : function() {
+			//var d = document.documentElement.style;
+			var supportsCSS = !!((window.CSS && window.CSS.supports) || false);
+
+			return supportsCSS && CSS.supports("display", "flex");
+
+		  //return ( 'flexWrap' in d || 'WebkitFlexWrap' in d || 'msFlexWrap' in d );
+		},
+
 	}; // end base
 
-	BASE.init();
+	BASE.boot();
 
 
 

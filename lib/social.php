@@ -3,7 +3,7 @@
 /* Functions for menus
 /*-----------------------------------------------------------------------------------*/
 class jtd_social {
-	public function jtd_social() {
+	public function __construct() {
 		add_action( 'wp_head', array( &$this, 'opengraph_for_posts' ) );
 		add_action( 'wp_head', array( &$this, 'googleplus' ) );
 	}
@@ -34,7 +34,7 @@ class jtd_social {
 
 	/**
 	 * Display a pinterest button
-	 * <script src="http://assets.pinterest.com/js/pinit.js"></script> 
+	 * <script src="http://assets.pinterest.com/js/pinit.js"></script>
 	 *
 	 * @return null
 	 */

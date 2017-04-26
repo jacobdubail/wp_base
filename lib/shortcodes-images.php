@@ -3,7 +3,7 @@
 /* Functions shotcodes images
 /*-----------------------------------------------------------------------------------*/
 class jtd_shortcodes_images {
-	public function jtd_shortcodes_images() {
+	public function __construct() {
 		// Snapshot of a website using wordpress.com
 		add_shortcode( "snapshot", array( &$this, 'website_snapshot' ) );
 	}

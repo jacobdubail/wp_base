@@ -3,7 +3,7 @@
 /* Functions for shorcode videos
 /*-----------------------------------------------------------------------------------*/
 class jtd_shortcodes_videos {
-	public function jtd_shortcodes_images() {
+	public function __construct() {
 		// Snapshot of a website using wordpress.com
 		add_shortcode( "jtd_vimeo", array( &$this, 'vimeo' ) );
 		add_shortcode( "jtd_youtube", array( &$this, 'youtube' ) );

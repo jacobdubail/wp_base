@@ -3,7 +3,7 @@
 /* Functions for comments
 /*-----------------------------------------------------------------------------------*/
 class jtd_login {
-	public function jtd_login() {
+	public function __construct() {
 		// Change logo
 		add_action( 'login_head',  array( &$this, 'custom_logo' ) );
 
