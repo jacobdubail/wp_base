@@ -38,13 +38,13 @@ gulp.task('styles', function() {
   util.log('Building Styles');
 
   return gulp.src(input)
-		//.pipe( sourcemaps.init() )
+		// .pipe( sourcemaps.init() )
     .pipe( sass({outputStyle: 'compressed'}).on('error', swallowError) )
     .pipe(
-    	postcss([ autoprefixer({ browsers: ['last 2 versions', 'iOS 7'] }),
+    	postcss([ autoprefixer({ browsers: ['last 2 versions', 'iOS 7', 'IE 11'] }),
     	require('postcss-flexibility') ])
     )
-    .pipe( sourcemaps.write() )
+    //.pipe( sourcemaps.write() )
     .pipe( rename("style.css") )
     .pipe( gulp.dest(output) )
     .pipe( browserSync.stream() );
@@ -59,7 +59,7 @@ SCRIPTS Task
 gulp.task('plugins', function () {
 	return gulp.src(['js/plugins/**/*.js'])
 		.pipe(concat('plugins.min.js')) //the name of the resulting file
-		.pipe(uglify().on('error', swallowError))
+		//.pipe(uglify().on('error', swallowError))
 		.pipe(gulp.dest('js'))
 		.pipe(browserSync.stream());
 
@@ -153,14 +153,17 @@ WATCH Task
  */
 gulp.task('watch', function() {
 
-  util.log('watching sass')
+  util.log('watching sass');
   gulp.watch('scss/**/*.scss', ['styles'], browserSync.reload);
+
 
   util.log('watching svg')
   gulp.watch('svg/*.svg', ['svg'], browserSync.reload);
 
-  util.log('watching js')
+
+  util.log('watching js');
   gulp.watch('js/plugins/**/*.js', ['plugins'], browserSync.reload);
+
   gulp.watch('js/main.js', ['js'], browserSync.reload);
 
   browserSync.reload({

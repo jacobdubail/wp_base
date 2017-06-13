@@ -6,7 +6,7 @@
 		float: left;
 		margin: 0 27px 20px 0;
 
-		@include bp( sm ) {
+		@include bp(max sm) {
 			float: none;
 		}
 	}
@@ -14,7 +14,7 @@
 		float: right;
 		margin: 0 0 20px 27px;
 
-		@include bp( sm ) {
+		@include bp(max sm) {
 			float: none;
 		}
 	}

@@ -1,11 +1,6 @@
-@include b(btn) {
+.btn {
 	@include btn($brand,#fff,$brand);
-	//margin: 1rem 0;
 	text-transform: lowercase;
-
-	&--jumbotron {
-
-	}
 
 	&--upper {
 		text-transform: uppercase;

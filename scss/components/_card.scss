@@ -30,7 +30,7 @@
 	&__title {
 		color: #000;
 	}
-	@include e(text) {
+	&__text {
 		color: $brand;
 	}
 

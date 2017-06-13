@@ -1,18 +1,34 @@
-.collapse {
-	display: none;
+.fade {
+  opacity: 0;
+ 	transition: opacity .15s linear;
 
-	&.in {
-		display: block;
-	}
-	// tr&.in    { display: table-row; }
-	// tbody&.in { display: table-row-group; }
+  &.show {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+tr {
+  &.collapse.show {
+    display: table-row;
+  }
+}
+
+tbody {
+  &.collapse.show {
+    display: table-row-group;
+  }
 }
 
 .collapsing {
-	position: relative;
-	height: 0;
-	overflow: hidden;
-	transition-timing-function: ease;
-	transition-duration: .35s;
-	transition-property: height;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
 }

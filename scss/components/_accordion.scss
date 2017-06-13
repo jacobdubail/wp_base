@@ -1,13 +1,13 @@
 .accordion {
 	position: relative;
 
-	@include e(title) {
+	&__title {
 		border-bottom: 1px solid $brand;
 		margin-top: 8px;
 		padding-bottom: 5px;
 	}
 
-	@include e(time) {
+	&__time {
 		color: $brand;
 		font-weight: 600;
 		border-bottom: 1px solid;
