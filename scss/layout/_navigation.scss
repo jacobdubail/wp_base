@@ -14,7 +14,7 @@
 			}
 
 			&.mobile-only {
-				@include bp(820px) {
+				@include bp(lg) {
 					display: none;
 				}
 			}
@@ -27,7 +27,7 @@
 		list-style: none;
 		margin: 0;
 		width: 100%;
-		@include bp(820px) {
+		@include bp(lg) {
 			width: auto;
 			&:hover {
 				.dropdown-menu {
@@ -62,7 +62,7 @@
 	background-color: $brand;
 
 	.collapse {
-		@include bp(820px) {
+		@include bp(lg) {
 			display: flex !important;
 			height: auto !important;
 		}
@@ -100,7 +100,7 @@
 	position: absolute;
 
 
-	@include bp(820px) {
+	@include bp(lg) {
 		display: none;
 	}
 

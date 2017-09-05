@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if lte IE 9]> <html class="no-js oldie" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <![endif]-->
-<!--[if !IE]><!--> <html class="no-js" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>> <!--<![endif]-->
+<html class="no-js" prefix="og: http://ogp.me/ns#" <?php language_attributes(); ?>>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,31 +28,27 @@
 	<![endif]-->
 
 	<header class="site__header">
-		<div class="container">
-			<div class="row">
-				<a class="site__logo" href="<?php home_url(); ?>/">
-					<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
-				</a>
-				<nav class="site__nav" role="navigation">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-						&#9776;
-					</button>
-					<?php
-						$in = ( wp_is_mobile() ) ? '' : 'in';
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'main-nav',
-								'menu_class'      => 'menu main__nav',
-								'container'       => 'div',
-								'container_id'    => 'main-nav',
-								'container_class' => 'collapse ' . $in,
-								//'walker'         => new tpr_nav_walker()
-							)
-						);
-					?>
-				</nav>
-			</div>
-		</div>
+		<a class="site__logo" href="<?php home_url(); ?>/">
+			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+		</a>
+		<nav class="site__nav" role="navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+				&#9776;
+			</button>
+			<?php
+				$in = ( wp_is_mobile() ) ? '' : 'in';
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'main-nav',
+						'menu_class'      => 'menu main__nav',
+						'container'       => 'div',
+						'container_id'    => 'main-nav',
+						'container_class' => 'collapse ' . $in,
+						//'walker'         => new BASE_nav_walker()
+					)
+				);
+			?>
+		</nav>
 	</header>
 
 	<main class="site__content" role="main">

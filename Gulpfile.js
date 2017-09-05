@@ -13,6 +13,7 @@ var
 	postcss      = require('gulp-postcss'),
 	concat       = require('gulp-concat'),
 	uglify       = require('gulp-uglify'),
+	notify       = require('gulp-notify'),
 	imagemin     = require('gulp-imagemin');
 
 var BROWSER_SYNC_RELOAD_DELAY = 1000;
@@ -141,8 +142,14 @@ IMAGES TASK
  */
 gulp.task('images', function() {
 	return gulp.src('images/*')
-		.pipe(imagemin())
+		.pipe(imagemin({
+			progressive: true,
+			optimizationLevel: 3, // 0-7 low-high
+			interlaced: true,
+			svgoPlugins: [{removeViewBox: false}]
+		}))
 		.pipe(gulp.dest('images/'))
+		.pipe( notify( { message: 'DONE: Images Optimized! 💯', onLast: true } ) );
 });
 
 
