@@ -3,27 +3,38 @@
 if ( ! isset( $content_width ) ) $content_width = 1200;
 
 
+register_sidebar(array(
+  'name' => 'Sidebar Widgets',
+  'id'   => 'sidebar-widgets',
+  'description'   => 'These are widgets for the sidebar.',
+  'before_widget' => '<div id="%1$s" class="widget %2$s">',
+  'after_widget'  => '</div>',
+  'before_title'  => '<h3>',
+  'after_title'   => '</h3>'
+));
+
+
 /* Theme Support Function */
 function jtd_theme_supports()  {
-	$customHeaderDefaults = array(
-		'default-image'          => get_template_directory_uri() . '/images/logo.png',
-		'random-default'         => false,
-		'width'                  => 202,
-		'height'                 => 72,
-		'flex-height'            => true,
-		'flex-width'             => true,
-		'default-text-color'     => '',
-		'header-text'            => '',
-		'uploads'                => true,
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-	);
-	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'widgets' ) );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'automatic_feed_links' );
-	add_theme_support( 'custom-header', $customHeaderDefaults );
+  $customHeaderDefaults = array(
+    'default-image'          => get_template_directory_uri() . '/images/logo.png',
+    'random-default'         => false,
+    'width'                  => 202,
+    'height'                 => 72,
+    'flex-height'            => true,
+    'flex-width'             => true,
+    'default-text-color'     => '',
+    'header-text'            => '',
+    'uploads'                => true,
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+  );
+  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'widgets' ) );
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'automatic_feed_links' );
+  add_theme_support( 'custom-header', $customHeaderDefaults );
 }
 
 function register_my_menu() {
@@ -31,8 +42,8 @@ function register_my_menu() {
 }
 
 function jtd_oembed_default($defaults) {
-	$defaults['width'] = 1160;
-	return $defaults;
+  $defaults['width'] = 1160;
+  return $defaults;
 }
 
 function jtd_allow_rel() {
@@ -44,9 +55,9 @@ function jtd_browser_body_class($classes) {
   global $is_IE, $is_iphone, $is_ipad;
 
   if($is_IE) $classes[]     = 'ie';
-	if($is_iphone) $classes[] = 'iphone';
+  if($is_iphone) $classes[] = 'iphone';
   if($is_ipad) $classes[]   = 'ipad';
-	return $classes;
+  return $classes;
 }
 
 function jtd_category_id_class( $classes ) {

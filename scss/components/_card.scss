@@ -1,41 +1,41 @@
 .card {
 
-	&__link {
-		text-decoration: none;
-		&:hover {
-			text-decoration: none;
-			.card__media {
-				transform: scale(1.05);
-			}
-		}
-	}
-	&__figure {
-		text-align: left;
-		//background-color: #fff;
-		overflow: hidden;
-	}
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .card__media {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__figure {
+    text-align: left;
+    //background-color: #fff;
+    overflow: hidden;
+  }
 
-	&__media {
-		width: 100%;
-		height: auto;
-		max-width: 100%;
-		transition: all .2s ease;
-	}
-	&__caption {
-		padding: .8px 10px 10px;
-		background-color: #fff;
-		z-index: 10;
-		position: relative;
-	}
-	&__title {
-		color: #000;
-	}
-	&__text {
-		color: $brand;
-	}
+  &__media {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transition: all .2s ease;
+  }
+  &__caption {
+    padding: .8px 10px 10px;
+    background-color: #fff;
+    z-index: 10;
+    position: relative;
+  }
+  &__title {
+    color: #000;
+  }
+  &__text {
+    color: $primary;
+  }
 
-	&__badge {
+  &__badge {
 
-	}
+  }
 
 }

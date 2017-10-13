@@ -5,15 +5,15 @@ input[type=tel],
 input[type=search],
 input[type=url],
 textarea {
-	width: 100%;
-	margin: 0 0 20px;
+  width: 100%;
+  margin: 0;
   padding: 15px;
   background: #fff;
   border: 1px solid #000;
   color: grey;
 
   .gfield_error & {
-  	border-color: #f80000;
+    border-color: #f80000;
   }
 
   &:focus {
@@ -26,24 +26,24 @@ textarea {
 }
 
 select {
-	width: 100%;
-	margin: 0 0 20px;
-	appearance: none;
-	padding: 15px;
-	background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11q0 .406-.297.703l-7 7Q8.406 19 8 19t-.703-.297l-7-7Q0 11.406 0 11t.297-.703T1 10h14q.406 0 .703.297T16 11z" fill="#000"/></svg>') no-repeat 95% center;
-	background-size: 14px 22px;
-	border: 1px solid #000;
-	color: grey;
-	border-radius: 0;
+  width: 100%;
+  margin: 0;
+  appearance: none;
+  padding: 15px;
+  background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11q0 .406-.297.703l-7 7Q8.406 19 8 19t-.703-.297l-7-7Q0 11.406 0 11t.297-.703T1 10h14q.406 0 .703.297T16 11z" fill="#000"/></svg>') no-repeat 95% center;
+  background-size: 14px 22px;
+  border: 1px solid #000;
+  color: grey;
+  border-radius: 0;
 
-	.gfield_error & {
-		border-color: #f80000;
-	}
+  .gfield_error & {
+    border-color: #f80000;
+  }
 
-	&:focus {
-	  //background: #fff;
-	  color: #414042;
-	  outline: none;
-	  box-shadow: 0 0 4px rgba(#000,0.85);
-	}
+  &:focus {
+    //background: #fff;
+    color: #414042;
+    outline: none;
+    box-shadow: 0 0 4px rgba(#000,0.85);
+  }
 }

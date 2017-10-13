@@ -1,8 +1,8 @@
 .gform_wrapper {
 
-	.use-placeholders .gfield_label {
-		@extend %visuallyhidden;
-	}
+  .use-placeholders .gfield_label {
+    @extend %visuallyhidden;
+  }
 
 }
 
@@ -36,7 +36,7 @@
   margin: 0;
 
   &.show_label .gfield_label {
-  	display: block;
+    display: block;
 
   }
 
@@ -49,52 +49,52 @@
 }
 
 .gfield_error {
-	.gfield_checkbox, .gfield_radio {
-		border: 1px solid $error;
-	}
+  .gfield_checkbox, .gfield_radio {
+    border: 1px solid $error;
+  }
 }
 
 .gfield_checkbox,
 .gfield_radio {
   margin: 10px 0 20px;
   padding: 0;
-	list-style: none;
+  list-style: none;
 
-	li {
-		margin: 0 0 10px;
-	}
+  li {
+    margin: 0 0 10px;
+  }
 
-	.inline_values & li {
-		margin: 0 0 10px 20px;
-		display: inline-block;
-		&:first-child {
-			margin-left: 0;
-		}
-	}
+  .inline_values & li {
+    margin: 0 0 10px 20px;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 
-	label {
-		//font-size: .8333rem;
-		margin-left: 3px;
-	}
+  label {
+    //font-size: .8333rem;
+    margin-left: 3px;
+  }
 
 
 }
 .gfield_radio label {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
 .ginput_complex {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
   .name_first,
   .name_last,
-	.ginput_full,
+  .ginput_full,
   .ginput_right,
   .ginput_left {
-  	flex: 0 1 auto;
+    flex: 0 1 auto;
     flex-basis: 50%;
-	  max-width: 50%;
+    max-width: 50%;
 
     @include bp(max sm) {
       width: 100%;
@@ -106,46 +106,23 @@
   }
 
   .ginput_full {
-  	flex: 100%;
-  	max-width: none;
+    flex: 100%;
+    max-width: none;
   }
   .name_first,
   .ginput_left {
-  	@include bp(sm) {
-  		padding-right: 15px;
-  	}
+    @include bp(sm) {
+      padding-right: 15px;
+    }
   }
-	.name_last,
+  .name_last,
   .ginput_right {
-  	@include bp(sm) {
-  		padding-left: 15px;
-  	}
+    @include bp(sm) {
+      padding-left: 15px;
+    }
   }
 
-  .ginput_full.ginput_cardextras {
-		flex-basis: 100%;
-  	max-width: 100%;
-  	width: 100%;
-  	margin-top: 5px;
-
-  	.ginput_cardinfo_left,
-  	.ginput_cardinfo_right {
-  		display: inline-block;
-  		width: auto;
-  	}
-  	.ginput_cardinfo_right {
-  		margin-top: 5px;
-  		@include bp(sm) {
-  			margin-top: 0;
-	  		margin-left: 10px;
-	  	}
-  	}
-  	label {
-  		display: block;
-  	}
+  label {
+    display: none;
   }
-
-	label {
-		display: none;
-	}
 }

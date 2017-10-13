@@ -1,87 +1,87 @@
 .menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-	.dropdown-menu {
-		a {
-			color: #fff;
-			text-transform: capitalize;
-			border: 0;
-			&:hover, &:focus {
-				background-color: #000;
-				color: #fff;
-			}
+  .dropdown-menu {
+    a {
+      color: #fff;
+      text-transform: capitalize;
+      border: 0;
+      &:hover, &:focus {
+        background-color: #000;
+        color: #fff;
+      }
 
-			&.mobile-only {
-				@include bp(lg) {
-					display: none;
-				}
-			}
-		}
-	}
+      &.mobile-only {
+        @include bp(lg) {
+          display: none;
+        }
+      }
+    }
+  }
 
-	li {
-		position: relative;
-		display: inline-block;
-		list-style: none;
-		margin: 0;
-		width: 100%;
-		@include bp(lg) {
-			width: auto;
-			&:hover {
-				.dropdown-menu {
-					display: block;
-				}
-			}
-		}
-	}
+  li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    @include bp(lg) {
+      width: auto;
+      &:hover {
+        .dropdown-menu {
+          display: block;
+        }
+      }
+    }
+  }
 
-	a {
-		display: block;
-		position: relative;
-		outline: none;
-		color: #fff;
-		transition: all .2s ease;
-		padding: 0 15px;
-		text-decoration: none;
-		line-height: 36px;
-	}
+  a {
+    display: block;
+    position: relative;
+    outline: none;
+    color: #fff;
+    transition: all .2s ease;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 36px;
+  }
 }
 
 
 .site__utils {
-	a {
-		background-color: $brand;
-		margin: 0 15px;
-	}
+  a {
+    background-color: $primary;
+    margin: 0 15px;
+  }
 }
 
 .site__nav {
-	position: relative;
-	background-color: $brand;
+  position: relative;
+  background-color: $primary;
 
-	.collapse {
-		@include bp(lg) {
-			display: flex !important;
-			height: auto !important;
-		}
-	}
+  .collapse {
+    @include bp(lg) {
+      display: flex !important;
+      height: auto !important;
+    }
+  }
 
-	a {
-		background-color: transparent;
+  a {
+    background-color: transparent;
 
-		&:hover {
-			background-color: $brand;
-		}
-	}
+    &:hover {
+      background-color: $primary;
+    }
+  }
 
-	.current-menu-item > a,
-	.current_page_parent > a,
-	.current-menu-parent > a,
-	.current_page_item > a {
-		color: $barnd;
-	}
+  .current-menu-item > a,
+  .current_page_parent > a,
+  .current-menu-parent > a,
+  .current_page_item > a {
+    color: $barnd;
+  }
 
 }
 
@@ -89,22 +89,22 @@
 
 
 .navbar-toggler {
-	margin-right: 10px;
-	padding: 5px 8px;
-	font-size: 32px;
-	line-height: 1;
-	background: none;
-	border: 1px solid transparent;
-	border-radius: 3px;
-	color: $blue;
-	position: absolute;
+  margin-right: 10px;
+  padding: 5px 8px;
+  font-size: 32px;
+  line-height: 1;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: $blue;
+  position: absolute;
 
 
-	@include bp(lg) {
-		display: none;
-	}
+  @include bp(lg) {
+    display: none;
+  }
 
-	&:hover, &:focus {
-	  text-decoration: none;
-	}
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 }
