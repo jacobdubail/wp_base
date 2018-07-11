@@ -1,8 +1,4 @@
 .btn {
-  @include btn($primary,#fff,$primary);
-  text-transform: lowercase;
+  //@include btn($primary,#fff,$primary);
 
-  &--upper {
-    text-transform: uppercase;
-  }
 }

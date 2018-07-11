@@ -132,7 +132,7 @@ export { watchFiles as watch };
 function bsync() {
 
   browserSync.init({
-    proxy: "http://familyhouse.dev",
+    proxy: "https://picframes.test",
     ui: {
       port: 8080
     }
