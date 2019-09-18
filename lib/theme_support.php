@@ -34,7 +34,7 @@ function jtd_theme_supports()  {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'automatic_feed_links' );
-  add_theme_support( 'custom-header', $customHeaderDefaults );
+  //add_theme_support( 'custom-header', $customHeaderDefaults );
 }
 
 function register_my_menu() {

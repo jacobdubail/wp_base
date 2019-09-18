@@ -5,7 +5,7 @@
 class jtd_login {
 	public function __construct() {
 		// Change logo
-		add_action( 'login_head',  array( &$this, 'custom_logo' ) );
+		//add_action( 'login_head',  array( &$this, 'custom_logo' ) );
 
 		// Change logo link url
 		add_action( 'login_headerurl',  array( &$this, 'change_url' ) );
@@ -42,4 +42,3 @@ class jtd_login {
 
 }
 $jtd_login = new jtd_login();
-?>

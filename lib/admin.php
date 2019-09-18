@@ -16,15 +16,15 @@ class jtd_admin {
     add_filter( 'admin_footer_text',  array( &$this, 'change_admin_footer' ) );
     add_action( 'pre_ping', array( &$this, 'no_self_ping' ) );
 
-    if ( is_user_logged_in() && !get_current_user_id() == 1 ) {
+    if ( is_user_logged_in() && !current_user_can('manage_options') ) {
         add_action( 'admin_menu', array( &$this, 'remove_menus' ) );
         add_action( 'admin_menu', array( &$this, 'remove_dashboard_widgets' ) );
       }
 
     add_action( 'admin_menu', array( &$this, 'remove_menus_everyone' ) );
     add_action( 'admin_init', array( &$this, 'remove_theme_editor' ) );
-    add_action( 'admin_menu', array( &$this, 'relabel_posts_menu' ));
-    add_action( 'init', array( &$this, 'relabel_posts' ));
+    // add_action( 'admin_menu', array( &$this, 'relabel_posts_menu' ));
+    // add_action( 'init', array( &$this, 'relabel_posts' ));
     add_filter( 'user_contactmethods', array( &$this, 'tweak_profile_fields' ) );
 
     // https://gist.github.com/hitautodestruct/b6801fd070c4b638c55a
